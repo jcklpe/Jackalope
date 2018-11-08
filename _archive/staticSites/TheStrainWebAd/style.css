@@ -1,0 +1,164 @@
+#video-container {
+    width: 300px;
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+margin: auto;
+}
+
+@keyframes videocontrolexit {
+    from {visibility: visible; opacity: 1;}
+    to {visibility: hidden; opacity: 0;}
+}
+
+.video-controls {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 0px;
+    animation: videocontrolexit .3s;
+    animation-delay: 15s;
+    animation-fill-mode: forwards;
+    z-index: 6;
+}
+
+.trailer {
+    z-index: 1;
+}
+
+@keyframes replayreveal {
+    from {visibility: hidden; opacity: 0;}
+    to {visibility: visible; opacity: 1;}
+
+}
+
+.replay-controls {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 0px;
+    visibility: hidden;
+    animation: replayreveal .3s cubic-bezier(0.84, .01, 0.19, .93);
+    animation-delay: 15.5s;
+    animation-fill-mode: forwards;
+    z-index: 6;
+}
+
+.footer-container {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 0px;
+}
+
+@keyframes titlemove {
+from {bottom:  -150px; transform: scale(.2); opacity: 0;}
+to {bottom: 5px; transform: scale(1);  opacity: 1;}
+}
+
+.title-container {
+    position: absolute;
+    left: 10px;
+    bottom: -150px;
+    padding: 0px;
+    animation: titlemove 1s cubic-bezier(0.84, .01, 0.19, .93);
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes datemove {
+from {right: -300px;}
+to {right: 5px;}
+}
+
+.date-container {
+    position: absolute;
+    bottom: 10px;
+    right: -300px;
+    padding: 0px;
+    animation: datemove 1s cubic-bezier(0.84, .01, 0.19, .93);
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes resolvefade {
+    from {left:-300px; opacity:0;}
+    to {left:0px; opacity:1;}
+}
+
+.resolve-container {
+    position: absolute;
+    left: -300px;
+    bottom: 0px;
+    top: 0px;
+    z-index: 5;
+    animation: resolvefade 1s cubic-bezier(0.84, .01, 0.19, .93);
+    animation-delay: 15s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes resolvetitlefade {
+from {top:60px; opacity:0;}
+    to {top: 50px; opacity:1;}
+}
+
+.resolvetitle-container {
+position: absolute;
+    right: 5px;
+    top: 25px;
+    z-index: 6;
+    animation: resolvetitlefade 6s ease-in;
+    animation-delay: 16s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+}
+
+@keyframes resolvedatefade {
+from {opacity:0;}
+    to {opacity:1;}
+}
+
+.resolvedate-container {
+position: absolute;
+    right: 15px;
+    bottom: 10px;
+    z-index: 6;
+    animation: resolvedatefade 5.6s ease-in;
+    animation-delay: 17s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+}
+
+
+
+#video-container:hover #video-controls {
+    opacity: .9;
+}
+
+button {
+    background: rgba(0,0,0,.5);
+    border: 0;
+    color: #ed1c24;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -o-border-radius: 1px;
+    border-radius: 1px;
+
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/*#playbutton: {*/
+    /*position:absolute !important;*/
+    /*top: 5px;*/
+    /*right: 5px;*/
+    /*border-radius: 6px 0 0 6px;*/
+    /*border: 1px solid rgba(0, 0, 0, 0.7);*/
+
+/*}*/
+

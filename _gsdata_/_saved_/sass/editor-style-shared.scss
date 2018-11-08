@@ -1,0 +1,80 @@
+/*   TINY MCE CUSTOM STYLES EDITOR STYLESHEET FOR FRONT AND BACKEND */
+
+/* Suggested general non-tag-specific visual styles (for all websites) */
+
+.list       { margin: 0.35rem 0; }
+.stdtop     { margin-top: 0.65rem !important; }
+.moretop    { margin-top: 0.8rem  !important; }
+.lotstop    { margin-top: 1rem    !important; }
+.hugetop    { margin-top: 1.3rem  !important; }
+.stdbottom  { margin-bottom: 0.65rem !important; }
+.morebottom { margin-bottom: 0.8rem  !important; }
+.lotsbottom { margin-bottom: 1rem    !important; }
+.hugebottom { margin-bottom: 1.3rem  !important; }
+
+.topless    { margin-top: 0 !important; }
+.bottomless { margin-bottom: 0 !important; }
+
+.beforelist { margin-bottom: 0.3rem; }
+
+.lastitempx { padding-bottom: 12px !important; }
+.lastitemem { margin-bottom: 0; padding-bottom: 1.3rem; }
+
+strong, .strong, .fett, .bold, .smallBold, .smallerBold { font-weight: bold; }
+
+/* Revert to normal text within strong */
+.notstrong { font-weight: normal; }
+
+.smaller, .smallerBold { font-size: 0.95rem; line-height: 1.25; }
+
+.small, .smallBold { font-size: 0.89rem; line-height: 1.2; }
+
+/* Append your site-specific styles here */
+
+
+///////////////
+/// BLOG STUFF
+///////////////////////
+
+.bullet-point {
+
+}
+
+
+
+
+////////////////////
+// Case study headers
+////////////////////
+
+div.case-study-content,  body.post-type-case_study{
+  h2 {
+    position: relative;
+    top: -20px;
+    span.case-title {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      font-size: 45px;
+      box-shadow: 4em 0 0 black, -5em 0 0 black;
+
+
+    }
+
+  }
+  h3{
+    span.case-title  {
+
+      margin-bottom: 20px;
+      line-height: 1.7!important;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      font-size: 27px;
+      box-shadow: 4em 0 0 black, -5em 0 0 black, 4em 3px 0px #40465f, -5em 3px 0px #40465f;
+
+    }
+
+  }
+}/////// end of case study stuff
+

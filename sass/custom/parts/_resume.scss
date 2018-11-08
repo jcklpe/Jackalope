@@ -1,0 +1,110 @@
+
+
+dd.accordion-content{
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  flex: 0 0  100%;
+
+
+  h1 {
+    flex: 0 0 100%;
+    margin: 20px;
+    color: white;
+  }
+
+  h2 {
+    flex: 0 0 100%;
+    color: white;
+    font-weight: bold;
+  }
+
+  > h3 {
+    position: relative;
+    right: -50px;
+    flex: 0 0 100%;
+    color: white;
+
+  }
+
+
+  figure.skill-block {
+    position: relative;
+    height: 20vw;
+    width: 19.7vw;
+    overflow: hidden;
+
+
+
+    h3 {
+      color: white;
+    }
+
+    figcaption {
+      text-align: left;
+      height: 100%;
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        height: 100%;
+        z-index: 5000;
+        h4 {
+          text-align: center;
+          color: white;
+          //padding: 1em;
+          //width: 100%;
+          z-index: 5000;
+          transition: transform 0.35s;
+          transform: translate3d(0,10vw,0);
+
+          &:hover {
+            transform: translate3d(0,0,0);
+          }
+
+        }
+        img {
+          max-height: 60%;
+          max-width: 60%;
+          z-index: 5000;
+          opacity: .95;
+
+        }
+      }
+    }
+
+    img.back-image {
+      position: absolute;
+      max-width: 150%;
+      max-height: 150%;
+      min-height: 100%;
+      min-width: calc(100% + 50px);
+      opacity: 0.7;
+      z-index: 50;
+
+    }
+
+    a {
+
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      color: transparent;
+    }
+
+  }
+
+
+  }
+
+
+
+
+
+
+

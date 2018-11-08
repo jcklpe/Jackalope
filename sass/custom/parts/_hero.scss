@@ -1,0 +1,281 @@
+/////////////////////////////
+//      Hero Image        //
+///////////////////////////
+body {
+  overflow-x: hidden !important;
+}
+
+
+section.blog-hero-section {
+  height: 60vh!important;
+  z-index: -1;
+
+}
+    section.hero-section {
+      width: 100%;
+      display:flex;
+      height: 60vh;
+      position: relative;
+      min-height: 50vh;
+      z-index: -1;
+
+
+      div.overlay {
+        position: absolute;
+        top: -80%;
+        width:100vw;
+        height:300vh;
+        z-index: -1;
+
+
+
+      }  //end overlay container //
+
+
+
+      div.img-container {
+        position: absolute !important;
+        display: flex !important;
+        min-width: 110%;
+        min-height: 120%;
+        max-height: 200%;
+        //top: -45%!important;
+
+
+
+
+
+        img.hero-img {
+          position: relative;
+          min-width: calc(100% + 200px);
+          min-height: calc(100% + 200px);
+          top: calc(-30px - 10vh)!important;
+          z-index: -5 !important;
+          object-fit: cover;
+
+
+          @include breakpoint(phone) {
+
+            top: calc(-220px - 10vh) !important;
+            height: 110vh;
+          }
+
+
+
+        } /// end of
+
+        //.front-page-hero {
+        //  display: flex;
+        //
+        //  position: absolute;
+        //  top: -50%;
+        //  left: -50%;
+        //  //right: 0;
+        //  //bottom: 0;
+        //  z-index: -1 !important;
+        //
+        //
+        //
+        //}
+      } //end image container
+
+
+
+
+
+
+      div.title-card-flex {
+        position: relative;
+        top: -5vw;
+        height:100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        display: flex!important;
+        z-index: 2;
+        transform: rotate(-5deg);
+
+        .hero-text {
+          position: relative;
+          padding: 10px;
+          width: 95vw;
+          top: 30vh;
+          stroke-miterlimit: 10;
+          display: flex;
+          overflow-x: hidden;
+          stroke-linejoin:miter;
+          fill: none;
+          stroke: white;
+          stroke-width: 2.2px;
+
+        }
+
+        h1 {
+          position: relative!important;
+          color: white;
+          background: black;
+          min-width: 80vw;
+          max-width: 90vw;
+          margin: 50px 10px 25px 50px;
+          padding: 0 !important;
+          text-align: center;
+          align-self: center;
+          z-index: 2;
+          user-select: none;
+          cursor: default;
+          transform: scale(1, .75) rotate(-5deg);
+          box-shadow: 1em 7px 10px rgba(0, 0, 0, 0.15),
+          1.5em 14px 7px rgba(0, 0, 0, 0.1),
+          20px 24px 30px rgba(0, 0, 0, 0.1);
+          text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+          font-family: $brushFont;
+          span {
+            transform: scale(1.1, 1.1) rotate(2deg);
+            position: relative!important;
+          }
+          @include breakpoint(phone) {
+            margin: 10px;
+
+            span {
+              font-size: 1.9em!important;
+              padding: 0;
+
+            }
+          }
+
+          span.slabtext {
+            font-family: $brushFont;
+          }
+
+        }
+
+
+        h2 {
+          position: relative!important;
+          color: white;
+          align-self: center;
+          font-family: 'Aller', Arial, sans-serif;
+          font-size: 3vmax;
+          text-align: center;
+          user-select: none;
+          cursor: default;
+
+        }
+
+      }
+    }
+
+
+
+
+#page {
+  //overflow: hidden;
+}
+
+//Frontpage hero video
+section.hero-section {
+
+
+
+
+  video.glitch-header {
+    //position: relative;
+    //top:-1.8vw;
+    //display: block;
+    //margin:0 auto;
+    //min-height: calc(100% + 200px);
+    //min-width: calc(100% + 100px);
+    //max-width:calc(100% + 600px);
+
+
+
+
+    @include breakpoint(phone) {
+      top: -70px;
+      max-width: calc(300% + 200px);
+    }
+
+  }
+
+}
+
+
+///////////////////////////////////////////////////////////
+//                  YOUTUBE BETTER OPTIMIZATIONS
+////////
+
+// is-active
+#ytplayer {
+  opacity: 0;
+  transition: opacity 0.3s $defaultAni;
+
+  &.is-active {
+    opacity: 1;
+    transition: opacity 0.3s $defaultAni;
+  }
+
+}
+
+
+
+// Panel
+section.hero-section {
+  background-color: #040319;
+  position: relative;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+
+  // Panel video
+  div.glitch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: calc(-40px + -20vw);
+    //display: block;
+    margin: 0 auto;
+    min-height: calc(160% + 20vw);
+    min-width: calc(100% + 25vw);
+    pointer-events: none;
+    background-repeat:repeat;
+
+    @include breakpoint(phone) {
+      top: calc(-350px + -20vw);
+      display: block;
+      margin: 0 auto;
+      min-height: calc(220% + 200px);
+      min-width: calc(100% + 100px);
+    }
+
+
+    iframe {
+      height: 100%;
+      min-height: 100%;
+      min-width: 100%;
+      overflow: auto;
+      position: absolute;
+      transition: opacity .5s;
+      width: 100%;
+
+    }
+
+  }
+
+}
+
+
+//Putting this here because stupid prepros isn't propssing correctly
+
+section.side-project-content {
+  background-color: white;
+  color: black;
+  position: relative;
+  z-index: 1000;
+  clip-path: polygon(0 0,100% 5vw,100% 100%,0 100%);
+  margin-top: -5vw;
+
+}
+
+
+

@@ -1,0 +1,123 @@
+
+.wrapper {
+  //width: 95%;
+  //margin: 3em auto;
+  background-color: white;
+width: 100%;
+}
+
+
+
+.single-column .b-by-b-item {
+  width: 100%!important;
+  display: flex;
+
+}
+@media (min-width: 0px) and (max-width: 480px) {
+  #layout .b-by-b-item {
+    width: 100%;
+  }
+}
+@media (min-width: 481px) and (max-width: 1024px) {
+  #layout .b-by-b-item {
+    width: 50%;
+  }
+}
+@media (min-width: 1025px) {
+  #layout .b-by-b-item {
+    width: 33.33%;
+  }
+}
+
+#grid {
+  max-width: 1100px;
+  margin: auto;
+}
+
+
+.grid-content {
+  width: 100vw;
+  background-color: white;
+  padding: 10px;
+
+  .gridGallery {
+    margin-right: 10vw;
+    margin-left: 10vw;
+
+
+    grid-sizer {
+      width: 33%;
+    }
+
+    .grid-item {
+      width: 33%;
+
+      float: left;
+      a {
+        height:100%;
+        position: relative;
+        top:-5px;
+        vertical-align: top;
+
+
+        img {
+          width: 100%;
+          vertical-align: top;
+        }
+      }
+
+      .gallery-video {
+        width:100%;
+        vertical-align: top;
+
+      }
+
+
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+div.fancybox-slide--current {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+
+  .video-fancybox {
+    position: absolute;
+    max-height:90%;
+    max-width: 90%;
+    display: block;
+    margin: 0 auto;
+
+  }
+}
+
+
+
+@media (max-width: 400px) {
+  .grid-item,.grid-sizer {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .grid-item,.grid-sizer {
+    width: 50%;
+  }
+
+}
+
+@media only screen and (min-width: 1280px) {
+  .wrapper {
+    width: 1260px;
+  }
+}
