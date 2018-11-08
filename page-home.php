@@ -5,12 +5,12 @@
 
 get_header();
 
-get_template_part( 'template-parts/content', 'hero-frontpage' );
+get_template_part('template-parts/content', 'hero-frontpage');
 
 
 
 //case studies loop starts here
-$loop = new WP_Query( array( 'post_type' => 'case_study', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+$loop = new WP_Query(array('post_type' => 'case_study', 'orderby' => 'post_id', 'order' => 'ASC')); ?>
 
 
 <?php
@@ -19,11 +19,11 @@ $loop = new WP_Query( array( 'post_type' => 'case_study', 'orderby' => 'post_id'
 //          ＣＡＳＥ ＳＴＵＤＩＥＳ
 //
 //////////////////////////
-while( $loop->have_posts() ) : $loop->the_post();
+while ($loop->have_posts()) : $loop->the_post();
 
-    $siteRoot = get_site_url();
-    $imageLocation = get_the_post_thumbnail_url(get_the_ID(),'large');
-    $image = $siteRoot . $imageLocation;?>
+$siteRoot = get_site_url();
+$imageLocation = get_the_post_thumbnail_url(get_the_ID(), 'large');
+$image = $siteRoot . $imageLocation; ?>
 
     <section class=" case-study-section container-fluid  parallaxin2">
 
@@ -38,7 +38,8 @@ while( $loop->have_posts() ) : $loop->the_post();
                 </h1>
 
                 <h2 class="case-study-subheading">
-                    <span><?php $field = 'case_study_subheading'; echo tag_stripped_field($field); ?>
+                    <span><?php $field = 'case_study_subheading';
+                            echo tag_stripped_field($field); ?>
                     </span>
                 </h2>
 
@@ -53,7 +54,8 @@ while( $loop->have_posts() ) : $loop->the_post();
     </section>
 
 
-<?php endwhile; wp_reset_query();
+<?php endwhile;
+wp_reset_query();
 
 $aboutMeBackground = get_field('aboutme_background');
 $sideProjectsBackground = get_field('sideprojects_background');
@@ -84,14 +86,16 @@ $sideProjectsBackground = get_field('sideprojects_background');
         <div class="aboutMe">
             <div class="about-me-text">
                 <p>
-                    <?php echo get_field('about_me_summary');?>
+                    <?php echo get_field('about_me_summary'); ?>
                 </p>
             </div>
             <div class="img-wrapper parallaxin2">
-                <img class="layer" data-relative-input="true" data-depth="0.30" src="<?php $image = get_field('picture_of_me'); echo $image['url'];?>">
+                <img class="layer" data-relative-input="true" data-depth="0.30" src="
+                <?php $image = get_field('picture_of_me');
+                echo $image['url']; ?> ">
                 <div class="links layer" data-relative-input="true" data-depth="0.40">
-                    <a class="email" data-relative-input="true" data-depth="0.40" href="mailto:david.aslan.french@gmail.com" target="_blank" rel="noopener">[ ✉- david.aslan.french@gmail.com ]</a>
-                    <a class="email-mobile" data-relative-input="true" data-depth="0.40" href="mailto:david.aslan.french@gmail.com" target="_blank" rel="noopener">[ ✉ ]</a>
+                    <a class="email" data-relative-input="true" data-depth="0.40" href="mailto:david@jackalope.tech" target="_blank" rel="noopener">[ ✉- david@jackalope.tech ]</a>
+                    <a class="email-mobile" data-relative-input="true" data-depth="0.40" href="mailto:david@jackalope.tech" target="_blank" rel="noopener">[ ✉ ]</a>
 
                     <a class="telephone" data-relative-input="true" data-depth="0.40" href="tel:+1-409-594-7119" target="_blank" rel="noopener"  >[ ☎- (409) 594-7119 ]</a>
                 </div>
@@ -103,17 +107,17 @@ $sideProjectsBackground = get_field('sideprojects_background');
 
                 <h4>Development:</h4>
                     <p>
-                        <?php echo get_field('development-skills');?>
+                        <?php echo get_field('development-skills'); ?>
                     </p>
 
                 <h4>Design:</h4>
                     <p>
-                        <?php echo get_field('design-skills');?>
+                        <?php echo get_field('design-skills'); ?>
                     </p>
 
                 <h4>Tools:</h4>
                     <p>
-                        <?php echo get_field('tool-skills');?>
+                        <?php echo get_field('tool-skills'); ?>
                     </p>
         </div> <!-- end of skills section -->
 
@@ -140,25 +144,26 @@ $sideProjectsBackground = get_field('sideprojects_background');
             //  Side Projects       //
             //////////////////////////
 
-            $loop = new WP_Query( array( 'post_type' => 'side_project', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+            $loop = new WP_Query(array('post_type' => 'side_project', 'orderby' => 'post_id', 'order' => 'ASC')); ?>
 
 
             <?php
             //While loop cycling through sideproject posts.
-            while( $loop->have_posts() ) : $loop->the_post();
+            while ($loop->have_posts()) : $loop->the_post();
                 //VARIABLES
 
-              ?>
+            ?>
 
-                <figure class=" side-project-box parallaxin2"  style="<?php $field = 'overlay'; echo tag_stripped_field($field); ?>">
+                <figure class=" side-project-box parallaxin2"  style="<?php $field = 'overlay';
+                                                                        echo tag_stripped_field($field); ?>">
                     <div class="img-container layer" data-relative-input="true" data-depth="0.10" >
                         <?php
 
-                        if ( 'vertical' == get_field('center_vertical') ): ?>
+                        if ('vertical' == get_field('center_vertical')) : ?>
                             <img class="side-project-img lazy" style="top:-300px; right:100px;" data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" />
-                        <?php else: ?>
-                            <img class="side-project-img lazy" data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'large') ?>" />
-                        <?php endif;?>
+                        <?php else : ?>
+                            <img class="side-project-img lazy" data-src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" />
+                        <?php endif; ?>
 
 
 
@@ -166,7 +171,8 @@ $sideProjectsBackground = get_field('sideprojects_background');
                     <figcaption class="layer" data-relative-input="true" data-depth="0.40">
                         <div>
                             <h3 ><span><?php the_title(); ?></span></h3>
-                            <p><span><?php $field = 'gallery_subheading'; echo tag_stripped_field($field); ?></span></p>
+                            <p><span><?php $field = 'gallery_subheading';
+                                    echo tag_stripped_field($field); ?></span></p>
                         </div>
 
                     </figcaption>
@@ -175,7 +181,8 @@ $sideProjectsBackground = get_field('sideprojects_background');
 
 
 
-            <?php endwhile; wp_reset_query(); ?>
+            <?php endwhile;
+            wp_reset_query(); ?>
 
         </div> <!--end of gallery grid -->
 

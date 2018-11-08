@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -32,8 +33,8 @@
                 </div>
             </form>
             <div class="footer-links">
-                <a href="https://twitter.com/TheDonquixotic" class="twitter-link">[twitter]</a> &nbsp; &nbsp;
-                <a href="https://github.com/thedonquixotic" class="github-link">[github]</a>
+                <a href="https://twitter.com/jcklpe_" class="twitter-link">[twitter]</a> &nbsp; &nbsp;
+                <a href="https://github.com/jcklpe" class="github-link">[github]</a>
             </div>
         </div> <!-- Sign Up Form END-->
 
