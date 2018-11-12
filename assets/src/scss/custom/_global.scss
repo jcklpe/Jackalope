@@ -1,0 +1,382 @@
+//- GLOBAL STYLES
+
+//- colors
+$blue: #2657eb;
+$offwhite: #d2cec2;
+
+//- MIXINS
+// Responsive mixins
+@mixin breakpoint($class) {
+  @if $class==phone {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @else if $class==tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $class==desktop {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $class==desktopLG {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: phone, tablet, desktop, desktopLG";
+  }
+}
+
+// animation default curve
+$defaultAni: cubic-bezier(0.84, .01, 0.19, .93);
+
+@mixin heavy-shadow($rim-color) {
+  box-shadow: 0px 3px 0px $rim-color,
+    0px 14px 10px rgba(0, 0, 0, 0.15),
+    0px 24px 2px rgba(0, 0, 0, 0.1),
+    0px 34px 30px rgba(0, 0, 0, 0.1);
+}
+
+//HACK: this was to fix an unknown overflow problem. This is bad form. Should be fixed someday
+div#page {
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+//- FONTS
+@font-face {
+  font-family: 'AllerBold';
+  src: url('/fonts/Aller/AllerBold.woff2') format('woff2'), url('/fonts/Aller/AllerBold.woff') format('woff');
+}
+
+$bold: AllerBold,
+Arial Black,
+sans-serif;
+
+@font-face {
+  font-family: 'AllerLite';
+  src: url('/fonts/Aller/AllerLite.woff2') format('woff2'), url('/fonts/Aller/AllerLite.woff') format('woff');
+}
+
+$lite: AllerLite,
+sans-serif;
+
+@font-face {
+  font-family: 'Aller';
+  src: url('/fonts/Aller/Aller.woff2') format('woff2'), url('/fonts/Aller/Aller.woff') format('woff');
+}
+
+$regular: Aller,
+sans-serif;
+
+@font-face {
+  font-family: 'input';
+  src: url('/fonts/input/input.woff') format('woff');
+}
+
+$monospaced: Input,
+Courier;
+
+@font-face {
+  font-family: 'dead_stock';
+  src: url('/fonts/BrushFonts/dead_stock-webfont.woff2') format('woff2'),
+    url('/fonts/BrushFonts/dead_stock-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+$brushFont: dead_stock,
+AllerBold,
+Arial Black,
+sans-serif;
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('/fonts/icomoon/icomoon.eot'), url('/fonts/icomoon/icomoon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+//HACK: This hack should go in it's own module eventually
+:focus {
+  outline: none !important;
+
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+
+//- GLOBAL DEFAULTS
+body {
+  font-size: 18px;
+  margin: 0 !important;
+  background: #000;
+}
+
+
+* {
+  font-family: $regular;
+}
+
+h2.section-heading {
+  font-family: AllerBold, sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 5em;
+  margin: 25px;
+  user-select: none;
+}
+
+p {
+  position: relative;
+  color: white;
+  font-size: 1em;
+  //margin: 25px;
+  font-family: AllerLite, sans-serif;
+}
+
+::selection {
+  background: #2657eb;
+}
+
+section.content {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  align-content: stretch;
+  z-index: 1000;
+  background: #2657eb;
+  box-shadow: 0 -2px 1px rgba(0, 0, 0, .15);
+}
+
+.no-overflow {
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.section-heading {
+  color: white;
+  display: flex;
+  flex: 0 0 auto;
+}
+
+
+
+@media (max-width: 900px) {
+  section.content {
+
+    padding-bottom: 2.5vw;
+    padding-right: 2.5vw;
+
+  }
+
+}
+
+*::-webkit-scrollbar-track {
+  border: 1px solid black;
+  background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar {
+  width: 15px;
+  background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
+
+*:focus {
+  outline: none;
+}
+
+@mixin centerIt() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+div.entry-content {
+  p {
+    margin-top: 50px;
+  }
+}
+
+
+
+
+
+
+
+
+//Global p anchor tag
+
+// also check footer links in the sign up footer sass file and below the .links sass file for the stuff in the about me section
+.entry-content {
+  p {
+    a {
+      background: white;
+      color: black;
+      overflow: hidden;
+      font-weight: 500;
+      z-index: 50;
+      position: relative;
+      display: inline-block;
+      outline: none;
+      vertical-align: bottom;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    a::before {
+      content: "[ ";
+      position: relative;
+    }
+
+    a:hover {
+      color: white;
+    }
+
+    a:focus {
+      color: white;
+    }
+
+    a::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-color: $blue;
+      content: '';
+      transition: all 0.2s $defaultAni;
+      transform: translateY(95%);
+
+    }
+
+    a:hover::before {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      color: white !important;
+    }
+
+    a:focus::before {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      color: white !important;
+    }
+
+  }
+}
+
+ol {
+  a {
+    background: white;
+    color: black;
+
+    overflow: hidden;
+    font-weight: 500;
+    z-index: 50;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    vertical-align: bottom;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  a::before {
+    content: "[ ";
+    position: relative;
+  }
+
+
+  a:hover {
+    color: white;
+  }
+
+  a:focus {
+    color: white;
+  }
+
+  a::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: $blue;
+    content: '';
+    transition: all 0.2s $defaultAni;
+    transform: translateY(95%);
+
+  }
+
+  a:hover::before {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    color: white !important;
+  }
+
+  a:focus::before {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    color: white !important;
+  }
+
+
+}
+
+
+//- Define Icons
+.icon-download:before {
+  font-family: 'icomoon';
+  content: "\e007";
+}
+
+.icon-rss:before {
+  font-family: 'icomoon';
+  content: "\ea9b";
+}
+
+.icon-smell:before {
+  font-family: 'icomoon';
+  content: "\e902";
+}
+
+.icon-send:before {
+  font-family: 'icomoon';
+  content: "\e901";
+}
+
+.icon-call:before {
+  font-family: 'icomoon';
+  content: "\e900";
+}
