@@ -1,9 +1,13 @@
 // Gulp.js configuration
 'use strict';
 
-const
 
-    //source and build folders
+
+// the reason for doing things in this way below is so that you have the freedom to not only  use gulp to render your scss etc  in your teamplate folder, but also so that you can actually do all your theme development off server and then upload a build folder with just the necessary files and nothing else.  I've set things up to be uploaded but the original Sitepoint tutorial I followed did it like this and I thought it was a good idea to keep that functionality in there as a possibility.
+// in order to switch the mode over you just have to change the build folder. "../templatefoldername" etc
+
+//source and build folders
+const
     dir = {
         src: './assets/src/',
         build: './assets/build/',

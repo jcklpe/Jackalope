@@ -97,14 +97,23 @@ section.aboutMe {
     background: rgba(10, 20, 55, .3);
     overflow: hidden;
 
-    div.overlay-img {
-      position: absolute;
-      min-width: calc(100% + 100px);
-      min-height: calc(100% + 100px);
-      z-index: -1;
+    div.hack-fix {
+      // top: -200px;
+      position: relative;
       height: 100%;
       width: 100%;
-      background-repeat: repeat;
+      top: -400px;
+
+      div.overlay-img {
+        position: absolute;
+        min-width: calc(100% + 100px);
+        min-height: calc(100% + 500px);
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        background-repeat: repeat;
+
+      }
     }
 
   }

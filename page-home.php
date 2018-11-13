@@ -71,12 +71,14 @@ $sideProjectsBackground = get_field('sideprojects_background'); ?>
     <h2>
         <span>About Me</span>
     </h2>
-
+    <!--//- IMAGE BACKGROUND-->
     <div class="overlay overlay-aboutMe">
-        <div
-        class="overlay-img rellax"
-        data-rellax-speed="-10"
-        style=" background: url(<?php echo $aboutMeBackground ?>)">
+        <div class="hack-fix rellax"  data-rellax-speed="0">
+            <div
+            class="overlay-img rellax"
+            data-rellax-speed="-10"
+            style=" background: url(<?php echo $aboutMeBackground ?>)">
+            </div>
         </div>
     </div>
 
@@ -157,10 +159,15 @@ $sideProjectsBackground = get_field('sideprojects_background'); ?>
                     <p>
                         <?php echo get_field('tool-skills'); ?>
                     </p>
-        </div> <!-- end of skills section -->
+        </div>
+        <!-- end of skills section -->
 
 
-    <a href="https://cloud.jackalope.tech/s/resumes""><button class="resume-button downloadbtn icon-download"><span>[ Download Resumé.txt ]</span></button></a>
+    <a href="https://cloud.jackalope.tech/s/resumes"">
+    <button class="resume-button downloadbtn icon-download">
+        <span>[ Download Resumé.txt ]</span>
+        </button>
+        </a>
 
 </section>
 <!--//- END ABOUT ME SECTION -->
@@ -170,10 +177,13 @@ $sideProjectsBackground = get_field('sideprojects_background'); ?>
 
         <!--//-Background-->
         <div class=" overlay overlay-sideProjects" >
-            <div
-            class="overlay-img rellax"
-            data-rellax-speed="-10"
-            style=" background: url(<?php echo $sideProjectsBackground ?>)">
+             <div class="hack-fix rellax"
+             data-rellax-speed="-5" data-rellax-percentage="0.5" >
+                <div
+                    class="overlay-img rellax"
+                    data-rellax-speed="-10"
+                    style=" background: url(<?php echo $sideProjectsBackground ?>)">
+                </div>
             </div>
         </div>
         <!--//-end of background-->
