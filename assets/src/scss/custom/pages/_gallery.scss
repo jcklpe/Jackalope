@@ -1,28 +1,31 @@
-
+//- GALLERY
 .wrapper {
   //width: 95%;
   //margin: 3em auto;
   background-color: white;
-width: 100%;
+  width: 100%;
 }
 
 
 
 .single-column .b-by-b-item {
-  width: 100%!important;
+  width: 100% !important;
   display: flex;
 
 }
+
 @media (min-width: 0px) and (max-width: 480px) {
   #layout .b-by-b-item {
     width: 100%;
   }
 }
+
 @media (min-width: 481px) and (max-width: 1024px) {
   #layout .b-by-b-item {
     width: 50%;
   }
 }
+
 @media (min-width: 1025px) {
   #layout .b-by-b-item {
     width: 33.33%;
@@ -53,10 +56,11 @@ width: 100%;
       width: 33%;
 
       float: left;
+
       a {
-        height:100%;
+        height: 100%;
         position: relative;
-        top:-5px;
+        top: -5px;
         vertical-align: top;
 
 
@@ -67,7 +71,7 @@ width: 100%;
       }
 
       .gallery-video {
-        width:100%;
+        width: 100%;
         vertical-align: top;
 
       }
@@ -88,11 +92,11 @@ width: 100%;
 div.fancybox-slide--current {
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
 
   .video-fancybox {
     position: absolute;
-    max-height:90%;
+    max-height: 90%;
     max-width: 90%;
     display: block;
     margin: 0 auto;
@@ -103,14 +107,18 @@ div.fancybox-slide--current {
 
 
 @media (max-width: 400px) {
-  .grid-item,.grid-sizer {
+
+  .grid-item,
+  .grid-sizer {
     width: 100%;
   }
 
 }
 
 @media (max-width: 600px) {
-  .grid-item,.grid-sizer {
+
+  .grid-item,
+  .grid-sizer {
     width: 50%;
   }
 

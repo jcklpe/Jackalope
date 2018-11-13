@@ -1,9 +1,4 @@
-///////////////////////////
-///
-///      🅲🅰🆂🅴 🆂🆃🆄🅳🅸🅴🆂 🅵🆁🅾🅽🆃 🅿🅰🅶🅴
-///
-////////////////////
-
+//- CASE STUDIES FRONTPAGE
 section.case-study-section {
   width: 100%;
   position: relative;
@@ -18,41 +13,50 @@ section.case-study-section {
   background: #002771;
 
 
+
   div.overlay {
     position: absolute;
     z-index: 3000;
     width: 100vw;
     height: 110vh;
     box-shadow: rgba(0, 0, 0, 0.85) 1px 7vw 100px inset;
-  } // end of overlay
+  }
+
+  // end of overlay
 
   div.rellax {
-  position: absolute!important;
-  width: calc(100% + 100px);
-  height: calc(100% + 100px);
-
-  div.img-container {
-    position: absolute!important;
+    position: absolute !important;
     width: calc(100% + 100px);
     height: calc(100% + 100px);
 
+    div.img-container {
+      position: absolute !important;
+      width: calc(100% + 100px);
+      height: calc(100% + 100px);
 
-    img.section-img {
-      position: relative;
-      top: -250px;
-      right: 300px;
-      min-width: calc(100% + 300px);
-      min-height: calc(100% + 250px);
-      object-fit: cover;
-      z-index: 2000 !important;
 
-      transform: translate(0px, 0px);
-      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      img.section-img {
+        position: relative;
+        top: -250px;
+        right: 300px;
+        min-width: calc(100% + 300px);
+        min-height: calc(100% + 250px);
+        object-fit: cover;
+        z-index: 2000 !important;
 
-    } // end of section-img
-  } // end of img-container
+        transform: translate(0px, 0px);
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-}//end of rellax img-container
+      }
+
+      // end of section-img
+    }
+
+    // end of img-container
+
+  }
+
+  //end of rellax img-container
 
   a.case-study-box {
     color: white;
@@ -79,7 +83,7 @@ section.case-study-section {
         max-width: 90vw;
         padding: 100px 100px 30px 40px;
         top: auto !important;
-        left: auto!important;
+        left: auto !important;
         z-index: 4000;
         user-select: none;
         text-decoration: none;
@@ -88,28 +92,32 @@ section.case-study-section {
         @include breakpoint(phone) {
           margin-left: 20px;
 
-        }/// END OF MOBILE
+        }
+
+        /// END OF MOBILE
 
         span.title {
           transition-delay: 0s;
           transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
           background-color: black;
           box-shadow: 0.3em 0 0 black, -5em 0 0 black, 1em 5px 0px $blue, 0 5px 0px $blue,
-          5px 14px 10px rgba(0, 0, 0, 0.15),
-          12px 24px 2px rgba(0, 0, 0, 0.1),
-          18px 34px 30px rgba(0, 0, 0, 0.1);
+            5px 14px 10px rgba(0, 0, 0, 0.15),
+            12px 24px 2px rgba(0, 0, 0, 0.1),
+            18px 34px 30px rgba(0, 0, 0, 0.1);
           padding: 0;
           font-family: $brushFont;
 
-          @include breakpoint(phone) {
+          @include breakpoint(phone) {}
 
-          }
+        }
 
-        } /// END OF TITLE SPAN
+        /// END OF TITLE SPAN
 
 
 
-      } /// END OF H1
+      }
+
+      /// END OF H1
 
       h2.case-study-subheading {
         margin-top: 50px;
@@ -134,8 +142,8 @@ section.case-study-section {
           text-decoration: none;
           background-color: black;
           box-shadow: -0.5em 0 0 black, 3em 0 0 black, 5px 14px 10px rgba(0, 0, 0, 0.15),
-          12px 24px 2px rgba(0, 0, 0, 0.1),
-          18px 34px 30px rgba(0, 0, 0, 0.1);
+            12px 24px 2px rgba(0, 0, 0, 0.1),
+            18px 34px 30px rgba(0, 0, 0, 0.1);
           transition-delay: 10s;
           transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           line-height: 1.5;
@@ -144,7 +152,9 @@ section.case-study-section {
             line-height: 3 !important;
           }
         }
-      } /// END OF H2
+      }
+
+      /// END OF H2
 
     }
 
@@ -156,12 +166,12 @@ section.case-study-section {
             transition-delay: 0s;
             transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-          @include breakpoint(phone) {
-            box-shadow: 0.3em 0 0 black, -5em 0 0 black, 1em 5px 0px $blue, 0 5px 0px $blue,
-            5px 14px 10px rgba(0, 0, 0, 0.15),
-            12px 24px 2px rgba(0, 0, 0, 0.1),
-            18px 34px 30px rgba(0, 0, 0, 0.1);
-          }
+            @include breakpoint(phone) {
+              box-shadow: 0.3em 0 0 black, -5em 0 0 black, 1em 5px 0px $blue, 0 5px 0px $blue,
+                5px 14px 10px rgba(0, 0, 0, 0.15),
+                12px 24px 2px rgba(0, 0, 0, 0.1),
+                18px 34px 30px rgba(0, 0, 0, 0.1);
+            }
           }
         }
 
@@ -174,8 +184,8 @@ section.case-study-section {
 
             @include breakpoint(phone) {
               box-shadow: -0.5em 0 0 black, 3em 0 0 black, 5px 14px 10px rgba(0, 0, 0, 0.15),
-              12px 24px 2px rgba(0, 0, 0, 0.1),
-              18px 34px 30px rgba(0, 0, 0, 0.1);
+                12px 24px 2px rgba(0, 0, 0, 0.1),
+                18px 34px 30px rgba(0, 0, 0, 0.1);
             }
 
 
@@ -187,7 +197,7 @@ section.case-study-section {
 
 
       //IMAGE CONTAINER
-      &+ div.rellax {
+      &+div.rellax {
 
         div.img-container {
 
@@ -201,20 +211,27 @@ section.case-study-section {
             }
           }
         }
-      } ///// end of img container
+      }
 
-    }/// END OF HOVER
+      ///// end of img container
 
-    &:active, &:focus {
+    }
+
+    /// END OF HOVER
+
+    &:active,
+    &:focus {
       outline: none;
       transition-delay: 0s;
       text-decoration: none;
+
       div.title-card-flex {
         h1.case-study-title {
           span.title {
             box-shadow: 3em 0 0 black, -0.3em 0 0 black;
             transition-delay: 0s;
             transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
             @include breakpoint(phone) {
               box-shadow: 1em 0 0 black, -0.3em 0 0 black;
 
@@ -240,35 +257,41 @@ section.case-study-section {
 
       }
 
-    } // End Active State
-  } //End  of Anchor link and hover stuff
+    }
 
+    // End Active State
   }
-  //end case study container
 
-  @media (max-width: 768px) {
-    div.title-card-flex {
+  //End  of Anchor link and hover stuff
 
-      h1 {
+}
 
-        padding: 40px 0px 40px 0px !important;
-        span {
+//end case study container
 
-          word-wrap: break-word;
-        }
+@media (max-width: 768px) {
+  div.title-card-flex {
+
+    h1 {
+
+      padding: 40px 0px 40px 0px !important;
+
+      span {
+
+        word-wrap: break-word;
       }
+    }
 
-      h2.class-study-subheading {
-        position: relative;
-        left: 75px;
-        margin-right: 100px;
-        span {
-          line-height: 2.8 !important;
-          margin-left: 70px;
-        }
+    h2.class-study-subheading {
+      position: relative;
+      left: 75px;
+      margin-right: 100px;
+
+      span {
+        line-height: 2.8 !important;
+        margin-left: 70px;
       }
-
     }
 
   }
 
+}

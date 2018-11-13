@@ -1,35 +1,26 @@
-    //////////////\\\\\
-   //                 \\
-  //   BLOG  ARCHIVE   \\
- //                     \\
-///////////////////////////
+//- BLOG ARCHIVE
+nav:-moz-full-screen:not(iframe) {
+  z-index: 1 !important;
+}
 
-    iframe:-webkit-full-screen {
+nav:-webkit-full-screen:not(iframe) {
+  z-index: 1 !important;
+}
 
-    }
-
-    nav:-moz-full-screen:not(iframe) {
-      z-index:1!important;
-    }
-
-    nav:-webkit-full-screen:not(iframe) {
-      z-index:1!important;
-    }
-
-    nav:fullscreen:not(iframe) {
-      z-index:1!important;
-    }
+nav:fullscreen:not(iframe) {
+  z-index: 1 !important;
+}
 
 header.blog-archive-header {
-  height:40vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   padding: 10px;
   text-align: center;
-  @include breakpoint(phone) {
 
+  @include breakpoint(phone) {
     height: 50vh;
 
   }
@@ -41,21 +32,20 @@ header.blog-archive-header {
     color: white;
     font-size: 12vmax;
     text-shadow: 0 3px 0 #5258b2,
-    0 14px 10px rgba(0,0,0,0.15),
-    0 24px 2px rgba(0,0,0,0.1),
-    0 34px 30px rgba(0,0,0,0.1);
+      0 14px 10px rgba(0, 0, 0, 0.15),
+      0 24px 2px rgba(0, 0, 0, 0.1),
+      0 34px 30px rgba(0, 0, 0, 0.1);
     font-family: $brushFont;
 
     @include breakpoint(phone) {
-
       margin-top: -20px;
-      font-size:12vmax;
+      font-size: 12vmax;
 
     }
   }
 
   a {
-    z-index:500;
+    z-index: 500;
     position: absolute;
     background-color: black;
     color: white;
@@ -64,6 +54,7 @@ header.blog-archive-header {
     right: 0;
     bottom: -30px;
     padding-bottom: 20px;
+
     &:hover {
       text-decoration: none;
       background: #FF7200;
@@ -95,232 +86,244 @@ header.blog-archive-header {
     position: absolute;
     top: -300px;
     min-height: 100%;
-    min-width:100%;
+    min-width: 100%;
 
   }
 
 }
 
-    //////////////////
-    //              //
-    //     MAIN     //
-    //              //
-    //////////////////
+//////////////////
+//              //
+//     MAIN     //
+//              //
+//////////////////
 
-    main {
-      :first-child {
-        a {
-          div.overlay {
-            box-shadow: none !important;
-          }
-        }
+main {
+  :first-child {
+    a {
+      div.overlay {
+        box-shadow: none !important;
       }
     }
+  }
+}
 
-    ////////////////////////////////
-    //                            //
-    //     Blog Post Previews     //
-    //                            //
-    //////////////////////////////////
+////////////////////////////////
+//                            //
+//     Blog Post Previews     //
+//                            //
+//////////////////////////////////
 
 
-    $blogBGColor: white;
+$blogBGColor: white;
 
 main figure.blog-post-section {
-  margin-bottom: -5vw!important;
+  margin-bottom: -5vw !important;
 }
 
 div#primary {
 
-  > figure.blog-post-section {
+  >figure.blog-post-section {
 
 
     &:last-child {
-      margin-bottom: 0!important;
+      margin-bottom: 0 !important;
     }
   }
 }
 
-    figure.blog-post-section {
-        position: relative;
-        width:100%;
-        height: 80vh;
-        overflow: hidden;
-        background: $blue;
-        box-shadow: rgba(0, 0, 0, 0.99) 3px 3px 10px inset;
-      z-index:50000;
-      margin: 0 0 -5vw 0;
+figure.blog-post-section {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  background: $blue;
+  box-shadow: rgba(0, 0, 0, 0.99) 3px 3px 10px inset;
+  z-index: 50000;
+  margin: 0 0 -5vw 0;
 
-      &:hover {
+  &:hover {
 
-        figcaption.blog-text {
+    figcaption.blog-text {
 
-          h2.blog-title {
+      h2.blog-title {
 
-            span {
+        span {
 
-              box-shadow: 1.6em 0 0 black, -0.5em 0 0 black, 1.6em 5px 0px $blue, 0 5px 0px $blue,
-              5px 14px 10px rgba(0, 0, 0, 0.15),
-              12px 24px 2px rgba(0, 0, 0, 0.1),
-              18px 34px 30px rgba(0, 0, 0, 0.1);
-              transition: all 0.3s $defaultAni;
-            }
-          }
+          box-shadow: 1.6em 0 0 black, -0.5em 0 0 black, 1.6em 5px 0px $blue, 0 5px 0px $blue,
+            5px 14px 10px rgba(0, 0, 0, 0.15),
+            12px 24px 2px rgba(0, 0, 0, 0.1),
+            18px 34px 30px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s $defaultAni;
         }
+      }
+    }
 
 
-      }// ENDOF HOVER
+  }
+
+  // ENDOF HOVER
 
 
+
+  @include breakpoint(phone) {
+    height: 75vh;
+
+  }
+
+  div.img-container {
+    position: absolute;
+    width: calc(40% + 100px);
+    height: calc(100% + 150px);
+    top: -100px;
+    overflow: hidden;
+
+    @include breakpoint(phone) {
+      width: calc(100% + 100px);
+    }
+
+
+    div.blog-preview-img {
+      background-size: cover;
+      background-position: center center;
+      min-height: calc(100% + 100px);
+      min-width: calc(100% + 100px);
+
+
+    }
+  }
+
+  ////end of image container
+
+  figcaption.blog-text {
+    height: 100%;
+    width: 60%;
+    padding: 0;
+    position: absolute;
+    top: -1px;
+    background-color: $blogBGColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include breakpoint(phone) {
+      background: transparent;
+      padding: 10px;
+      width: 100%;
+    }
+
+    &::before {
+      content: '' !important;
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-bottom: 50px solid transparent;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
 
       @include breakpoint(phone) {
-        height: 75vh;
+        display: none;
+      }
+
+    }
+
+
+
+
+    h2.blog-title {
+      margin-left: -40px;
+      display: inline;
+      width: 60%;
+      margin-bottom: 30px;
+      transform: translate(-20px, 0);
+      transition: all 0.3s $defaultAni;
+
+      @include breakpoint(phone) {
+        margin-left: 25px;
 
       }
 
-          div.img-container {
-            position: absolute;
-            width: calc(40% + 100px);
-           height: calc(100% + 150px);
-            top: -100px;
-            overflow: hidden;
+      span {
+        color: white;
+        background: black;
+        box-shadow: 1.6em 0 0 black, -0.5em 0 0 black, 1.6em 5px 0px $blue, 0 5px 0px $blue,
+          0px 14px 10px rgba(0, 0, 0, 0.15),
+          0px 24px 2px rgba(0, 0, 0, 0.1),
+          0px 34px 30px rgba(0, 0, 0, 0.1);
+        line-height: 1.3;
 
-            @include breakpoint(phone) {
-              width: calc(100% + 100px);
-            }
-
-
-            div.blog-preview-img {
-              background-size: cover;
-              background-position: center center;
-              min-height: calc(100% + 100px);
-              min-width:  calc(100% + 100px);
+        padding: 4px;
+        transition: all 0.3s $defaultAni;
+        font-size: 3vmax;
 
 
-            }
-          }////end of image container
+        @include breakpoint(phone) {
+          font-size: 30px;
 
-          figcaption.blog-text {
-            height: 100%;
-            width: 60%;
-            padding: 0;
-            position: absolute;
-            top: -1px;
-            background-color: $blogBGColor;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+        }
 
-            @include breakpoint(phone) {
-              background: transparent;
-              padding: 10px;
-              width: 100%;
-            }
 
-            &::before {
-              content: ''!important;
-              width: 0;
-              height: 0;
-              border-top: 50px solid transparent;
-              border-bottom: 50px solid transparent;
-              margin:auto;
-              position: absolute;
-              top: 0;
-              bottom: 0;
+      }
+    }
 
-              @include breakpoint(phone) {
-                display: none;
-              }
+    p.blog-exerpt {
+      margin-left: 20px;
+      transform: translate(10px, 0);
+      transition: all 0.3s $defaultAni;
+      max-width: 60%;
 
-            }
+      @include breakpoint(phone) {
+        margin-left: 0;
+        padding: 0 40px;
+      }
+
+      span {
+        color: white;
+        background: black;
+        box-shadow: 0.75em 0 0 black, -0.5em 0 0 black;
+        line-height: 1.5;
+        position: static !important;
+        font-size: 1.5vmax;
+        padding: 2px;
+
+        @include breakpoint(phone) {
+          font-size: 16px;
+
+        }
+
+      }
+    }
 
 
 
 
-                h2.blog-title {
-                  margin-left: -40px;
-                  display: inline;
-                  width: 60%;
-                  margin-bottom: 30px;
-                  transform: translate( -20px, 0);
-                  transition: all 0.3s $defaultAni;
-                  @include breakpoint(phone) {
-                    margin-left: 25px;
+  }
 
-                  }
+  ////end of blog-text
 
-                  span {
-                    color: white;
-                    background: black;
-                    box-shadow: 1.6em 0 0 black, -0.5em 0 0 black, 1.6em 5px 0px $blue, 0 5px 0px $blue,
-                    0px 14px 10px rgba(0, 0, 0, 0.15),
-                    0px 24px 2px rgba(0, 0, 0, 0.1),
-                    0px 34px 30px rgba(0, 0, 0, 0.1);
-                    line-height:1.3;
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0;
+  }
 
-                    padding: 4px;
-                    transition: all 0.3s $defaultAni;
-                    font-size: 3vmax;
-
-
-                    @include breakpoint(phone) {
-                      font-size: 30px;
-
-                    }
-
-
-                  }
-                }
-
-                p.blog-exerpt {
-                  margin-left: 20px;
-                  transform: translate( 10px, 0);
-                  transition: all 0.3s $defaultAni;
-                  max-width: 60%;
-
-                  @include breakpoint(phone) {
-                    margin-left: 0;
-                    padding: 0 40px;
-                  }
-                  span {
-                    color: white;
-                    background: black;
-                    box-shadow: 0.75em 0 0 black, -0.5em 0 0 black;
-                    line-height: 1.5;
-                    position: static!important;
-                    font-size: 1.5vmax;
-                    padding: 2px;
-
-                    @include breakpoint(phone) {
-                      font-size: 16px;
-
-                    }
-
-                  }
-                }
+  /// end of anchor link
 
 
 
+}
 
-          } ////end of blog-text
-
-          a {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1000;
-            text-indent: 200%;
-            white-space: nowrap;
-            font-size: 0;
-            opacity: 0;
-          }/// end of anchor link
-
-
-
-    } //End of normal figure layout
+//End of normal figure layout
 
 
 
@@ -328,438 +331,462 @@ div#primary {
 
 
 ///////////////// EVEN EVEN STEVEN EVEN EVEN EVEN STEVEN//////////
-    figure.blog-post-section:nth-child(even)  {
-      clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
+figure.blog-post-section:nth-child(even) {
+  clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
 
-      margin-bottom: -5vw;
+  margin-bottom: -5vw;
 
-      div.img-container{
-        right: 0;
+  div.img-container {
+    right: 0;
 
-        div.blog-preview-img {
-          transform: translate(0,0);
-          opacity: 0.7;
-          transition: all 0.3s $defaultAni;
-          @include breakpoint(phone) {
-            opacity: 0.5;
+    div.blog-preview-img {
+      transform: translate(0, 0);
+      opacity: 0.7;
+      transition: all 0.3s $defaultAni;
 
-          }
+      @include breakpoint(phone) {
+        opacity: 0.5;
 
-
-        }
-
-      } ///end of image container
-
-      figcaption.blog-text {
-        left: 0;
+      }
 
 
+    }
 
+  }
 
-        &::before {
-          right:-24px;
-          border-left: 25px solid $blogBGColor;
-          border-top: 50px solid transparent;
-          border-bottom: 50px solid transparent;
-          transition: all 0.3s $defaultAni;
-        }
+  ///end of image container
 
-
-      }  //// ENd of figcaption
-
-///////HOVER/////////////
-      &:hover {
-
-        div.img-container {
-
-          div.blog-preview-img {
-            opacity: 0.9;
-            transform: translate( -90px, 0);
-            transition: all 0.5s $defaultAni;
-          }
-        }////end of Hover image container
-
-        figcaption.blog-text {
-
-          h2.blog-title {
-
-            transform: translate(0px, 0);
-            transition: all 0.3s $defaultAni;
-
-
-          }
-
-          p.blog-exerpt {
-            transform: translate(-20px, 0);
-            transition: all 0.3s $defaultAni;
-
-          }
-
-          &::before {
-            right:-60px;
-            border-left: 61px solid $blogBGColor;
-            border-top: 150px solid transparent;
-            border-bottom: 150px solid transparent;
-            transition: all 0.9s $defaultAni;
-
-          }
+  figcaption.blog-text {
+    left: 0;
 
 
 
 
-          h2.blog-title {
-            transform: translate(0px, 0);
-            transition: all 0.3s $defaultAni;
-          }
-
-          p.blog-exerpt {
-
-            transform: translate( -20px, 0);
-            transition: all 0.3s $defaultAni;
-          }
+    &::before {
+      right: -24px;
+      border-left: 25px solid $blogBGColor;
+      border-top: 50px solid transparent;
+      border-bottom: 50px solid transparent;
+      transition: all 0.3s $defaultAni;
+    }
 
 
+  }
+
+  //// ENd of figcaption
+
+  ///////HOVER/////////////
+  &:hover {
+
+    div.img-container {
+
+      div.blog-preview-img {
+        opacity: 0.9;
+        transform: translate(-90px, 0);
+        transition: all 0.5s $defaultAni;
+      }
+    }
+
+    ////end of Hover image container
+
+    figcaption.blog-text {
+
+      h2.blog-title {
+
+        transform: translate(0px, 0);
+        transition: all 0.3s $defaultAni;
 
 
-        }// END OF Hover FIG CAPTION
+      }
 
-      } /// End of hover container
-    } ///End of Even
+      p.blog-exerpt {
+        transform: translate(-20px, 0);
+        transition: all 0.3s $defaultAni;
+
+      }
+
+      &::before {
+        right: -60px;
+        border-left: 61px solid $blogBGColor;
+        border-top: 150px solid transparent;
+        border-bottom: 150px solid transparent;
+        transition: all 0.9s $defaultAni;
+
+      }
+
+
+
+
+      h2.blog-title {
+        transform: translate(0px, 0);
+        transition: all 0.3s $defaultAni;
+      }
+
+      p.blog-exerpt {
+
+        transform: translate(-20px, 0);
+        transition: all 0.3s $defaultAni;
+      }
+
+
+
+
+    }
+
+    // END OF Hover FIG CAPTION
+
+  }
+
+  /// End of hover container
+}
+
+///End of Even
 
 
 
 
 
 ////////////////////ODD ODD ODD ODD ODD //////////////////////
-    figure.blog-post-section:nth-child(odd) {
-      clip-path: polygon(0 5vw, 100% 0, 100% 100%, 0 100%);
+figure.blog-post-section:nth-child(odd) {
+  clip-path: polygon(0 5vw, 100% 0, 100% 100%, 0 100%);
 
-      margin-bottom: -5vw;
-      div.img-container{
-        left: 0px;
-        div.blog-preview-img {
-          transform: translate(0,0);
-          opacity: 0.7;
-          transition: all 0.3s $defaultAni;
+  margin-bottom: -5vw;
 
+  div.img-container {
+    left: 0px;
 
-        }
-
-      }// End of Image container
-
-      figcaption.blog-text {
-        right: 0px;
-
-        &::before {
-          left:-24px;
-          border-right: 25px solid $blogBGColor;
-          border-top: 50px solid transparent;
-          border-bottom: 50px solid transparent;
-          transition: all 0.3s $defaultAni;
-        }
+    div.blog-preview-img {
+      transform: translate(0, 0);
+      opacity: 0.7;
+      transition: all 0.3s $defaultAni;
 
 
-      }//End of Figcaption
-///////////HOVER/////////////////
-      &:hover {
+    }
 
-        div.img-container {
+  }
 
-          div.blog-preview-img {
-            opacity: 0.9;
-            transform: translate( -90px, 0);
-            transition: all 0.5s $defaultAni;
-          }///// Delete this if you decide to keep them all going the same direction.
+  // End of Image container
 
+  figcaption.blog-text {
+    right: 0px;
 
-
-
-        }////end of Hover image container
-
-        figcaption.blog-text {
+    &::before {
+      left: -24px;
+      border-right: 25px solid $blogBGColor;
+      border-top: 50px solid transparent;
+      border-bottom: 50px solid transparent;
+      transition: all 0.3s $defaultAni;
+    }
 
 
-          &::before {
-            left:-60px;
-            border-right: 61px solid $blogBGColor;
-            border-top: 150px solid transparent;
-            border-bottom: 150px solid transparent;
-            transition: all 0.9s $defaultAni;
+  }
 
-          }
+  //End of Figcaption
+  ///////////HOVER/////////////////
+  &:hover {
+
+    div.img-container {
+
+      div.blog-preview-img {
+        opacity: 0.9;
+        transform: translate(-90px, 0);
+        transition: all 0.5s $defaultAni;
+      }
+
+      ///// Delete this if you decide to keep them all going the same direction.
 
 
 
 
-          h2.blog-title {
-           transform: translate(0px, 0);
-            transition: all 0.3s $defaultAni;
+    }
 
-            span {
+    ////end of Hover image container
 
-            }
-
-          }
-
-          p.blog-exerpt {
-            transform: translate( -20px, 0);
-            transition: all 0.3s $defaultAni;
-
-          }
+    figcaption.blog-text {
 
 
+      &::before {
+        left: -60px;
+        border-right: 61px solid $blogBGColor;
+        border-top: 150px solid transparent;
+        border-bottom: 150px solid transparent;
+        transition: all 0.9s $defaultAni;
 
-
-        }// END OF Hover FIG CAPTION
-
-      } // END of HOVER
-
-
-    } /// End of ODD
+      }
 
 
 
 
+      h2.blog-title {
+        transform: translate(0px, 0);
+        transition: all 0.3s $defaultAni;
+
+        span {}
+
+      }
+
+      p.blog-exerpt {
+        transform: translate(-20px, 0);
+        transition: all 0.3s $defaultAni;
+
+      }
+
+
+
+
+    }
+
+    // END OF Hover FIG CAPTION
+
+  }
+
+  // END of HOVER
+
+
+}
+
+/// End of ODD
 
 
 
 
 
-    //section.blog-post-section {
-    //  width: 100%;
-    //  position: relative;
-    //  min-height: 50vh;
-    //  overflow: hidden;
-    //  z-index: 2000;
-    //  padding: 0px;
-    //  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //a {
-    //  height: 100%;
-    //  width: 100%;
-    //  text-decoration: none;
-    //  z-index: 5000;
-    //  cursor:pointer !important;
-    //
-    //  div.overlay {
-    //    position: absolute;
-    //    z-index: 3000;
-    //    width: 100%;
-    //    height: 100%;
-    //    box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 10px inset;
-    //    background: linear-gradient(rgba(0,0,0, 0.0), rgba(0,0,0,0.5));
-    //
-    //  }
-    //  //end overlay container
-    //
-    //  div.img-container {
-    //    position: absolute;
-    //    min-width: 100%;
-    //    min-height: 100%;
-    //
-    //    img.section-img {
-    //      position: absolute;
-    //      min-width: 100%;
-    //      min-height: calc(100% + 200px);
-    //      z-index: 2000 !important;
-    //      filter:blur(2px);
-    //
-    //    }
-    //
-    //  }
-    //  //end image container
-    //
-    //  div.title-card-flex {
-    //    padding: 50px;
-    //    position: relative;
-    //    height: 100%;
-    //    width: 100%;
-    //    flex-direction: column;
-    //    justify-content: left;
-    //    align-items: flex-start;
-    //    z-index: 4000;
-    //
-    //    h1 {
-    //      position: relative;
-    //
-    //      background-color: black;
-    //      font-family: 'AllerBold', Arial, sans-serif;
-    //      color: white;
-    //      text-align: left;
-    //      text-shadow: 0 2px 2px rgba(0, 0, 0, .35);
-    //      max-width: 90vw;
-    //      margin: 50px 10px 25px 50px;
-    //      padding: 10px;
-    //      z-index: 4000;
-    //      user-select: none;
-    //      cursor:pointer !important;
-    //      font-size:3.5vmax;
-    //
-    //    }
-    //
-    //
-    //
-    //    p.blog-summary {
-    //      display: block;
-    //      position: relative;
-    //      padding: 5px;
-    //      margin: 25px 10px 45px 50px;
-    //      font-family: 'Aller', Arial, sans-serif;
-    //      color: white;
-    //      text-align: left;
-    //      text-shadow: 0 2px 2px rgba(0, 0, 0, .35);
-    //      z-index: 4000;
-    //      user-select: none;
-    //      cursor:pointer !important;
-    //      line-height: 1.4;
-    //      font-size: 2vmax;
-    //      margin-bottom: 10px;
-    //
-    //
-    //      span{
-    //        background-color: black;
-    //        box-shadow: 0.2em 0 0 rgba(black,1), -0.2em 0 0 rgba(black,1);
-    //        display: inline;
-    //      }
-    //
-    //    }
-    //
-    //    svg {
-    //      float: right;
-    //      background-color: black;
-    //    }
-    //
-    //  }
-    //
-    //}
-    //
-    //}
-
-    //section.blog-post-section {
-    //  width: 100%;
-    //  position: relative;
-    //  min-height: 50vh;
-    //  overflow: hidden;
-    //  z-index: 2000;
-    //  padding: 0px;
-    //  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    //
-    //
-    //  a {
-    //    height: 100%;
-    //    width: 100%;
-    //    text-decoration: none;
-    //    z-index: 5000;
-    //    cursor: pointer !important;
-    //    display: flex;
-    //
-    //
-    //
-    //    div.overlay {
-    //      position: absolute;
-    //      z-index: 3000;
-    //      width: 100%;
-    //      height: 100%;
-    //      box-shadow: rgba(0, 0, 0, 0.99) 3px 3px 10px inset;
-    //      background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5));
-    //
-    //    }
-    //    //end overlay container
-    //
-    //    div.img-container {
-    //      position: absolute;
-    //      width:50%;
-    //      height:100%;
-    //      display: flex;
-    //      justify-items: center;
-    //      align-items: center;
-    //
-    //
-    //      img.section-img {
-    //        position: relative;
-    //        min-width: 100%;
-    //        min-height: calc(100% + 200px);
-    //        z-index: 2000 !important;
-    //        filter: blur(2px);
-    //        top: -100px;
-    //        right: 0;
-    //
-    //
-    //      }
-    //      svg {
-    //        float: right;
-    //        background-color: black;
-    //      }
-    //
-    //    }
-    //
-    //
-    //    //end image container
-    //
-    //    div.title-card-flex {
-    //      padding: 50px;
-    //      position: absolute;
-    //      height: 100%;
-    //      width: 50%;
-    //      flex-direction: column;
-    //      justify-content: left;
-    //      align-items: flex-start;
-    //      z-index: 4000;
-    //      background: white;
-    //
-    //      h1 {
-    //        position: relative;
-    //
-    //        background-color: black;
-    //        font-family: 'AllerBold', Arial, sans-serif;
-    //        color: white;
-    //        text-align: left;
-    //        text-shadow: 0 2px 2px rgba(0, 0, 0, .35);
-    //        max-width: 90vw;
-    //        margin: 50px 10px 25px 50px;
-    //        padding: 10px;
-    //        z-index: 4000;
-    //        user-select: none;
-    //        cursor: pointer !important;
-    //        font-size: 3.5vmax;
-    //
-    //      }
-    //
-    //      p.blog-summary {
-    //        display: block;
-    //        position: relative;
-    //        padding: 5px;
-    //        margin: 25px 10px 45px 50px;
-    //        font-family: 'Aller', Arial, sans-serif;
-    //        color: white;
-    //        text-align: left;
-    //        text-shadow: 0 2px 2px rgba(0, 0, 0, .35);
-    //        z-index: 4000;
-    //        user-select: none;
-    //        cursor: pointer !important;
-    //        line-height: 1.4;
-    //        font-size: 2vmax;
-    //        margin-bottom: 10px;
-    //
-    //        span {
-    //          background-color: black;
-    //          box-shadow: 0.2em 0 0 rgba(black, 1), -0.2em 0 0 rgba(black, 1);
-    //          display: inline;
-    //        }
-    //
-    //      }
-    //
-    //
-    //
-    //    }
-    //  }
-    //}
 
 
 
+
+//section.blog-post-section {
+//  width: 100%;
+//  position: relative;
+//  min-height: 50vh;
+//  overflow: hidden;
+//  z-index: 2000;
+//  padding: 0px;
+//  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+//
+//
+//
+//
+//
+//
+//
+//a {
+//  height: 100%;
+//  width: 100%;
+//  text-decoration: none;
+//  z-index: 5000;
+//  cursor:pointer !important;
+//
+//  div.overlay {
+//    position: absolute;
+//    z-index: 3000;
+//    width: 100%;
+//    height: 100%;
+//    box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 10px inset;
+//    background: linear-gradient(rgba(0,0,0, 0.0), rgba(0,0,0,0.5));
+//
+//  }
+//  //end overlay container
+//
+//  div.img-container {
+//    position: absolute;
+//    min-width: 100%;
+//    min-height: 100%;
+//
+//    img.section-img {
+//      position: absolute;
+//      min-width: 100%;
+//      min-height: calc(100% + 200px);
+//      z-index: 2000 !important;
+//      filter:blur(2px);
+//
+//    }
+//
+//  }
+//  //end image container
+//
+//  div.title-card-flex {
+//    padding: 50px;
+//    position: relative;
+//    height: 100%;
+//    width: 100%;
+//    flex-direction: column;
+//    justify-content: left;
+//    align-items: flex-start;
+//    z-index: 4000;
+//
+//    h1 {
+//      position: relative;
+//
+//      background-color: black;
+//      font-family: 'AllerBold', Arial, sans-serif;
+//      color: white;
+//      text-align: left;
+//      text-shadow: 0 2px 2px rgba(0, 0, 0, .35);
+//      max-width: 90vw;
+//      margin: 50px 10px 25px 50px;
+//      padding: 10px;
+//      z-index: 4000;
+//      user-select: none;
+//      cursor:pointer !important;
+//      font-size:3.5vmax;
+//
+//    }
+//
+//
+//
+//    p.blog-summary {
+//      display: block;
+//      position: relative;
+//      padding: 5px;
+//      margin: 25px 10px 45px 50px;
+//      font-family: 'Aller', Arial, sans-serif;
+//      color: white;
+//      text-align: left;
+//      text-shadow: 0 2px 2px rgba(0, 0, 0, .35);
+//      z-index: 4000;
+//      user-select: none;
+//      cursor:pointer !important;
+//      line-height: 1.4;
+//      font-size: 2vmax;
+//      margin-bottom: 10px;
+//
+//
+//      span{
+//        background-color: black;
+//        box-shadow: 0.2em 0 0 rgba(black,1), -0.2em 0 0 rgba(black,1);
+//        display: inline;
+//      }
+//
+//    }
+//
+//    svg {
+//      float: right;
+//      background-color: black;
+//    }
+//
+//  }
+//
+//}
+//
+//}
+
+//section.blog-post-section {
+//  width: 100%;
+//  position: relative;
+//  min-height: 50vh;
+//  overflow: hidden;
+//  z-index: 2000;
+//  padding: 0px;
+//  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+//
+//
+//  a {
+//    height: 100%;
+//    width: 100%;
+//    text-decoration: none;
+//    z-index: 5000;
+//    cursor: pointer !important;
+//    display: flex;
+//
+//
+//
+//    div.overlay {
+//      position: absolute;
+//      z-index: 3000;
+//      width: 100%;
+//      height: 100%;
+//      box-shadow: rgba(0, 0, 0, 0.99) 3px 3px 10px inset;
+//      background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5));
+//
+//    }
+//    //end overlay container
+//
+//    div.img-container {
+//      position: absolute;
+//      width:50%;
+//      height:100%;
+//      display: flex;
+//      justify-items: center;
+//      align-items: center;
+//
+//
+//      img.section-img {
+//        position: relative;
+//        min-width: 100%;
+//        min-height: calc(100% + 200px);
+//        z-index: 2000 !important;
+//        filter: blur(2px);
+//        top: -100px;
+//        right: 0;
+//
+//
+//      }
+//      svg {
+//        float: right;
+//        background-color: black;
+//      }
+//
+//    }
+//
+//
+//    //end image container
+//
+//    div.title-card-flex {
+//      padding: 50px;
+//      position: absolute;
+//      height: 100%;
+//      width: 50%;
+//      flex-direction: column;
+//      justify-content: left;
+//      align-items: flex-start;
+//      z-index: 4000;
+//      background: white;
+//
+//      h1 {
+//        position: relative;
+//
+//        background-color: black;
+//        font-family: 'AllerBold', Arial, sans-serif;
+//        color: white;
+//        text-align: left;
+//        text-shadow: 0 2px 2px rgba(0, 0, 0, .35);
+//        max-width: 90vw;
+//        margin: 50px 10px 25px 50px;
+//        padding: 10px;
+//        z-index: 4000;
+//        user-select: none;
+//        cursor: pointer !important;
+//        font-size: 3.5vmax;
+//
+//      }
+//
+//      p.blog-summary {
+//        display: block;
+//        position: relative;
+//        padding: 5px;
+//        margin: 25px 10px 45px 50px;
+//        font-family: 'Aller', Arial, sans-serif;
+//        color: white;
+//        text-align: left;
+//        text-shadow: 0 2px 2px rgba(0, 0, 0, .35);
+//        z-index: 4000;
+//        user-select: none;
+//        cursor: pointer !important;
+//        line-height: 1.4;
+//        font-size: 2vmax;
+//        margin-bottom: 10px;
+//
+//        span {
+//          background-color: black;
+//          box-shadow: 0.2em 0 0 rgba(black, 1), -0.2em 0 0 rgba(black, 1);
+//          display: inline;
+//        }
+//
+//      }
+//
+//
+//
+//    }
+//  }
+//}

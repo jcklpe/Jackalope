@@ -1,12 +1,12 @@
-
-
-section.link-slideup p>a{
+section.link-slideup p>a {
   position: relative;
-  z-index: 9998; /* needed for setting pseudo-element z-index */
+  z-index: 9998;
+  /* needed for setting pseudo-element z-index */
   overflow: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+
 
 section.link-slideup p>a {
   position: relative;
@@ -28,10 +28,7 @@ section.link-slideup p>a::after {
 }
 
 /* Slide up */
-.link-slideup {
-
-
-}
+.link-slideup {}
 
 .link-slideup p>a {
   overflow: hidden !important;
@@ -52,7 +49,7 @@ section.link-slideup p>a::after {
   -webkit-transition: -webkit-transform 0.2s;
   transition: transform background-color 0.2s cubic-bezier(0.84, .01, 0.19, .80);
   -webkit-transform: translateY(95%);
-  transform: translateY(95%) ;
+  transform: translateY(95%);
 
 }
 

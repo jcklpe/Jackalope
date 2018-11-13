@@ -1,9 +1,4 @@
-//////////////////////////////
-//                          //
-//          BLOG            //
-//                          //
-//////////////////////////////
-
+//- BLOG POST
 div.blog-article {
 
 
@@ -13,23 +8,25 @@ div.blog-article {
 
     span {
       box-shadow: 4em 0 0 black, 4em 3px 0px #40465f, -5em 3px 0px #40465f, 0 3px 0px #40465f,
-      1em 7px 10px rgba(0, 0, 0, 0.15),
-      1.5em 14px 7px rgba(0, 0, 0, 0.1),
-      20px 24px 30px rgba(0, 0, 0, 0.1);
-line-height: 1.5;
-      font-size: 33px!important;
+        1em 7px 10px rgba(0, 0, 0, 0.15),
+        1.5em 14px 7px rgba(0, 0, 0, 0.1),
+        20px 24px 30px rgba(0, 0, 0, 0.1);
+      line-height: 1.5;
+      font-size: 33px !important;
     }
   }
 
 
 
-} //// H2 Header stuff
+}
+
+//// H2 Header stuff
 
 section.blog-content {
   background-color: white;
   color: black;
   position: relative;
-  z-index:1000; /// this seems to be causing a problem with the hover state of links. changing it to 1 fixes that but then makes the navbar visible above it. So I think it has something to do with the hovestate of things.
+  z-index: 1000; /// this seems to be causing a problem with the hover state of links. changing it to 1 fixes that but then makes the navbar visible above it. So I think it has something to do with the hovestate of things.
   clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
   margin-top: -5vw;
 
@@ -46,20 +43,22 @@ section.blog-content {
   margin-right: 30px;
 
   &.tad-smaller-30 {
-    max-width: 30%!important;
+    max-width: 30% !important;
   }
+
   &.tad-smaller-40 {
-    max-width: 40%!important;
+    max-width: 40% !important;
   }
 }
 
 .alignright {
 
   &.tad-smaller-30 {
-    max-width: 30%!important;
+    max-width: 30% !important;
   }
+
   &.tad-smaller-40 {
-    max-width: 40%!important;
+    max-width: 40% !important;
   }
 
 }
@@ -70,7 +69,7 @@ img.pull-portrait {
 }
 
 img.aligncenter {
-//margin: 0;   you got rid of this because it was wonky on desktop. if it's wonky on mobile just give it a breakpoint.
+  //margin: 0;   you got rid of this because it was wonky on desktop. if it's wonky on mobile just give it a breakpoint.
 }
 
 time.entry-date {
@@ -104,7 +103,7 @@ article {
   background-color: white;
   position: relative;
   color: black;
-  z-index:1000;
+  z-index: 1000;
   padding-bottom: 50px;
 
   iframe {
@@ -159,10 +158,11 @@ article {
         margin-bottom: 10px;
       }
     }
+
     figure {
       padding: 0;
       max-width: 100vw;
-      height:auto;
+      height: auto;
 
       &.pullinmore {
         margin-right: 20vw;
@@ -174,18 +174,21 @@ article {
 
       a {
         max-width: 100%;
+
         img {
           max-width: 100%;
         }
 
       }
     }
+
     div.sketchfab-embed-wrapper {
 
       margin-top: 50px;
 
 
     }
+
     ////////////////////////////////////
     /// THIS IS THE PARAGRAPH TEXT FOR
     /// BLOGS IT IS IMPORTANT CONTENT
@@ -202,13 +205,14 @@ article {
 
       @include breakpoint(phone) {
         margin: 20px 10vw 0 10vw;
-        padding: 0 5px 0 5px!important;
+        padding: 0 5px 0 5px !important;
+
         img {
-          margin-left: -10vw!important;
-          width: 100vw!important;
-          height: auto!important;
-          float: none!important;
-          display: block!important;
+          margin-left: -10vw !important;
+          width: 100vw !important;
+          height: auto !important;
+          float: none !important;
+          display: block !important;
           margin-bottom: 10px !important;
 
         }
@@ -226,22 +230,28 @@ article {
         margin-bottom: 20px;
 
         &.alignright {
-        margin-right: -15vw;
-        max-width: 35vmax;
-        height:auto;
+          margin-right: -15vw;
+          max-width: 35vmax;
+          height: auto;
 
-      }
+        }
 
         &.alignleft {
           margin-left: -15vw;
           max-width: 35vmax;
-          height:auto;
-        }/// end of align left
+          height: auto;
+        }
+
+        /// end of align left
 
 
-      }///// end of images
+      }
 
-    } //// End of p
+      ///// end of images
+
+    }
+
+    //// End of p
 
     pre.wp-block-code {
       margin: 30px 17vw 0 17vw;
@@ -259,11 +269,14 @@ article {
         }
       }
     }
+
     cite {
       margin: 5px 2vw 5px 20vw;
     }
 
-  } /// End of entry content
+  }
+
+  /// End of entry content
 
 
 }
@@ -281,13 +294,16 @@ header.entry-header {
 
 article.post {
   iframe {
-    display:block;
+    display: block;
     width: 100vw;
-    margin:50px auto auto auto;
+    margin: 50px auto auto auto;
 
-  }  /// Okay so this was originally outside article.post but I moved it inside because it was applying needlessly to the frontpage youtube embed and I wasn't sure if it needed to be there or not, so I decided to take it out. If #FUBAR then check
+  }
+
+  /// Okay so this was originally outside article.post but I moved it inside because it was applying needlessly to the frontpage youtube embed and I wasn't sure if it needed to be there or not, so I decided to take it out. If #FUBAR then check
 
 }
+
 //
 //figure {
 //  margin: 0px;
@@ -297,14 +313,14 @@ article.post {
   max-width: 100vw;
   height: auto;
 
-  img{
+  img {
     max-width: 100vw;
     height: auto;
   }
 
-  a{
+  a {
     img {
-      left:0px;
+      left: 0px;
       max-width: 100vw;
       height: auto;
     }
@@ -312,20 +328,22 @@ article.post {
 }
 
 div.entry-content {
-h2 {
-  position: relative;
-  top: -20px;
-  span {
-  background-color: black;
-  color: white;
-  padding: 10px;
-    font-size: 45px;
-    box-shadow: 2em 0 0 black, -10px 0 0 black;
+  h2 {
+    position: relative;
+    top: -20px;
 
+    span {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      font-size: 45px;
+      box-shadow: 2em 0 0 black, -10px 0 0 black;
+
+
+    }
 
   }
 
-}
   h3 {
     span {
       margin-bottom: 20px;
@@ -342,32 +360,33 @@ h2 {
 }
 
 .image-collection {
-  column-count:         3;
-  column-gap:           0px;
+  column-count: 3;
+  column-gap: 0px;
   margin: 0 15vw 0 15vw;
 
   img {
-      width: 100% !important;
-      height: auto !important;
+    width: 100% !important;
+    height: auto !important;
 
-    }
+  }
 }
 
 /////////////////
 /////// COOL NAV FOR NEXT WP SHIT
 ///////////////////
 
-#cooler-nav{
+#cooler-nav {
   display: flex;
   justify-content: space-between;
   position: relative;
   min-height: 300px;
-@include breakpoint(phone) {
-  min-height: 200px;
-  margin-top: 100px;
-}
 
-  .nav-box{
+  @include breakpoint(phone) {
+    min-height: 200px;
+    margin-top: 100px;
+  }
+
+  .nav-box {
     display: flex;
     position: absolute;
     width: 35vw;
@@ -377,7 +396,7 @@ h2 {
 
     @include breakpoint(phone) {
       width: 50vw;
-      min-height:200px;
+      min-height: 200px;
       padding: 10px;
     }
 
@@ -409,10 +428,11 @@ h2 {
       p {
         transform: translateX(0);
         transition: all 0.3s $defaultAni;
+
         span {
-        margin: 0 10px;
-        vertical-align: middle;
-          background:black;
+          margin: 0 10px;
+          vertical-align: middle;
+          background: black;
           text-decoration: none;
         }
 
@@ -421,7 +441,7 @@ h2 {
 
   }
 
-  .previous{
+  .previous {
 
     a {
       justify-content: flex-start;
@@ -445,12 +465,12 @@ h2 {
       }
 
       img {
-        left:0;
-        top:0;
+        left: 0;
+        top: 0;
       }
 
 
-      p{
+      p {
         span {
           text-align: left;
           left: 0;
@@ -460,8 +480,9 @@ h2 {
 
   }
 
-  .next{
+  .next {
     right: 0;
+
     a {
       justify-content: flex-end;
 
@@ -484,10 +505,11 @@ h2 {
       }
 
       img {
-        right:0;
-        top:0;
+        right: 0;
+        top: 0;
       }
-      p{
+
+      p {
         span {
           text-align: right;
           right: 0;
@@ -506,7 +528,8 @@ h2 {
 .video-wrapper {
 
   position: relative;
-  padding-bottom: 45%; /* 16:9 */
+  padding-bottom: 45%;
+  /* 16:9 */
   padding-top: 25px;
   height: 0;
   background: black;
@@ -523,7 +546,7 @@ h2 {
       body {
         #player.player {
           div.vp-player.js-playerLayout {
-            position: static!important;
+            position: static !important;
           }
         }
       }
@@ -542,13 +565,14 @@ h2 {
 @media (max-width: 700px) {
   .image-collection {
 
-    column-count:         2;
+    column-count: 2;
   }
 }
+
 @media (max-width: 400px) {
   .image-collection {
 
-    column-count:         1;
+    column-count: 1;
   }
 
 
@@ -556,7 +580,7 @@ h2 {
 }
 
 article.hentry {
-margin:0;
+  margin: 0;
 
 }
 
@@ -580,6 +604,7 @@ margin:0;
 .brkt:before {
   content: "\005B";
 }
+
 .brkt:after {
   content: "\005D";
 }

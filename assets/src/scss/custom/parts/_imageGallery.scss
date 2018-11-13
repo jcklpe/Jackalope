@@ -1,6 +1,4 @@
 //Image gallery for gallery inserts inside wordpress native
-
-
 div.gallery {
   display: flex;
   flex-wrap: wrap;
@@ -27,9 +25,7 @@ div.gallery {
         justify-content: center;
         align-items: center;
 
-        img {
-
-        }
+        img {}
 
       }
 
@@ -50,12 +46,14 @@ div.gallery-columns-1 {
     max-width: 100%;
     max-height: 60vh;
 
-    div.gallery-icon{
+    div.gallery-icon {
       max-width: 100%;
       max-height: 60vh;
+
       a {
         max-height: 60vh;
         max-width: 100%;
+
         img {
 
           max-height: 60vh;
@@ -67,7 +65,9 @@ div.gallery-columns-1 {
     }
   }
 
-}//// End of columns 1
+}
+
+//// End of columns 1
 
 div.gallery-columns-2 {
 
@@ -78,12 +78,14 @@ div.gallery-columns-2 {
     max-width: 45vw;
     max-height: 60vh;
 
-    div.gallery-icon{
+    div.gallery-icon {
       max-width: 100%;
       max-height: 60vh;
+
       a {
         max-height: 60vh;
         max-width: 100%;
+
         img.attachment-medium.size-medium {
 
           max-height: 60vh;
@@ -95,28 +97,32 @@ div.gallery-columns-2 {
     }
   }
 
-}//// End of columns 2
+}
+
+//// End of columns 2
 
 ul.columns-2 {
-justify-content: center;
+  justify-content: center;
   max-height: 75vh;
 
   li.blocks-gallery-item {
     margin: 0;
     max-width: 45vw;
     max-height: 75vh;
-    width: auto!important;
-    flex-grow: 0!important;
+    width: auto !important;
+    flex-grow: 0 !important;
 
-    figure{
+    figure {
       max-width: 100%;
       max-height: 75vh;
       display: flex;
       justify-content: center;
       align-content: center;
+
       a {
         max-height: 75vh;
         max-width: 100%;
+
         img {
 
           max-height: 75vh;
@@ -128,17 +134,21 @@ justify-content: center;
     }
   }
 
-}//// End of columns 2
+}
+
+//// End of columns 2
 
 div.gallery-columns-3 {
 
   figure.gallery-item {
-    max-width: 30vw!important;
+    max-width: 30vw !important;
     max-height: 60vh;
     margin: 0;
-    div.gallery-icon{
+
+    div.gallery-icon {
       max-width: 100%;
       max-height: 60vh;
+
       a {
         max-height: 60vh;
         max-width: 100%;
@@ -153,13 +163,17 @@ div.gallery-columns-3 {
     }
   }
 
-}//// End of columns 3
+}
+
+//// End of columns 3
 
 div.gallery-columns-4 {
-  margin-bottom:100px;
+  margin-bottom: 100px;
+
   figure.gallery-item {
-    max-width: 24.5vw!important;
+    max-width: 24.5vw !important;
     margin: 0;
+
     div.gallery-icon {
       max-width: 100%;
 
@@ -174,20 +188,24 @@ div.gallery-columns-4 {
     }
   }
 
-} /// end of columns 4
+}
+
+/// end of columns 4
 
 div.gallery-columns-5 {
   max-height: 60vh;
+
   figure.gallery-item {
-    max-width: 19vw!important;
+    max-width: 19vw !important;
     margin: 0;
+
     div.gallery-icon {
       max-width: 19vw;
 
       a {
         max-width: 19vw;
 
-        img.size-medium{
+        img.size-medium {
           max-width: 19vw;
 
         }
@@ -195,20 +213,24 @@ div.gallery-columns-5 {
     }
   }
 
-}/// end of columns 5
+}
+
+/// end of columns 5
 
 div.gallery-columns-6 {
   max-height: 60vh;
+
   figure.gallery-item {
-    max-width: 16vw!important;
+    max-width: 16vw !important;
     margin: 0;
+
     div.gallery-icon {
       max-width: 16vw;
 
       a {
         max-width: 16vw;
 
-        img.attachment.size-medium{
+        img.attachment.size-medium {
           max-width: 16vw;
 
         }
@@ -216,20 +238,24 @@ div.gallery-columns-6 {
     }
   }
 
-}/// end of columns 6
+}
+
+/// end of columns 6
 
 div.gallery-columns-7 {
   max-height: 60vh;
+
   figure.gallery-item {
-    max-width: 14vw!important;
+    max-width: 14vw !important;
     margin: 0;
+
     div.gallery-icon {
       max-width: 14vw;
 
       a {
         max-width: 14vw;
 
-        img.attachment.size-medium{
+        img.attachment.size-medium {
           max-width: 14vw;
 
         }
@@ -237,11 +263,6 @@ div.gallery-columns-7 {
     }
   }
 
-}/// end of columns 7
+}
 
-
-
-
-
-
-
+/// end of columns 7

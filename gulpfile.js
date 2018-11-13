@@ -6,7 +6,8 @@ const
     //source and build folders
     dir = {
         src: './assets/src/',
-        build: './assets/build/'
+        build: './assets/build/',
+        root: './',
     },
 
 
@@ -22,6 +23,7 @@ const
     concat = require('gulp-concat'),
     stripdebug = require('gulp-strip-debug'),
     uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
 
 // Browser-sync
 var browsersync = false;
@@ -47,7 +49,7 @@ gulp.task('php', () => {
 var css = {
     src: dir.src + 'scss/style.scss',
     watch: dir.src + 'scss/**/*.scss',
-    build: dir.build,
+    build: dir.root,
     sassOpts: {
         outputStyle: 'expanded',
         //   imagePath       : images.build,
@@ -64,15 +66,17 @@ var css = {
             browsers: ['last 2 versions', '> 2%']
         }),
         require('css-mqpacker'),
-        require('cssnano')
+        require('cssnano'),
     ]
 };
 
 // CSS processing
 gulp.task('css', () => {
     return gulp.src(css.src)
+        .pipe(sourcemaps.init())
         .pipe(sass(css.sassOpts))
         .pipe(postcss(css.processors))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(css.build))
         .pipe(browsersync ? browsersync.reload({
             stream: true

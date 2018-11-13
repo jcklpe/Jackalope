@@ -1,10 +1,10 @@
+//- RESUME
 
-
-dd.accordion-content{
+dd.accordion-content {
   display: flex;
   position: relative;
   flex-wrap: wrap;
-  flex: 0 0  100%;
+  flex: 0 0 100%;
 
 
   h1 {
@@ -19,7 +19,7 @@ dd.accordion-content{
     font-weight: bold;
   }
 
-  > h3 {
+  >h3 {
     position: relative;
     right: -50px;
     flex: 0 0 100%;
@@ -52,6 +52,7 @@ dd.accordion-content{
         flex-direction: column;
         height: 100%;
         z-index: 5000;
+
         h4 {
           text-align: center;
           color: white;
@@ -59,13 +60,14 @@ dd.accordion-content{
           //width: 100%;
           z-index: 5000;
           transition: transform 0.35s;
-          transform: translate3d(0,10vw,0);
+          transform: translate3d(0, 10vw, 0);
 
           &:hover {
-            transform: translate3d(0,0,0);
+            transform: translate3d(0, 0, 0);
           }
 
         }
+
         img {
           max-height: 60%;
           max-width: 60%;
@@ -100,11 +102,4 @@ dd.accordion-content{
   }
 
 
-  }
-
-
-
-
-
-
-
+}

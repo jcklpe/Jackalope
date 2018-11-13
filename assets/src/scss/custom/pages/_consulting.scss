@@ -1,25 +1,19 @@
-//////////////////////////////
-//                          //
-//      CONSULTING CSS      //
-//                          //
-//////////////////////////////
-
-
-
-
+//- CONSULTING
 body.page-id-15 {
 
   div.site {
 
-nav.navbar {
-  background: black;
+    nav.navbar {
+      background: black;
 
-  div.customnav {
-    background: black;
+      div.customnav {
+        background: black;
+      }
+    }
   }
 }
-  }
-} /// END OF CUSTOM PAGE STYLING
+
+/// END OF CUSTOM PAGE STYLING
 
 
 header.consulting-header {
@@ -30,7 +24,8 @@ header.consulting-header {
   margin-bottom: 100px;
 
 
-  flex-direction:column;
+  flex-direction: column;
+
   h1 {
     font-size: 9vw;
     position: relative;
@@ -38,7 +33,7 @@ header.consulting-header {
     z-index: 1;
     color: white;
     text-align: center;
-    width:100%;
+    width: 100%;
     margin: 35px;
 
 
@@ -99,12 +94,13 @@ header.consulting-header {
   a:hover::before {
     -webkit-transform: translateY(0);
     transform: translateY(0);
-    color: white!important;
+    color: white !important;
   }
+
   a:focus::before {
     -webkit-transform: translateY(0);
     transform: translateY(0);
-    color: white!important;
+    color: white !important;
   }
 
 
@@ -155,7 +151,7 @@ section.content.consulting {
       max-height: 50vh;
       overflow: hidden;
 
-      .section-img{
+      .section-img {
         min-width: 100%;
         min-height: 100%;
         max-width: 60vw;
@@ -167,13 +163,13 @@ section.content.consulting {
 
   }
 
-  .exit-button{
-    width:40px;
-    height:40px;
+  .exit-button {
+    width: 40px;
+    height: 40px;
     border: 1px solid black;
-    cursor:pointer;
-    display:inline-block;
-    margin:10px 20px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px 20px;
     position: absolute;
     top: 0;
     right: 0;
@@ -187,7 +183,7 @@ section.content.consulting {
 
 
 
-    &:after{
+    &:after {
       width: 24px;
       height: 4px;
       background-color: black;
@@ -200,7 +196,8 @@ section.content.consulting {
       transform: rotate(-45deg);
       transition: all 0.3s $defaultAni;
     }
-    &:before{
+
+    &:before {
       left: 50%;
       top: 50%;
       margin-left: -12px;
@@ -225,6 +222,7 @@ section.content.consulting {
       background-color: white;
       transform: rotate(-45deg) scale(0.6);
     }
+
     &:hover:before {
       background-color: white;
       transform: rotate(45deg) scale(0.6);
@@ -249,7 +247,7 @@ section.content.consulting {
     width: 80vw;
     min-height: 85vh;
     top: 50px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -310,7 +308,7 @@ section.content.consulting {
             border-bottom: 2px solid #382628;
           }
 
-          .audience{
+          .audience {
             margin: 0 0 1em 0;
             padding: 1em;
             font-size: 0.85em;
@@ -325,10 +323,12 @@ section.content.consulting {
             border: 2px solid #382628;
             position: relative;
             z-index: 100;
+
             .currency {
               font-size: 0.5em;
               vertical-align: super;
             }
+
             .time-period {
               font-size: 0.25em;
               display: block;
@@ -375,14 +375,16 @@ section.content.consulting {
           }
 
           .pricing__action:hover,
-           .pricing__action:focus {
+          .pricing__action:focus {
             background-color: #ffdbd5;
             color: #382628;
           }
 
 
 
-        }  //end of product-package
+        }
+
+        //end of product-package
 
         .product-package.featured .price::after {
           background: url("http://www.freeiconspng.com/uploads/free-best-seller-stamp-png-6.png");
@@ -398,7 +400,9 @@ section.content.consulting {
 
       }
     }
-  }  //End of Modal active styling
+  }
+
+  //End of Modal active styling
 
 
 }

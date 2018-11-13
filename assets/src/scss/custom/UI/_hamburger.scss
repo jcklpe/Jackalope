@@ -1,10 +1,9 @@
-
 /* Hamburger Animation Stuff */
 
 .hamburger-toggle-switch {
   display: block;
   position: relative;
-  float:right;
+  float: right;
   overflow: hidden;
   padding: 0;
   width: 50px;
@@ -13,6 +12,7 @@
   border: none;
   transition: background 0.3s $defaultAni;
 }
+
 
 .hamburger-toggle-switch:focus {
   outline: none;

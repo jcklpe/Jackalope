@@ -1,32 +1,33 @@
-/////////////////////////////
-//                         //
-//     ABOUT ME SUMMARY    //
-//         front-page      //
-/////////////////////////////
+//- ABOUT ME
 
 section.aboutMe {
   z-index: 50000;
   flex-direction: column;
-  display:flex;
-  box-shadow: inset 0px 12px 39px 1px rgba(0,4,26,0.39);
+  display: flex;
+  box-shadow: inset 0px 12px 39px 1px rgba(0, 4, 26, 0.39);
+
 
   @include breakpoint(phone) {
     padding-bottom: 150px;
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: center!important;
+    justify-content: center !important;
 
 
-  }/// end of mobile
+  }
+
+  /// end of mobile
 
 
 
   h1 {
-    z-index:1;
-  }//// end of h1
+    z-index: 1;
+  }
+
+  //// end of h1
   h2 {
-    z-index: 50000 ;
+    z-index: 50000;
     position: relative;
     left: 10px;
     top: -30px;
@@ -45,67 +46,81 @@ section.aboutMe {
       padding-left: 3.5vmax;
       font-size: 6vmax;
       box-shadow: 3em 0 0 black, -5em 0 0 black, 0px 3px 0px $blue,
-      0px 14px 10px rgba(0, 0, 0, 0.15), 4em 14px 10px rgba(0, 0, 0, 0.15),
-      0px 24px 2px rgba(0, 0, 0, 0.1),
-      0px 34px 30px rgba(0, 0, 0, 0.1);
+        0px 14px 10px rgba(0, 0, 0, 0.15), 4em 14px 10px rgba(0, 0, 0, 0.15),
+        0px 24px 2px rgba(0, 0, 0, 0.1),
+        0px 34px 30px rgba(0, 0, 0, 0.1);
       font-family: $brushFont;
 
 
       @include breakpoint(phone) {
 
         box-shadow: 3em 0 0 black, -3em 0 0 black, 0px 3px 0px $blue,
-        0px 14px 10px rgba(0, 0, 0, 0.15),
-        0px 24px 2px rgba(0, 0, 0, 0.1),
-        0px 34px 30px rgba(0, 0, 0, 0.1);;
+          0px 14px 10px rgba(0, 0, 0, 0.15),
+          0px 24px 2px rgba(0, 0, 0, 0.1),
+          0px 34px 30px rgba(0, 0, 0, 0.1);
+        ;
         padding: 0;
         margin-left: 10px;
 
       }
 
-    }///// end of span
-  }//// end of h2
+    }
+
+    ///// end of span
+  }
+
+  //// end of h2
   h3 {
     z-index: 50;
-    margin-bottom:25px;
+    margin-bottom: 25px;
+
     span {
       background: black;
       color: white;
       padding: 5px;
       font-size: 24px;
       box-shadow: 2.5em 0 0 black, -0.5em 0 0 black, 0px 3px 0px $blue,
-      0px 14px 10px rgba(0, 0, 0, 0.15),
-      0px 24px 2px rgba(0, 0, 0, 0.1),
-      0px 34px 30px rgba(0, 0, 0, 0.1);
-    } /// end of span
-  }//// end of h3
+        0px 14px 10px rgba(0, 0, 0, 0.15),
+        0px 24px 2px rgba(0, 0, 0, 0.1),
+        0px 34px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /// end of span
+  }
+
+  //// end of h3
 
   div.overlay-aboutMe {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(10,20,55,.3);
+    background: rgba(10, 20, 55, .3);
     overflow: hidden;
 
     div.overlay-img {
-      position:absolute;
+      position: absolute;
       min-width: calc(100% + 100px);
       min-height: calc(100% + 100px);
       z-index: -1;
       height: 100%;
       width: 100%;
-      background-repeat:repeat;
+      background-repeat: repeat;
     }
 
-  }  ////End of overlay-aboutMe
+  }
+
+  ////End of overlay-aboutMe
 
   div.overlay-img {
-    position:absolute;
+    position: absolute;
     min-width: calc(100% + 100px);
     min-height: calc(100% + 100px);
     z-index: -1;
     height: 100%;
     width: 100%;
-  }  ///// End of overlay img
+  }
+
+  ///// End of overlay img
 
 
   div.aboutMe {
@@ -172,7 +187,7 @@ section.aboutMe {
         max-width: 100%;
         min-width: 100%;
         top: 10px;
-        margin-left:0;
+        margin-left: 0;
         margin-bottom: 50px;
 
 
@@ -184,6 +199,7 @@ section.aboutMe {
         display: block;
 
         @include heavy-shadow(black);
+
         @include breakpoint(phone) {
           width: 100%;
           height: auto;
@@ -201,7 +217,7 @@ section.aboutMe {
         justify-content: center;
         position: absolute;
         top: auto !important;
-        left : -20px !important;
+        left: -20px !important;
         bottom: 60px !important;
 
 
@@ -210,7 +226,9 @@ section.aboutMe {
           bottom: 0;
           width: 100%;
 
-        } //// end of link mobile
+        }
+
+        //// end of link mobile
 
 
         a {
@@ -232,14 +250,14 @@ section.aboutMe {
           text-shadow: 3px 3px 0 black;
 
           @include breakpoint(phone) {
-            font-size: 3.5vmax!important;
+            font-size: 3.5vmax !important;
             padding: 10px 20px;
             width: 100%;
 
           }
 
           &:hover {
-            color: white!important;
+            color: white !important;
             transition: all 0.2s $defaultAni;
           }
 
@@ -280,21 +298,23 @@ section.aboutMe {
 
             @include breakpoint(phone) {
               display: block;
-              font-size:60px!important;
+              font-size: 60px !important;
               text-align: center;
               padding: 10px 20px;
-              margin-bottom:-10px;
+              margin-bottom: -10px;
             }
           }
 
           &.telephone {
             top: 30px;
-              left:-30px;
+            left: -30px;
 
             @include breakpoint(phone) {
               display: none;
             }
-          } /// end of telephone link
+          }
+
+          /// end of telephone link
         }
 
 
@@ -302,7 +322,9 @@ section.aboutMe {
 
     }
 
-  } ///// End of aboutMe
+  }
+
+  ///// End of aboutMe
 
   div.skills {
     position: relative;
@@ -320,6 +342,7 @@ section.aboutMe {
     h3 {
       left: -25px;
       position: relative;
+
       span {
         font-size: 3vmax;
       }
@@ -329,7 +352,7 @@ section.aboutMe {
       left: -5px;
       position: relative;
 
-        font-size: 2vmax;
+      font-size: 2vmax;
     }
 
     p {
@@ -345,142 +368,119 @@ section.aboutMe {
 
       }
     }
-  } //// End of skills section
+  }
+
+  //// End of skills section
 
 
 
   a {
 
-    z-index:1;
+    z-index: 1;
 
-      button.downloadbtn {
-        padding:15px;
-        color: #fff;
-        min-width: 260px;
-        line-height: 24px;
-        overflow: hidden;
-        backface-visibility: hidden;
-        background: $blue;
-        font-size: 20px;
-        border: 0;
-        box-shadow: -.3em 0 0 $blue, 5em 0 0 $blue;
-        transition: all 0.2s $defaultAni;
-        z-index:1;
-        position: absolute;
-        right: 0;
-        bottom:0;
-
-
-        @include breakpoint(phone) {
-          padding-bottom: 50px;
-          padding-top: 40px;
-          width: 100%;
+    button.downloadbtn {
+      padding: 15px;
+      color: #fff;
+      min-width: 260px;
+      line-height: 24px;
+      overflow: hidden;
+      backface-visibility: hidden;
+      background: $blue;
+      font-size: 20px;
+      border: 0;
+      box-shadow: -.3em 0 0 $blue, 5em 0 0 $blue;
+      transition: all 0.2s $defaultAni;
+      z-index: 1;
+      position: absolute;
+      right: 0;
+      bottom: 0;
 
 
-        }
+      @include breakpoint(phone) {
+        padding-bottom: 50px;
+        padding-top: 40px;
+        width: 100%;
+
+
+      }
 
 
 
-        &:hover {
+      &:hover {
 
-          box-shadow: -3em 0 0 $blue, 5em 0 0 $blue;
-
-          &::before {
-            text-shadow: 3px 3px 0 black;
-            top: -15px;
-            left: -37px;
-
-            @include breakpoint(phone) {
-              left: 0;
-            }
-          }
-          span {
-            transform: translateY(170%);
-            @include breakpoint(phone) {
-              transform: translateY(300%);
-            }
-
-
-          }
-
-        }
-
-
+        box-shadow: -3em 0 0 $blue, 5em 0 0 $blue;
 
         &::before {
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          line-height: 2.5;
+          text-shadow: 3px 3px 0 black;
+          top: -15px;
           left: -37px;
-          font-size: 180%;
-          transition: all 0.3s $defaultAni;
-          top: -120%;
 
           @include breakpoint(phone) {
-
             left: 0;
           }
         }
 
         span {
-          display: inline-block;
-          width: 100%;
-          height: 100%;
-          transition: all 0.2s $defaultAni;
-          backface-visibility: hidden;
+          transform: translateY(170%);
+
+          @include breakpoint(phone) {
+            transform: translateY(300%);
+          }
+
+
         }
 
-
-
-            &:focus {
-              box-shadow: -3.5em 0 0 blue, 4em 0 0 blue;
-              transition: all 0.2s $defaultAni;
-              background-color: blue;
-            }
-
-            &:active {
-              background-color: blue;
-              transition: all 0.2s $defaultAni;
-            }
+      }
 
 
 
-      } ////// End of download button styles
+      &::before {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        line-height: 2.5;
+        left: -37px;
+        font-size: 180%;
+        transition: all 0.3s $defaultAni;
+        top: -120%;
 
-  } //// END OF Anchor Tag
+        @include breakpoint(phone) {
 
-} ///// end of about Me section
+          left: 0;
+        }
+      }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      span {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        transition: all 0.2s $defaultAni;
+        backface-visibility: hidden;
+      }
 
 
 
+      &:focus {
+        box-shadow: -3.5em 0 0 blue, 4em 0 0 blue;
+        transition: all 0.2s $defaultAni;
+        background-color: blue;
+      }
+
+      &:active {
+        background-color: blue;
+        transition: all 0.2s $defaultAni;
+      }
 
 
 
+    }
 
+    ////// End of download button styles
 
+  }
 
+  //// END OF Anchor Tag
 
+}
 
-
-
+///// end of about Me section

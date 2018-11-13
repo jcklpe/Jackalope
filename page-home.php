@@ -122,7 +122,7 @@ $sideProjectsBackground = get_field('sideprojects_background');
         </div> <!-- end of skills section -->
 
 
-    <a href="https://www.dropbox.com/s/1isufxj5x2mt9hk/DavidFrenchResume.txt?dl=1" download="https://www.dropbox.com/s/1isufxj5x2mt9hk/DavidFrenchResume.txt?dl=1"><button class="resume-button downloadbtn icon-download"><span>[ Download Resumé.txt ]</span></button></a>
+    <a href="https://cloud.jackalope.tech/s/resumes""><button class="resume-button downloadbtn icon-download"><span>[ Download Resumé.txt ]</span></button></a>
 
 </section>
 
@@ -140,9 +140,7 @@ $sideProjectsBackground = get_field('sideprojects_background');
 
 
 
-            //////////////////////////
-            //  Side Projects       //
-            //////////////////////////
+           //- SIDE PROJECTS
 
             $loop = new WP_Query(array('post_type' => 'side_project', 'orderby' => 'post_id', 'order' => 'ASC')); ?>
 

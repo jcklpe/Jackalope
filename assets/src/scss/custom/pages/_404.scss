@@ -1,3 +1,4 @@
+//- 404 page
 @font-face {
   font-family: 'Share Tech Mono';
   font-style: normal;
@@ -6,14 +7,18 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }
 
+.fatboy {
+  background: black;
+}
+
 svg:not(:root) {
-  overflow:visible;
+  overflow: visible;
 }
 
 .bodyContain {
   overflow: hidden;
   cursor: crosshair;
-    }
+}
 
 svg.picture404 {
   width: 100%;
@@ -57,7 +62,7 @@ svg.picture404 {
 
 
 
-.noiseContain{
+.noiseContain {
 
   position: absolute;
   width: 100vw;
@@ -69,7 +74,7 @@ svg.picture404 {
 }
 
 
-.noiseContain div{
+.noiseContain div {
   background-image: url(http://prashantsani.com/Misc/codepen/noise.jpg);
   background-repeat: repeat;
   background-position: 0 0;
@@ -80,37 +85,109 @@ svg.picture404 {
   -o-animation: noiseAnim 0.5s infinite linear alternate;
   animation: noiseAnim 0.5s infinite linear alternate;
 }
-@-webkit-keyframes noiseAnim{
-  0%   { background-position: 10px 200px; }
-  20%  { background-position: -50px 0; }
-  40%  { background-position: 100px -10px; }
-  60%  { background-position: 0 -150px; }
-  80%  { background-position: -100px -30px; }
-  100% { background-position: 160px -60px; }
+
+@-webkit-keyframes noiseAnim {
+  0% {
+    background-position: 10px 200px;
+  }
+
+  20% {
+    background-position: -50px 0;
+  }
+
+  40% {
+    background-position: 100px -10px;
+  }
+
+  60% {
+    background-position: 0 -150px;
+  }
+
+  80% {
+    background-position: -100px -30px;
+  }
+
+  100% {
+    background-position: 160px -60px;
+  }
 }
+
 @-moz-keyframes noiseAnim {
-  0%   { background-position: 10px 200px; }
-  20%  { background-position: -50px 0; }
-  40%  { background-position: 100px -10px; }
-  60%  { background-position: 0 -150px; }
-  80%  { background-position: -100px -30px; }
-  100% { background-position: 160px -60px; }
+  0% {
+    background-position: 10px 200px;
+  }
+
+  20% {
+    background-position: -50px 0;
+  }
+
+  40% {
+    background-position: 100px -10px;
+  }
+
+  60% {
+    background-position: 0 -150px;
+  }
+
+  80% {
+    background-position: -100px -30px;
+  }
+
+  100% {
+    background-position: 160px -60px;
+  }
 }
+
 @-o-keyframes noiseAnim {
-  0%   { background-position: 10px 200px; }
-  20%  { background-position: -50px 0; }
-  40%  { background-position: 100px -10px; }
-  60%  { background-position: 0 -150px; }
-  80%  { background-position: -100px -30px; }
-  100% { background-position: 160px -60px; }
+  0% {
+    background-position: 10px 200px;
+  }
+
+  20% {
+    background-position: -50px 0;
+  }
+
+  40% {
+    background-position: 100px -10px;
+  }
+
+  60% {
+    background-position: 0 -150px;
+  }
+
+  80% {
+    background-position: -100px -30px;
+  }
+
+  100% {
+    background-position: 160px -60px;
+  }
 }
+
 @keyframes noiseAnim {
-  0%   { background-position: 10px 200px; }
-  20%  { background-position: -50px 0; }
-  40%  { background-position: 100px -10px; }
-  60%  { background-position: 0 -150px; }
-  80%  { background-position: -100px -30px; }
-  100% { background-position: 160px -60px; }
+  0% {
+    background-position: 10px 200px;
+  }
+
+  20% {
+    background-position: -50px 0;
+  }
+
+  40% {
+    background-position: 100px -10px;
+  }
+
+  60% {
+    background-position: 0 -150px;
+  }
+
+  80% {
+    background-position: -100px -30px;
+  }
+
+  100% {
+    background-position: 160px -60px;
+  }
 }
 
 
@@ -126,21 +203,17 @@ $scanLineWidth: 2px;
   z-index: 500;
   position: absolute;
   /*** WEBKIT ***/
-  background: -webkit-repeating-linear-gradient(
-                  top,
-                  transparent 0px,
-                  transparent $scanLineWidth,
-                  rgba(0,0,0,0.25) $scanLineWidth,
-                  rgba(0,0,0,0.25) $scanLineWidth*2
-  );
+  background: -webkit-repeating-linear-gradient(top,
+    transparent 0px,
+    transparent $scanLineWidth,
+    rgba(0, 0, 0, 0.25) $scanLineWidth,
+    rgba(0, 0, 0, 0.25) $scanLineWidth*2);
   -webkit-background-size: 100% $scanLineWidth*2;
   /** MOZILLA **/
-  background: -moz-repeating-linear-gradient(
-                  top,
-                  transparent 0px,
-                  transparent $scanLineWidth,
-                  rgba(0,0,0,0.25) $scanLineWidth,
-                  rgba(0,0,0,0.25) $scanLineWidth*2
-  );
+  background: -moz-repeating-linear-gradient(top,
+    transparent 0px,
+    transparent $scanLineWidth,
+    rgba(0, 0, 0, 0.25) $scanLineWidth,
+    rgba(0, 0, 0, 0.25) $scanLineWidth*2);
   -moz-background-size: 100% $scanLineWidth*2;
 }
