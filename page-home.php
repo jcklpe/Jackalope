@@ -178,7 +178,7 @@ $sideProjectsBackground = get_field('sideprojects_background'); ?>
         <!--//-Background-->
         <div class=" overlay overlay-sideProjects" >
              <div class="hack-fix rellax"
-             data-rellax-speed="-5" data-rellax-percentage="0.5" >
+             data-rellax-speed="0" data-rellax-percentage="0.5" >
                 <div
                     class="overlay-img rellax"
                     data-rellax-speed="-10"
