@@ -28,15 +28,16 @@ const
     stripdebug = require('gulp-strip-debug'),
     uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
+var browserify = require('browserify'),
 
-// Browser-sync
-var browsersync = false;
+    // Browser-sync
+    var browsersync = false;
 
 
 
 // The below allows you to work on your template from outside your server and have gulp copy the php files over to the theme folder along with the scss and js etc
 
-//- PHP settings
+//- PHP
 const php = {
     src: dir.src + 'template/**/*.php', //*/
     build: dir.build
@@ -49,10 +50,10 @@ gulp.task('php', () => {
         .pipe(gulp.dest(php.build));
 });
 
-// CSS settings
+//- CSS
 var css = {
     src: dir.src + 'scss/style.scss',
-    watch: dir.src + 'scss/**/*.scss',
+    watch: dir.src + 'scss/**/*.scss', //*/
     build: dir.root,
     sassOpts: {
         outputStyle: 'expanded',
@@ -85,4 +86,26 @@ gulp.task('css', () => {
         .pipe(browsersync ? browsersync.reload({
             stream: true
         }) : gutil.noop());
+});
+
+//-Javascript
+const jsHead = {
+    src: dir.src + 'js/header-script.js', //*/
+    build: dir.build + './',
+    filename: 'prod-header-scripts.js'
+};
+
+// JavaScript processing
+gulp.task('jsHead', () => {
+
+    return gulp.src(jsHead.src)
+        .pipe(deporder())
+        .pipe(concat(jsHead.filename))
+        .pipe(stripdebug())
+        .pipe(uglify())
+        .pipe(gulp.dest(jsHead.build))
+        .pipe(browsersync ? browsersync.reload({
+            stream: true
+        }) : gutil.noop());
+
 });
