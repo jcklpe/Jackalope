@@ -26,12 +26,12 @@ const
     deporder = require('gulp-deporder'),
     concat = require('gulp-concat'),
     stripdebug = require('gulp-strip-debug'),
-    uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
-var browserify = require('browserify'),
+    uglify = require('gulp-uglify'),
+    sourcemaps = require('gulp-sourcemaps'),
+    browserify = require('browserify');
 
-    // Browser-sync
-    var browsersync = false;
+// Browser-sync
+var browsersync = false;
 
 
 
@@ -109,3 +109,16 @@ gulp.task('jsHead', () => {
         }) : gutil.noop());
 
 });
+
+
+
+//-Image Uploads optimization
+
+gulp.task("image", () =>
+    gulp
+    .src("../../uploads/**/*")
+    .pipe(imagemin({
+        verbose: true
+    }))
+    .pipe(gulp.dest("../../uploads/"))
+);
