@@ -5,13 +5,16 @@ This is the first WP theme I ever developed. It's a mess. Going to be updating a
 To Do:
 
 - [x] add gulp preprocessing support
+- [ ] add Timber templating
+- [ ] refactor scss and template structure
+- [ ] remove underscores cruft
 - [ ] remove Case Study custom post type support
 - [ ] Design front page to only feature blog and Projects posts.
   - [ ] Rework relationship between blogs and Project posts.
         `Should they be custom post types or should they just be posts separated by taxonomy/category? And if just by taxonomy why distringuish projects from posts at all? Maybe could just use a tag and have the Projects set off in their own section. The reason why I originally made Projects the way I did is because I wanted to give them a different structure but with Gutenberg I can hypothetically do any structure I want and it's better to keep things built within the post rather than using ACF.`
 - [ ] update nav to only show blog and Projects
 - [ ] Refactor SCSS and JS structure to use webpack or task runner.
-- [ ] rework Galleries custom post type to be a Gutenberg block
+- [ ] rework Galleries custom post type to be a Gutenberg block. 
 
 Eventually:
 
