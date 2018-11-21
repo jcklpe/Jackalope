@@ -3,8 +3,19 @@
   "version": "1.0.0",
   "description": "wp theme with gulp support",
   "main": "footer-script-prod.js",
-  "dependencies": {},
+  "dependencies": {
+    "@types/gulp-babel": "^6.1.29",
+    "@types/vinyl-buffer": "^1.0.0",
+    "@types/vinyl-source-stream": "0.0.30",
+    "gulp-babel": "^8.0.0",
+    "gulp-imports": "0.0.3",
+    "gulp-js-import": "^1.0.6",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
   "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
     "autoprefixer": "^9.3.1",
     "browser-sync": "^2.26.3",
     "css-mqpacker": "^7.0.0",

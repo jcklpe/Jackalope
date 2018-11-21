@@ -1,1 +1,0 @@
-function domReady(e){"interactive"===document.readyState||"complete"===document.readyState?e():document.addEventListener("DOMContentLoaded",e)}
