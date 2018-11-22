@@ -12,3 +12,15 @@ span.edit-link {
 a:focus {
     outline: none !important;
 }
+
+//HACK: this was to fix an unknown overflow problem. This is bad form. Should be fixed someday
+div#page {
+    overflow: hidden;
+    min-height: 100vh;
+  }
+
+  .no-overflow {
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
+  }
