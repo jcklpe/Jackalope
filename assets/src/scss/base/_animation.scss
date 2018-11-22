@@ -1,0 +1,72 @@
+//- Animation
+.transition-fade {
+    transition: .4s;
+    opacity: 1;
+    will-change: opacity;
+
+}
+html.is-animating .transition-fade{
+    transition: .4s;
+    opacity: 0!important;
+    will-change: opacity;
+
+}
+
+.transition-move-down {
+    transition: all .5s;
+    opacity: 1!important;
+    will-change: opacity;
+    transform: translateY(0vh);
+    will-change: opacity, transform;
+
+
+}
+
+html.is-animating .transition-move-down{
+    transition: all .4s;
+    opacity: 0!important;
+    transform: translateY(-70vh);
+    will-change: opacity, transform;
+
+}
+
+
+
+.transition-move-right {
+    transition: all .5s;
+    opacity: 1!important;
+    will-change: opacity;
+
+}
+html.is-animating .transition-move-right{
+    transition: all .4s;
+    opacity: 0!important;
+    will-change: opacity;
+
+
+}
+
+//- Animation transition timings
+
+@mixin ani-3ms {
+    transition: all 0.3s $AniCurve;
+
+}
+
+@mixin ani-4ms {
+    transition: all 0.4s $AniCurve;
+
+}
+
+@mixin ani-5ms {
+    transition: all 0.5s $AniCurve;
+
+}
+
+@mixin ani-8ms {
+    transition: all 0.8s $AniCurve;
+}
+
+@mixin ani-12ms {
+    transition: all 1.2s $AniCurve;
+}

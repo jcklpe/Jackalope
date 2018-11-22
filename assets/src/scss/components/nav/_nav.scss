@@ -1,0 +1,27 @@
+///////////////////////
+//- Navigation Bar
+
+nav.nav {
+  position: absolute;
+  display: flex;
+  z-index: 555;
+  @include card-heading-shadow;
+  @include ani-5ms;
+  background: black;
+
+  a.nav-link {
+    color: white;
+    margin: 15px;
+
+    &:hover {
+      @include simple-link(white);
+    }
+
+  }
+
+  @include breakpoint(phone) {
+    width: 100vw;
+    justify-content: center;
+  }
+
+}

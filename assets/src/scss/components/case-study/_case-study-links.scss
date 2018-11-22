@@ -1,0 +1,112 @@
+//- Case Study Links
+
+section.case-study-links{
+    display: flex;
+    min-height: 40vh;
+    margin-bottom: 100px;
+
+
+
+    @include breakpoint(phone) {
+        flex-direction: column;
+    }
+
+    figure.case-study-box {
+    position: relative;
+
+    height: 40vh;
+    min-width: 25vw;
+    overflow: hidden;
+    @include center-vertical;
+
+    &:hover {
+        min-width: 30vw;
+        a.text-container {
+            h2 {
+                span {
+                @include card-heading-shadow-hover;
+                //padding-left: 2em !important;
+                line-height: 1.6;
+
+                @include ani-3ms;
+                }
+            }
+            h3 {
+                span {
+                    @include card-subhheading-shadow-hover;
+                    @include ani-3ms;
+                }
+            }
+    }
+
+
+    }
+
+    @include breakpoint(phone) {
+        margin: 0;
+    }
+
+
+        a.text-container {
+        display: block;
+        position: absolute;
+        padding: 25px;
+        z-index: 5;
+        width: 25vw;
+
+        @include breakpoint(phone) {
+            width: 100vw;
+        }
+
+        h2 {
+            color: white;
+            font-size: 2em;
+
+            span {
+                background:$black;
+
+
+                @include card-heading-shadow;
+                padding-right: 2em;
+                line-height: 1.6;
+                @include ani-5ms;
+            }
+        }
+
+        h3 {
+            color: white;
+
+            span {
+                background:$black;
+                padding: .2em 1em;
+
+                @include card-heading-shadow;
+                @include ani-5ms;
+                line-height: 1.6;
+            }
+        }
+
+    }
+
+        img {
+        object-fit: cover;
+        min-height: 110%;
+        min-width: 110%;
+        z-index: 0;
+        position: absolute;
+        top:-25px;
+        left:-25px;
+        }
+
+        div.overlay {
+        position: absolute;
+        top:0;
+        left:0;
+        min-height: 100%;
+        min-width: 100%;
+        z-index: 1;
+
+        }
+    }
+
+}
