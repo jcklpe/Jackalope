@@ -1,0 +1,10 @@
+//////////////////
+//- 𝗙𝗢𝗢𝗧𝗘𝗥
+footer#colophon.site-footer {
+  margin-top: -1px !important; //HACK: temporary fix to get rid of slight gap between foot and content
+  background: black !important;
+}
+
+@import "mail-chimp";
+@import "sign-up-footer";
+@import "footer-links";

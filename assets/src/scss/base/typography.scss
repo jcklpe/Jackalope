@@ -1,194 +1,180 @@
 //- TYPOGRAPHY
 //- FONTS
 @font-face {
-    font-family: 'AllerBold';
-    src: url('assets/fonts/Aller/AllerBold.woff2') format('woff2'),
-      url('assets/fonts/Aller/AllerBold.woff') format('woff');
-  }
+  font-family: "AllerBold";
+  src: url("./../fonts/Aller/AllerBold.woff2") format("woff2"),
+    url("./../fonts/Aller/AllerBold.woff") format("woff");
+}
 
-  $bold: AllerBold,
-  Arial Black,
-  sans-serif;
+$bold: AllerBold, Arial Black, sans-serif;
 
-  @font-face {
-    font-family: 'AllerLite';
-    src: url('assets/fonts/Aller/AllerLite.woff2') format('woff2'),
-      url('assets/fonts/Aller/AllerLite.woff') format('woff');
-  }
+@font-face {
+  font-family: "AllerLite";
+  src: url("../fonts/Aller/AllerLite.woff2") format("woff2"),
+    url("../fonts/Aller/AllerLite.woff") format("woff");
+}
 
-  $lite: AllerLite,
-  sans-serif;
+$lite: AllerLite, sans-serif;
 
-  @font-face {
-    font-family: 'Aller';
-    src: url('assets/fonts/Aller/Aller.woff2') format('woff2'),
-      url('assets/fonts/Aller/Aller.woff') format('woff');
-  }
+@font-face {
+  font-family: "Aller";
+  src: url("../fonts/Aller/Aller.woff2") format("woff2"),
+    url("../fonts/Aller/Aller.woff") format("woff");
+}
 
-  $regular: Aller,
-  sans-serif;
+$regular: Aller, sans-serif;
 
-  @font-face {
-    font-family: 'input';
-    src: url('assets/fonts/input/input.woff') format('woff');
-  }
+@font-face {
+  font-family: "input";
+  src: url("../fonts/input/input.woff") format("woff");
+}
 
-  $monospaced: Input,
-  Courier;
+$monospaced: Input, Courier;
 
-  @font-face {
-    font-family: 'dead_stock';
-    src: url('assets/fonts/BrushFonts/dead_stock-webfont.woff2') format('woff2'),
-      url('assets/fonts/BrushFonts/dead_stock-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+@font-face {
+  font-family: "dead_stock";
+  src: url("../fonts/BrushFonts/dead_stock-webfont.woff2") format("woff2"),
+    url("../fonts/BrushFonts/dead_stock-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
-  }
+$brushFont: dead_stock, AllerBold, Arial Black, sans-serif;
 
-  $brushFont: dead_stock,
-  AllerBold,
-  Arial Black,
-  sans-serif;
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon/icomoon.eot"),
+    url("../fonts/icomoon/icomoon.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
-  @font-face {
-    font-family: 'icomoon';
-    src: url('assets/fonts/icomoon/icomoon.eot'),
-      url('assets/fonts/icomoon/icomoon.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+  font-weight: 500;
+  line-height: 1.3;
+}
 
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-weight: normal;
-    font-weight: 500;
-    line-height: 1.3;
-  }
+//HACK: This hack should go in it's own module eventually
+:focus {
+  outline: none !important;
 
-  //HACK: This hack should go in it's own module eventually
-  :focus {
-    outline: none !important;
-
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  }
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
 
 //- GLOBAL DEFAULTS
 body {
-    font-size: 18px;
-    margin: 0 !important;
-    background: #000;
-  }
+  font-size: 18px;
+  margin: 0 !important;
+  background: #000;
+}
 
+* {
+  font-family: $regular;
+}
 
-  * {
-    font-family: $regular;
-  }
+h2.section-heading {
+  font-family: AllerBold, sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 5em;
+  margin: 25px;
+  user-select: none;
+}
 
-  h2.section-heading {
-    font-family: AllerBold, sans-serif;
-    text-transform: uppercase;
+p {
+  position: relative;
+  color: white;
+  font-size: 1em;
+  //margin: 25px;
+  font-family: AllerLite, sans-serif;
+}
+
+::selection {
+  background: #2657eb;
+}
+
+// I believe these are links a the bottom footer. not sure though.
+ol {
+  a {
+    background: white;
+    color: black;
+
+    overflow: hidden;
+    font-weight: 500;
+    z-index: 50;
     position: relative;
-    font-size: 5em;
-    margin: 25px;
-    user-select: none;
+    display: inline-block;
+    outline: none;
+    vertical-align: bottom;
+    text-decoration: none;
+    white-space: nowrap;
   }
 
-  p {
+  a::before {
+    content: "[ ";
     position: relative;
+  }
+
+  a:hover {
     color: white;
-    font-size: 1em;
-    //margin: 25px;
-    font-family: AllerLite, sans-serif;
   }
 
-  ::selection {
-    background: #2657eb;
+  a:focus {
+    color: white;
   }
 
-  // I believe these are links a the bottom footer. not sure though.
-  ol {
-    a {
-      background: white;
-      color: black;
-
-      overflow: hidden;
-      font-weight: 500;
-      z-index: 50;
-      position: relative;
-      display: inline-block;
-      outline: none;
-      vertical-align: bottom;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    a::before {
-      content: "[ ";
-      position: relative;
-    }
-
-
-    a:hover {
-      color: white;
-    }
-
-    a:focus {
-      color: white;
-    }
-
-    a::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      background-color: $blue;
-      content: '';
-      transition: all 0.2s $defaultAni;
-      transform: translateY(95%);
-
-    }
-
-    a:hover::before {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-      color: white !important;
-    }
-
-    a:focus::before {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-      color: white !important;
-    }
-
-
+  a::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: $blue;
+    content: "";
+    transition: all 0.2s $defaultAni;
+    transform: translateY(95%);
   }
 
-  //- Define Icons
+  a:hover::before {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    color: white !important;
+  }
+
+  a:focus::before {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    color: white !important;
+  }
+}
+
+//- Define Icons
 .icon-download:before {
-    font-family: 'icomoon';
-    content: "\e007";
-  }
+  font-family: "icomoon";
+  content: "\e007";
+}
 
-  .icon-rss:before {
-    font-family: 'icomoon';
-    content: "\ea9b";
-  }
+.icon-rss:before {
+  font-family: "icomoon";
+  content: "\ea9b";
+}
 
-  .icon-smell:before {
-    font-family: 'icomoon';
-    content: "\e902";
-  }
+.icon-smell:before {
+  font-family: "icomoon";
+  content: "\e902";
+}
 
-  .icon-send:before {
-    font-family: 'icomoon';
-    content: "\e901";
-  }
+.icon-send:before {
+  font-family: "icomoon";
+  content: "\e901";
+}
 
-  .icon-call:before {
-    font-family: 'icomoon';
-    content: "\e900";
-  }
+.icon-call:before {
+  font-family: "icomoon";
+  content: "\e900";
+}
