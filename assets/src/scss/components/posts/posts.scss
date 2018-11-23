@@ -1,0 +1,12 @@
+//-POSTS
+
+// all post types
+@import "article";
+@import "gallery";
+@import "gallery (2)";
+@import "imageGallery";
+
+// post specific styling
+@import "blog-post/blog-post";
+@import "case-study/case-study";
+@import "side-project/side-project";

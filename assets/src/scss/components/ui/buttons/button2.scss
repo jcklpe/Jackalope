@@ -1,0 +1,25 @@
+//- Button 2
+.btn-2a {
+	background: transparent !important;
+	border-radius: 0 0 5px 5px;
+
+}
+
+.btn-2a:hover {
+	background: transparent !important;
+	box-shadow: 0 4px transparent;
+	top: 2px;
+
+}
+
+.btn-2a:active {
+	background: transparent !important;
+	box-shadow: 0 0 transparent;
+	top: 6px;
+
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: black;
+}
+

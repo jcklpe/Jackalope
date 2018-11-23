@@ -50,7 +50,7 @@ gulp.task("php", () => {
 //- CSS
 //config
 var css = {
-  src: dir.src + "scss/style.scss",
+  src: dir.src + "scss/*.scss",
   watch: dir.src + "scss/**/*.scss", //*/
   build: dir.root,
   sassOpts: {
