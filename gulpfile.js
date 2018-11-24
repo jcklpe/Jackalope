@@ -7,10 +7,10 @@
 
 //source and build folders
 const dir = {
-    src: "./assets/src/",
-    build: "./assets/build/",
-    root: "./"
-  },
+  src: "./assets/src/",
+  build: "./assets/build/",
+  root: "./"
+},
   // Gulp and plugins
   gulp = require("gulp"),
   gutil = require("gulp-util"),
@@ -40,7 +40,8 @@ const php = {
 };
 
 // copy PHP files
-gulp.task("php", () => {
+gulp.task("php", () =>
+{
   return gulp
     .src(php.src)
     .pipe(newer(php.build))
@@ -52,7 +53,7 @@ gulp.task("php", () => {
 var css = {
   src: dir.src + "scss/*.scss",
   watch: dir.src + "scss/**/*.scss", //*/
-  build: dir.build,
+  build: dir.root,
   sassOpts: {
     outputStyle: "expanded",
     //   imagePath       : images.build,
@@ -74,7 +75,8 @@ var css = {
 };
 
 // CSS processing
-gulp.task("css", () => {
+gulp.task("css", () =>
+{
   return gulp
     .src(css.src)
     .pipe(sourcemaps.init())
@@ -85,8 +87,8 @@ gulp.task("css", () => {
     .pipe(
       browsersync
         ? browsersync.reload({
-            stream: true
-          })
+          stream: true
+        })
         : gutil.noop()
     );
 });
@@ -99,7 +101,8 @@ const jshead = {
   watch: dir.src + "js/**/*.js" //*/
 };
 
-gulp.task("jshead", function() {
+gulp.task("jshead", function ()
+{
   return gulp
     .src(jshead.src)
     .pipe(sourcemaps.init())
@@ -111,8 +114,8 @@ gulp.task("jshead", function() {
     .pipe(
       browsersync
         ? browsersync.reload({
-            stream: true
-          })
+          stream: true
+        })
         : gutil.noop()
     );
 });
@@ -123,7 +126,8 @@ const jsfooter = {
   watch: dir.src + "js/**/*.js" //*/
 };
 
-gulp.task("jsfooter", function() {
+gulp.task("jsfooter", function ()
+{
   return gulp
     .src(jsfooter.src)
     .pipe(sourcemaps.init())
@@ -135,8 +139,8 @@ gulp.task("jsfooter", function() {
     .pipe(
       browsersync
         ? browsersync.reload({
-            stream: true
-          })
+          stream: true
+        })
         : gutil.noop()
     );
 });
@@ -148,7 +152,8 @@ gulp.task("build", ["php", "css", "js"]);
 
 //- Watch
 
-gulp.task("watch", () => {
+gulp.task("watch", () =>
+{
   gulp.watch(css.watch, ["css"]);
 
   //gulp.watch(php.src, ["php"], browsersync ? browsersync.reload : {});

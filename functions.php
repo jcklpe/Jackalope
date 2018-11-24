@@ -83,7 +83,7 @@ wp_enqueue_script('header-jackalope');
 //- Footer Style and Scripts
 function jackalope_footer()
 {
-	wp_register_style('jackalope-style', get_template_directory_uri() . '/assets/build/style.css', array(), '', all);
+	wp_register_style('jackalope-style', get_stylesheet_uri(), array(), '', all);
 	wp_enqueue_style('jackalope-style');
 
 	wp_register_script('footer-jackalope', get_template_directory_uri() . '/footer-script-prod.js', array('jquery'), '', true);
@@ -166,11 +166,39 @@ function tag_stripped_field($field)
  * strip_tags: string with tags to strip, ex: "<a><p><quote>" etc.
  * strip_content flag: TRUE will also strip everything between open and closed tag
  */
-function strip_selected_tags($str, $tags = "", $stripContent = false)
-{
-	preg_match_all("/<([^>]+)>/i", $tags, $allTags, PREG_PATTERN_ORDER);
-	$replace = "%(<$tag.*?>)(.*?)(<\/$tag.*?>)%is";
- foreach ($allTags[1] as $tag) { if ($stripContent) { $str=preg_replace($replace, '' , $str); } $str=preg_replace($replace,
- '${2}' , $str); } return $str; } function filter_ptags_on_images($content) { $content=preg_replace('/ <p>\s*(<a .*>)?\s*(<img
-		 .* \ />)\s*(<\/a>)?\s* <\/p>/iU', '\1\2\3' , $content); return preg_replace('/ <p>\s*(<iframe .*>*.<\/iframe>)\s* <\/p>/iU',
-				 '\1' , $content); } add_filter('the_content', 'filter_ptags_on_images' );
+// {
+// 	{
+// 		preg_match_all("/<([^>]+)>/i", $tags, $allTags, PREG_PATTERN_ORDER);
+// 		preg_match_all("/<([^>]+)>/i", $tags, $allTags, PREG_PATTERN_ORDER);
+// 		$replace = "%(<$tag.*)(.*?)(<\/$tag.*)%is";
+// 		$replace = "%(<$tag.*)(.*?)(<\/$tag.*)%is";
+
+// 		foreach ($allTags[1] as $tag) {
+
+// 			 foreach ($allTags[1] as $tag) { if ($stripContent)
+// 				{ $str=preg_replace($replace, '' , $str); }
+
+// 				$str=preg_replace($replace,
+// 				if ($stripContent) {'${2}' , $str); }
+// 	  return $str; }
+// 	  function filter_ptags_on_images($content)
+// 	  { $content=preg_replace('/ <p>\s*(<a .*>)?\s*(<img
+// 				$str = preg_replace($replace, '', $str);
+// 			 .* \ />)\s*(<\/a>)?\s* <\/p>/iU', '\1\2\3' , $content);
+// 			  return preg_replace('/ <p>\s*(<iframe .*>*.<\/iframe>)\s* <\/p>/iU',
+// 			}
+
+// 			'\1' , $content); }
+// 			 add_filter('the_content', 'filter_ptags_on_images' );
+// 			$str = preg_replace($replace, '${2}', $str);
+// 		}
+// 		return $str;
+// }
+
+
+function filter_ptags_on_images($content)
+	{
+		$content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+		return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
+	}
+	add_filter('the_content', 'filter_ptags_on_images');

@@ -1,50 +1,61 @@
 //- TYPOGRAPHY
 //- FONTS
+
+$asset-base-path: './assets/fonts/';
+
 @font-face {
   font-family: "AllerBold";
-  src: url("../fonts/Aller/AllerBold.woff2") format("woff2"),
-    url("../fonts/Aller/AllerBold.woff") format("woff");
+  src: url("#{$asset-base-path}Aller/AllerBold.woff2") format("woff2"),
+  url("#{$asset-base-path}Aller/AllerBold.woff") format("woff");
 }
 
-$bold: AllerBold, Arial Black, sans-serif;
+$bold: AllerBold,
+Arial Black,
+sans-serif;
 
 @font-face {
   font-family: "AllerLite";
-  src: url("../fonts/Aller/AllerLite.woff2") format("woff2"),
-    url("../fonts/Aller/AllerLite.woff") format("woff");
+  src: url("#{$asset-base-path}Aller/AllerLite.woff2") format("woff2"),
+  url("#{$asset-base-path}Aller/AllerLite.woff") format("woff");
 }
 
-$lite: AllerLite, sans-serif;
+$lite: AllerLite,
+sans-serif;
 
 @font-face {
   font-family: "Aller";
-  src: url("../fonts/Aller/Aller.woff2") format("woff2"),
-    url("../fonts/Aller/Aller.woff") format("woff");
+  src: url("#{$asset-base-path}Aller/Aller.woff2") format("woff2"),
+  url("#{$asset-base-path}Aller/Aller.woff") format("woff");
 }
 
-$regular: Aller, sans-serif;
+$regular: Aller,
+sans-serif;
 
 @font-face {
   font-family: "input";
-  src: url("../fonts/input/input.woff") format("woff");
+  src: url("#{$asset-base-path}input/input.woff") format("woff");
 }
 
-$monospaced: Input, Courier;
+$monospaced: Input,
+Courier;
 
 @font-face {
   font-family: "dead_stock";
-  src: url("../fonts/BrushFonts/dead_stock-webfont.woff2") format("woff2"),
-    url("../fonts/BrushFonts/dead_stock-webfont.woff") format("woff");
+  src: url("#{$asset-base-path}BrushFonts/dead_stock-webfont.woff2") format("woff2"),
+  url("#{$asset-base-path}BrushFonts/dead_stock-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
-$brushFont: dead_stock, AllerBold, Arial Black, sans-serif;
+$brushFont: dead_stock,
+AllerBold,
+Arial Black,
+sans-serif;
 
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/icomoon/icomoon.eot"),
-    url("../fonts/icomoon/icomoon.woff") format("woff");
+  src: url("#{$asset-base-path}icomoon/icomoon.eot"),
+  url("#{$asset-base-path}icomoon/icomoon.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
