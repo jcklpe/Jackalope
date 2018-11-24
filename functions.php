@@ -83,7 +83,7 @@ wp_enqueue_script('header-jackalope');
 //- Footer Style and Scripts
 function jackalope_footer()
 {
-	wp_register_style('jackalope-style', get_template_directory_uri(), array(), '', all);
+	wp_register_style('jackalope-style', get_template_directory_uri() . '/assets/build/style.css', array(), '', all);
 	wp_enqueue_style('jackalope-style');
 
 	wp_register_script('footer-jackalope', get_template_directory_uri() . '/footer-script-prod.js', array('jquery'), '', true);

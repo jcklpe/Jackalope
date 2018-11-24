@@ -1,26 +1,26 @@
-// span.edit-link {
-//     position: absolute;
-//     bottom: 100px;
-//     right: 10px;
-//     padding: 10px 15px;
-//     background: yellow;
-//     font-size: 2em !important;
-//     font-weight: bold;
+span.edit-link {
+    position: absolute;
+    bottom: 100px;
+    right: 10px;
+    padding: 10px 15px;
+    background: yellow;
+    font-size: 2em !important;
+    font-weight: bold;
 
-// }
+}
 
 a:focus {
-  outline: none !important;
+    outline: none !important;
 }
 
 //HACK: this was to fix an unknown overflow problem. This is bad form. Should be fixed someday
 div#page {
-  overflow: hidden;
-  min-height: 100vh;
-}
+    overflow: hidden;
+    min-height: 100vh;
+  }
 
-.no-overflow {
-  overflow: hidden !important;
-  display: flex;
-  flex-direction: column;
-}
+  .no-overflow {
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
+  }
