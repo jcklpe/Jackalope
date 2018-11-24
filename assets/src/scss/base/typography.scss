@@ -2,8 +2,8 @@
 //- FONTS
 @font-face {
   font-family: "AllerBold";
-  src: url("./../fonts/Aller/AllerBold.woff2") format("woff2"),
-    url("./../fonts/Aller/AllerBold.woff") format("woff");
+  src: url("../fonts/Aller/AllerBold.woff2") format("woff2"),
+    url("../fonts/Aller/AllerBold.woff") format("woff");
 }
 
 $bold: AllerBold, Arial Black, sans-serif;

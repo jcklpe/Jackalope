@@ -52,7 +52,7 @@ gulp.task("php", () => {
 var css = {
   src: dir.src + "scss/*.scss",
   watch: dir.src + "scss/**/*.scss", //*/
-  build: dir.root,
+  build: dir.build,
   sassOpts: {
     outputStyle: "expanded",
     //   imagePath       : images.build,

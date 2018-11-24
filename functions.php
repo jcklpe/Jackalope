@@ -30,14 +30,14 @@ function jackalope_setup()
 		'caption',
 	));
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support('custom-background', apply_filters('jackalope_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	)));
+	// // Set up the WordPress core custom background feature.
+	// add_theme_support('custom-background', apply_filters('jackalope_custom_background_args', array(
+	// 	'default-color' => 'ffffff',
+	// 	'default-image' => '',
+	// )));
 
-	// Add theme support for selective refresh for widgets.
-	add_theme_support('customize-selective-refresh-widgets');
+	// // Add theme support for selective refresh for widgets.
+	// add_theme_support('customize-selective-refresh-widgets');
 }
 endif;
 add_action('after_setup_theme', 'jackalope_setup');
@@ -49,11 +49,11 @@ add_action('after_setup_theme', 'jackalope_setup');
  *
  * @global int $content_width
  */
-function jackalope_content_width()
-{
-	$GLOBALS['content_width'] = apply_filters('jackalope_content_width', 640);
-}
-add_action('after_setup_theme', 'jackalope_content_width', 0);
+// function jackalope_content_width()
+// {
+// 	$GLOBALS['content_width'] = apply_filters('jackalope_content_width', 640);
+// }
+// add_action('after_setup_theme', 'jackalope_content_width', 0);
 
 /**
  * Register widget area.
@@ -83,7 +83,7 @@ wp_enqueue_script('header-jackalope');
 //- Footer Style and Scripts
 function jackalope_footer()
 {
-	wp_register_style('jackalope-style', get_template_directory_uri() . '/assets/build/style.css', array(), '', all);
+	wp_register_style('jackalope-style', get_template_directory_uri(), array(), '', all);
 	wp_enqueue_style('jackalope-style');
 
 	wp_register_script('footer-jackalope', get_template_directory_uri() . '/footer-script-prod.js', array('jquery'), '', true);
@@ -111,7 +111,7 @@ function custom_excerpt_length($length)
 }
 add_filter('excerpt_length', 'custom_excerpt_length', 999);
 
-//-Implement the Custom Header feature.
+// //-Implement the Custom Header feature.
 require get_template_directory() . '/inc/custom-header.php';
 
 //-Custom template tags for this theme.
@@ -120,8 +120,8 @@ require get_template_directory() . '/inc/template-tags.php';
 //-Custom functions that act independently of the theme templates.
 require get_template_directory() . '/inc/extras.php';
 
-//-Customizer additions.
-require get_template_directory() . '/inc/customizer.php';
+// //-Customizer additions.
+// require get_template_directory() . '/inc/customizer.php';
 
 //- Disable Emojis 😎👌💯🤣😍🍆💦🌊
 function disable_wp_emojicons()
