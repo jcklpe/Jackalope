@@ -75,6 +75,30 @@ function jackalope_widgets_init()
 add_action('widgets_init', 'jackalope_widgets_init');
 
 
+//- Login Style
+function my_login_style() {
+    wp_enqueue_style( 'login_style', get_template_directory_uri() . '/login-style.css' );
+    // wp_enqueue_script( 'login_style', get_template_directory_uri() . './assets/build/login-style.js' );
+}
+add_action( 'login_enqueue_scripts', 'my_login_style' );
+
+//- Editor Style
+add_editor_style( './editor-style.css' );
+
+//- Admin Panel Style
+
+function my_admin_style() {
+	wp_register_style( 'admin_style', get_template_directory_uri() . '/admin-style.css', false, '1.0.0' );
+	wp_enqueue_style( 'admin_style' );
+}
+add_action( 'admin_enqueue_scripts', 'my_admin_style' );
+
+// function my_admin_theme_style()
+// {
+//     wp_enqueue_style("my-admin-theme", get_template_directory_uri() . '/admin-style.css', __FILE__));
+// }
+// add_action("admin_enqueue_scripts", "my_admin_theme_style");
+// add_action("login_enqueue_scripts", "my_admin_theme_style");
 
 //- Header Style and Scripts
 wp_register_script('header-jackalope', get_template_directory_uri() . '/header-script-prod.js', array('jquery'), '', false);
