@@ -27,78 +27,78 @@ div.entry-content.case-study-content {
     }
   }
 
-  ol {
-    color: black;
-    margin-bottom: 3vh;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    counter-reset: li;
-    flex-wrap: wrap;
+  // ol {
+  //   color: black;
+  //   margin-bottom: 3vh;
+  //   z-index: 1000;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: stretch;
+  //   counter-reset: li;
+  //   flex-wrap: wrap;
 
-    li {
-      position: relative;
-      background: #f6f6f6;
-      list-style: none;
-      margin-top: 70px;
-      margin-left: 70px;
-      font-family: $lite;
-      line-height: 1.6;
-      margin-right: 40px;
-      flex-grow: 1;
-      min-width: 300px;
-      max-width: 400px;
-      padding: 30px 30px 60px 30px;
-      @include heavy-shadow($offwhite);
+  //   li {
+  //     position: relative;
+  //     background: #f6f6f6;
+  //     list-style: none;
+  //     margin-top: 70px;
+  //     margin-left: 70px;
+  //     font-family: $lite;
+  //     line-height: 1.6;
+  //     margin-right: 40px;
+  //     flex-grow: 1;
+  //     min-width: 300px;
+  //     max-width: 400px;
+  //     padding: 30px 30px 60px 30px;
+  //     @include heavy-shadow($offwhite);
 
-      &:nth-child(odd) {
-        border-top: 3px solid $blue;
+  //     &:nth-child(odd) {
+  //       border-top: 3px solid $blue;
 
-        &::before {
-          border-top: 5px solid $blue;
-        }
-      }
+  //       &::before {
+  //         border-top: 5px solid $blue;
+  //       }
+  //     }
 
-      &:nth-child(even) {
-        border-top: 3px solid cyan;
+  //     &:nth-child(even) {
+  //       border-top: 3px solid cyan;
 
-        &::before {
-          border-top: 5px solid cyan;
-        }
-      }
+  //       &::before {
+  //         border-top: 5px solid cyan;
+  //       }
+  //     }
 
-      span {
-        background: black;
-        padding: 2.5px 10px;
-        color: white;
-        margin: 5px 0 10px 0;
-        font-size: 19px;
-      }
+  //     span {
+  //       background: black;
+  //       padding: 2.5px 10px;
+  //       color: white;
+  //       margin: 5px 0 10px 0;
+  //       font-size: 19px;
+  //     }
 
-      &::before {
-        content: counter(li);
-        counter-increment: li;
-        position: absolute;
-        z-index: -1;
+  //     &::before {
+  //       content: counter(li);
+  //       counter-increment: li;
+  //       position: absolute;
+  //       z-index: -1;
 
-        color: #fff;
-        background: black;
-        font-family: $brushFont;
-        font-size: 60px;
-        text-align: center;
-        left: -75px;
-        top: -30px;
-        line-height: 0.8;
-        padding: 19px 75px 10px 25px;
-        box-shadow:
-          0px 3px 0px #ccc8bc,
-          2px 14px 10px rgba(0, 0, 0, 0.15),
-          -2px 24px 2px rgba(0, 0, 0, 0.1),
-          0px 34px 30px rgba(0, 0, 0, 0.1);
-      }
-    }
-  }
+  //       color: #fff;
+  //       background: black;
+  //       font-family: $brushFont;
+  //       font-size: 60px;
+  //       text-align: center;
+  //       left: -75px;
+  //       top: -30px;
+  //       line-height: 0.8;
+  //       padding: 19px 75px 10px 25px;
+  //       box-shadow:
+  //         0px 3px 0px #ccc8bc,
+  //         2px 14px 10px rgba(0, 0, 0, 0.15),
+  //         -2px 24px 2px rgba(0, 0, 0, 0.1),
+  //         0px 34px 30px rgba(0, 0, 0, 0.1);
+  //     }
+  //   }
+  // }
 }
 
 //// End of Entry Content
