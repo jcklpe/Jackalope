@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying case-study  posts
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -21,10 +21,12 @@
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php jackalope_posted_on(); ?>
-		</div><!-- .entry-meta -->
+		</div>
+		<!-- .entry-meta -->
 		<?php
 		endif; ?>
-	</header><!-- .entry-header -->
+	</header>
+	<!-- .entry-header -->
 
 	<div class="entry-content case-study-content">
 		<?php
@@ -39,9 +41,12 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div><!-- .entry-content -->
+	</div>
+	<!-- .entry-content -->
 
 	<footer class="entry-footer">
 		<?php jackalope_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+	</footer>
+	<!-- .entry-footer -->
+</article>
+<!-- #post-## -->

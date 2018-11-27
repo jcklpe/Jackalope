@@ -607,3 +607,8 @@ h2 {
     background: black !important;
     color: white !important;
 }
+
+.gallery-item {
+    max-width: 33%;
+    display: inline-flex;
+}

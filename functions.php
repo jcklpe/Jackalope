@@ -60,48 +60,23 @@ add_action('after_setup_theme', 'jackalope_setup');
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function jackalope_widgets_init()
-{
-	register_sidebar(array(
-		'name' => esc_html__('Sidebar', 'jackalope'),
-		'id' => 'sidebar-1',
-		'description' => esc_html__('Add widgets here.', 'jackalope'),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	));
-}
-add_action('widgets_init', 'jackalope_widgets_init');
-
-
-//- Login Style
-function my_login_style() {
-    wp_enqueue_style( 'login_style', get_template_directory_uri() . '/login-style.css' );
-    // wp_enqueue_script( 'login_style', get_template_directory_uri() . './assets/build/login-style.js' );
-}
-add_action( 'login_enqueue_scripts', 'my_login_style' );
-
-//- Editor Style
-add_editor_style( './editor-style.css' );
-
-//- Admin Panel Style
-
-function my_admin_style() {
-	wp_register_style( 'admin_style', get_template_directory_uri() . '/admin-style.css', false, '1.0.0' );
-	wp_enqueue_style( 'admin_style' );
-}
-add_action( 'admin_enqueue_scripts', 'my_admin_style' );
-
-// function my_admin_theme_style()
+// function jackalope_widgets_init()
 // {
-//     wp_enqueue_style("my-admin-theme", get_template_directory_uri() . '/admin-style.css', __FILE__));
+// 	register_sidebar(array(
+// 		'name' => esc_html__('Sidebar', 'jackalope'),
+// 		'id' => 'sidebar-1',
+// 		'description' => esc_html__('Add widgets here.', 'jackalope'),
+// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+// 		'after_widget' => '</section>',
+// 		'before_title' => '<h2 class="widget-title">',
+// 		'after_title' => '</h2>',
+// 	));
 // }
-// add_action("admin_enqueue_scripts", "my_admin_theme_style");
-// add_action("login_enqueue_scripts", "my_admin_theme_style");
+// add_action('widgets_init', 'jackalope_widgets_init');
+
 
 //- Header Style and Scripts
-wp_register_script('header-jackalope', get_template_directory_uri() . '/header-script-prod.js', array('jquery'), '', false);
+wp_register_script('header-jackalope', get_template_directory_uri() . '/assets/build/head.js', array('jquery'), '', false);
 wp_enqueue_script('header-jackalope');
 
 //- Footer Style and Scripts
@@ -110,17 +85,40 @@ function jackalope_footer()
 	wp_register_style('jackalope-style', get_stylesheet_uri(), array(), '', all);
 	wp_enqueue_style('jackalope-style');
 
-	wp_register_script('footer-jackalope', get_template_directory_uri() . '/footer-script-prod.js', array('jquery'), '', true);
+	wp_register_script('footer-jackalope', get_template_directory_uri() . '/assets/build/footer.js', array('jquery'), '', true);
 
 	wp_enqueue_script('footer-jackalope');
 }
 add_action('wp_enqueue_scripts', 'jackalope_footer');
 
+//- THEME STYLES
+function enqueue_theme_css() {
+    wp_enqueue_style( 'default', get_template_directory_uri() . '/assets/build/style.css' );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_theme_css' );
+
+
+//- Login Style
+function my_login_style() {
+    wp_enqueue_style( 'login_style', get_template_directory_uri() . '/assets/build/login-style.css' );
+    // wp_enqueue_script( 'login_style', get_template_directory_uri() . './assets/build/login-style.js' );
+}
+add_action( 'login_enqueue_scripts', 'my_login_style' );
+
+//- Editor Style
+add_editor_style( './assets/build/editor-style.css' );
+
+//- Admin Panel Style
+function my_admin_style() {
+	wp_register_style( 'admin_style', get_template_directory_uri() . '/assets/build/admin-style.css', false, '1.0.0' );
+	wp_enqueue_style( 'admin_style' );
+}
+add_action( 'admin_enqueue_scripts', 'my_admin_style' );
 
 //- change admin favicon
 function add_favicon()
 {
-	$favicon_url = get_stylesheet_directory_uri() . '/favicon-admin.ico';
+	$favicon_url = get_stylesheet_directory_uri() . '/assets/images/favicon-admin.ico';
 	echo '<link rel="shortcut icon" href="' . $favicon_url . '" />';
 }
 // Now, just make sure that function runs when you're on the login page and admin pages
@@ -134,18 +132,6 @@ function custom_excerpt_length($length)
 	return 30;
 }
 add_filter('excerpt_length', 'custom_excerpt_length', 999);
-
-// //-Implement the Custom Header feature.
-require get_template_directory() . '/inc/custom-header.php';
-
-//-Custom template tags for this theme.
-require get_template_directory() . '/inc/template-tags.php';
-
-//-Custom functions that act independently of the theme templates.
-require get_template_directory() . '/inc/extras.php';
-
-// //-Customizer additions.
-// require get_template_directory() . '/inc/customizer.php';
 
 //- Disable Emojis 😎👌💯🤣😍🍆💦🌊
 function disable_wp_emojicons()
@@ -167,8 +153,9 @@ add_action('init', 'disable_wp_emojicons');
 // remove dns fetch for emojis
 add_filter('emoji_svg_url', '__return_false');
 
-//- Tag strip sub-fields
-//necessary for processing some ACF subfields.
+//- UTILITY FUNCTIONS
+
+//- Tag strip sub-fields (necessary for processing some ACF subfields.)
 function tag_stripped_sub_field($field)
 {
 	$field = get_sub_field($field);
@@ -182,6 +169,31 @@ function tag_stripped_field($field)
 	$field_stripped = wp_strip_all_tags($field);
 	return $field_stripped;
 }
+
+function filter_ptags_on_images($content)
+	{
+		$content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+		return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
+	}
+	add_filter('the_content', 'filter_ptags_on_images');
+
+
+
+//- IM NOT SURE IF I NEED THESE OR NOT
+// //-Implement the Custom Header feature.
+require get_template_directory() . '/inc/custom-header.php';
+
+//-Custom template tags for this theme.
+require get_template_directory() . '/inc/template-tags.php';
+
+//-Custom functions that act independently of the theme templates.
+require get_template_directory() . '/inc/extras.php';
+
+// //-Customizer additions.
+// require get_template_directory() . '/inc/customizer.php';
+
+
+
 
 /**
  * strip_selected_tags ( string str [, string strip_tags[, strip_content flag]] )
@@ -218,11 +230,3 @@ function tag_stripped_field($field)
 // 		}
 // 		return $str;
 // }
-
-
-function filter_ptags_on_images($content)
-	{
-		$content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-		return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
-	}
-	add_filter('the_content', 'filter_ptags_on_images');

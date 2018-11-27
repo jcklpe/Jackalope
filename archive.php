@@ -6,9 +6,9 @@
  * @package Jackalope
 */
 
-get_header(); ?>
+get_template_part('template-parts/ui/header'); ?>
 
- <!--///////////////////
+<!--///////////////////
     //               //
    //  HERO STUFF   //
   //               //
@@ -17,17 +17,19 @@ get_header(); ?>
 
 <header class="blog-archive-header">
     <h1>My WebLog</h1>
-    <a href="https://www.jackalope.tech/feed/"><h2 class="icon-rss">RSS Subscribe</h2></a>
-    <img src="https://www.universetoday.com/wp-content/uploads/2010/09/The-Fairy-of-Eagle-Nebula.jpg"/>
+    <a href="https://www.jackalope.tech/feed/">
+        <h2 class="icon-rss">RSS Subscribe</h2>
+    </a>
+    <img src="https://www.universetoday.com/wp-content/uploads/2010/09/The-Fairy-of-Eagle-Nebula.jpg" />
 
 </header>
 
-    <div id="primary" class="content-area">
-        <main>
+<div id="primary" class="content-area">
+    <main>
 
 
 
-<?php
+        <?php
 $blogposts = new WP_Query( array( 'post_type' => 'post', 'orderby' => 'post_id', 'order' => 'DESC' ) );
 
 
@@ -45,19 +47,21 @@ $image = $siteRoot . $imageLocation;
 
         <figure class="blog-post-section lazy" style="<?php $field = 'overlay_background_grad'; echo tag_stripped_field($field); ?>">
 
-<!--            image Container-->
+            <!--            image Container-->
             <div class="img-container rellax" data-rellax-speed="-8" data-rellax-percentage="0.5">
                 <div style="background-image: url(<?php echo $imageLocation ?> " class="blog-preview-img"> </div>
             </div>
 
-<!--            Figure caption and Titles-->
+            <!--            Figure caption and Titles-->
             <figcaption class="blog-text">
                 <h2 class="blog-title">
-                    <span><?php $field = 'html_title'; echo tag_stripped_field($field);   ?></span>
+                    <span>
+                        <?php $field = 'html_title'; echo tag_stripped_field($field);   ?></span>
                 </h2>
 
                 <p class="blog-exerpt">
-                    <span><?php echo get_the_excerpt(); ?></span>
+                    <span>
+                        <?php echo get_the_excerpt(); ?></span>
                 </p>
 
             </figcaption>
@@ -67,7 +71,7 @@ $image = $siteRoot . $imageLocation;
         </figure>
 
     </main>
-<?php endwhile; wp_reset_query(); ?>
+    <?php endwhile; wp_reset_query(); ?>
 
-<?php
-get_footer();
+    <?php
+get_template_part('template-parts/ui/footer');

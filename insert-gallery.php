@@ -11,10 +11,10 @@ $defaultCardNumber = get_field( "default_card_number" );
 ?>
 
 
-    <section class="grid-content">
-        <div class="gridGallery <?php the_title_attribute(); ?>">
+<section class="grid-content">
+    <div class="gridGallery <?php the_title_attribute(); ?>">
 
-            <?php
+        <?php
             // check if the repeater field has rows of data
             if ( have_rows( 'card' ) ) {
 
@@ -38,39 +38,44 @@ $defaultCardNumber = get_field( "default_card_number" );
 
                     if ( $loopLazyLoad > $initialCardLoad ) {
 
-                        ?> <div class="grid-item"> <?php
+                        ?>
+        <div class="grid-item">
+            <?php
 
 
 
                             if ( $cardEmbed ) { ?>
-                                <a data-fancybox data-type="iframe" data-src="<?php echo $cardEmbed ?>"
-                                   href="javascript:;">
-                                    <img class="lazy embedPreviewImg" data-src="<?php echo $childImage['sizes']['medium']; ?>">
-                                </a>
-                                <!-- end of iframe IF statement --> <?php
+            <a data-fancybox data-type="iframe" data-src="<?php echo $cardEmbed ?>" href="javascript:;">
+                <img class="lazy embedPreviewImg" data-src="<?php echo $childImage['sizes']['medium']; ?>">
+            </a>
+            <!-- end of iframe IF statement -->
+            <?php
 
                             } else if ( $cardLin ) { ?>
-                                <a href="<?php echo $cardLink ?>" target="_blank">
-                                    <img class="lazy" src="<?php echo $childImage['sizes']['large']; ?>">
-                                </a>
-                                <!-- end of link If statement --> <?php
+            <a href="<?php echo $cardLink ?>" target="_blank">
+                <img class="lazy" src="<?php echo $childImage['sizes']['large']; ?>">
+            </a>
+            <!-- end of link If statement -->
+            <?php
 
                             } else if ( $childImage ) { ?>
-                                <a href="<?php echo $childImage['sizes']['large'];//big one here ?>"  data-caption="<?php echo $title ?>" data-fancybox="gallery">
-                                    <img class="lazy" data-src="<?php echo $childImage['sizes']['medium']; ?>" />
-                                </a>
+            <a href="<?php echo $childImage['sizes']['large'];//big one here ?>" data-caption="<?php echo $title ?>"
+                data-fancybox="gallery">
+                <img class="lazy" data-src="<?php echo $childImage['sizes']['medium']; ?>" />
+            </a>
 
-                                <!-- End of image IF statement --> <?php
+            <!-- End of image IF statement -->
+            <?php
 
                             } else if ( $video ) { ?>
-                                <a id="<?php echo $title ?>" href="javascript:;">
-                                    <video class="gallery-video lazy" loop autoplay muted>
-                                        <source src="<?php echo $video; ?>" type="video/mp4">
-                                    </video>
-                                </a>
+            <a id="<?php echo $title ?>" href="javascript:;">
+                <video class="gallery-video lazy" loop autoplay muted>
+                    <source src="<?php echo $video; ?>" type="video/mp4">
+                </video>
+            </a>
 
-                                 <script>
-                                     domReady( function () {
+            <script>
+                domReady( function () {
                                             jQuery("#<?php echo $title?>").on('click', function() {
                                                 jQuery.fancybox.open('<video class="video-fancybox" loop autoplay muted><source src="<?php echo $video; ?>" type="video/mp4"></video>');
                                             });
@@ -79,10 +84,12 @@ $defaultCardNumber = get_field( "default_card_number" );
                                  </script>
 
 
-                                <!-- end of Video IF statement --> <?php
+            <!-- end of Video IF statement -->
+            <?php
                             } ?>
 
-                        </div> <?php //end of grid item div
+        </div>
+        <?php //end of grid item div
 
 
 
@@ -90,48 +97,57 @@ $defaultCardNumber = get_field( "default_card_number" );
                     }// End of if lazy load iter check
                     else { // this is where initial load begins
 
-                        ?> <div class="grid-item"> <?php
+                        ?>
+        <div class="grid-item">
+            <?php
 
                             if ( $cardEmbed ) { ?>
-                                <a data-fancybox data-type="iframe" data-src="<?php echo $cardEmbed ?>" href="javascript:;">
-                                    <img class="embedPreviewImg lazy" data-src="<?php echo $childImage['sizes']['medium']; ?>">
-                                </a>
-                                <!-- end of iframe If statement --> <?php
+            <a data-fancybox data-type="iframe" data-src="<?php echo $cardEmbed ?>" href="javascript:;">
+                <img class="embedPreviewImg lazy" data-src="<?php echo $childImage['sizes']['medium']; ?>">
+            </a>
+            <!-- end of iframe If statement -->
+            <?php
 
                             } else if ( $cardLin ) { ?>
-                                <a href="<?php echo $cardLink ?>" target="_blank">
-                                    <img class="" src="<?php echo $childImage['sizes']['large']; ?>">
-                                </a>
-                                <!-- end of link If statement --> <?php
+            <a href="<?php echo $cardLink ?>" target="_blank">
+                <img class="" src="<?php echo $childImage['sizes']['large']; ?>">
+            </a>
+            <!-- end of link If statement -->
+            <?php
 
                             } else if ( $childImage ){ ?>
-                                <a data-fancybox="gallery" data-caption="<?php echo $title ?>"
-                                   href="<?php echo $childImage['sizes']['large'];//big one here
+            <a data-fancybox="gallery" data-caption="<?php echo $title ?>" href="<?php echo $childImage['sizes']['large'];//big one here
                                    ?>">
-                                    <img class="" src="<?php echo $childImage['sizes']['medium']; ?>">
-                                </a>
-                                <!--end of Image IF statement --> <?php
+                <img class="" src="<?php echo $childImage['sizes']['medium']; ?>">
+            </a>
+            <!--end of Image IF statement -->
+            <?php
 
                             } else if ( $video ){ ?>
-                                <a id="<?php echo $title ?>" href="javascript:;">
-                                    <video class="gallery-video" loop autoplay muted>
-                                        <source src="<?php echo $video; ?>" type="video/mp4">
-                                    </video>
-                                </a>
+            <a id="<?php echo $title ?>" href="javascript:;">
+                <video class="gallery-video" loop autoplay muted>
+                    <source src="<?php echo $video; ?>" type="video/mp4">
+                </video>
+            </a>
 
-                              <script>
-                                   domReady( function () {
-                                        jQuery("#<?php echo $title?>").on('click', function() {
+            <script>
+                domReady(function () {
+                    jQuery("#<?php echo $title?>").on('click', function () {
 
-                                           jQuery.fancybox.open('<video class= "video-fancybox" loop autoplay muted><source src="<?php echo $video; ?>" type="video/mp4"></video>');
-                                       });
-                                   } );
-                                </script>
-                               <!-- end of Video IF statement --> <?php
+                        jQuery.fancybox.open(
+                            '<video class= "video-fancybox" loop autoplay muted><source src="<?php echo $video; ?>" type="video/mp4"></video>'
+                        );
+                    });
+                });
+
+            </script>
+            <!-- end of Video IF statement -->
+            <?php
                             } ?>
 
-                        </div> <!-- end of grid item div -->
-                        <!--end of initial card load of loop-->  <?php
+        </div> <!-- end of grid item div -->
+        <!--end of initial card load of loop-->
+        <?php
 
 
                     }
@@ -143,35 +159,34 @@ $defaultCardNumber = get_field( "default_card_number" );
                 // rows do not have any data so do nothing
             }?>
 
-        </div>
+    </div>
 
-    </section>
+</section>
 
-    <script>
-        domReady( function () {
-            var macy_instance = Macy.init({
-                container: '.<?php the_title_attribute(); ?>',
-                trueOrder: false,
-                waitForImages: true,
-                debug: false,
-                margin: 0,
-                columns: <?php echo $defaultCardNumber ?>,
-                breakAt: {
-                    1200: 4,
-                    940: 3,
-                    520: 1
-                }
-            });
-
-
-            macy_instance.runOnImageLoad(function () {
-                macy_instance.recalculate(true);
-            }, true); //End of Macy stuff
-
-
+<script>
+    domReady(function () {
+        var macy_instance = Macy.init({
+            container: '.<?php the_title_attribute(); ?>',
+            trueOrder: false,
+            waitForImages: true,
+            debug: false,
+            margin: 0,
+            columns: <?php echo $defaultCardNumber ?>,
+            breakAt: {
+                1200: 4,
+                940: 3,
+                520: 1
+            }
         });
 
-    </script>
+
+        macy_instance.runOnImageLoad(function () {
+            macy_instance.recalculate(true);
+        }, true); //End of Macy stuff
+
+
+    });
+
+</script>
 
 <?php endwhile;?>
-
