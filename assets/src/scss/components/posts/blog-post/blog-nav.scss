@@ -1,0 +1,130 @@
+//- NextArticle Nav
+
+#cooler-nav {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    min-height: 300px;
+
+    @include breakpoint(phone) {
+        min-height: 200px;
+        margin-top: 100px;
+    }
+
+    .nav-box {
+        display: flex;
+        position: absolute;
+        width: 35vw;
+        min-height: 300px;
+        overflow: hidden;
+        padding: 30px 40px;
+
+        @include breakpoint(phone) {
+            width: 50vw;
+            min-height: 200px;
+            padding: 10px;
+        }
+
+        a {
+
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            text-decoration: none;
+
+            img {
+                position: absolute;
+                z-index: -1;
+                width: calc(100% + 100px);
+                min-height: calc(100% + 20px);
+                object-fit: cover;
+                transform: translateX(0);
+                transition: all 0.3s $defaultAni;
+            }
+
+            p {
+                transform: translateX(0);
+                transition: all 0.3s $defaultAni;
+
+                span {
+                    margin: 0 10px;
+                    vertical-align: middle;
+                    background: black;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .previous {
+
+        a {
+            justify-content: flex-start;
+
+            &:hover {
+                img {
+                    transform: translateX(-50px);
+                    transition: all 0.3s $defaultAni;
+                }
+
+                p {
+                    transform: translateX(-50px);
+                    transition: all 0.9s $defaultAni;
+                }
+            }
+
+            img {
+                left: 0;
+                top: 0;
+            }
+
+            p {
+                span {
+                    text-align: left;
+                    left: 0;
+                }
+            }
+        }
+
+    }
+
+    .next {
+        right: 0;
+
+        a {
+            justify-content: flex-end;
+
+            &:hover {
+
+                img {
+
+                    transform: translateX(50px);
+                    transition: all 0.3s $defaultAni;
+
+                }
+
+                p {
+                    transform: translateX(50px);
+                    transition: all 0.9s $defaultAni;
+
+
+                }
+
+            }
+
+            img {
+                right: 0;
+                top: 0;
+            }
+
+            p {
+                span {
+                    text-align: right;
+                    right: 0;
+                }
+            }
+        }
+
+    }
+
+}

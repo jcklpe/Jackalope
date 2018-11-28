@@ -1,0 +1,20 @@
+//- Block Quote
+
+.wp-block-quote {
+
+
+    padding: 0 2vw 0 5vw;
+
+    p {
+        border-left: 4px solid #000;
+    }
+}
+
+
+.brkt:before {
+    content: "\005B";
+}
+
+.brkt:after {
+    content: "\005D";
+}

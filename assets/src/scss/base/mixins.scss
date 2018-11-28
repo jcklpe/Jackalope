@@ -5,6 +5,10 @@
   border: 3px solid $color;
 }
 
+@mixin max-height($height) {
+  max-height: $height;
+}
+
 //-Responsive Mixins
 @mixin breakpoint($class) {
   @if $class==phone {
@@ -181,6 +185,8 @@
 }
 
 
+
+
 //- Subheading
 @mixin block-subheading($x-axis, $y-axis, $blur) {
   box-shadow:
@@ -191,6 +197,9 @@
     5px 10px 10px 0 rgba(0, 0, 0, 0.1),
     10px 12px 8px rgba(0, 0, 0, 0.09),
     1px 6px 13px 0px rgba(0, 0, 0, 0.09) !important;
+  background: $black;
+  color: white;
+  display: inline-block;
 
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;

@@ -1,7 +1,11 @@
-//-IMAGE GALLERY
+//-IMAGE GALLERY iIN GUTENBERG
+
+@mixin gallery-max-height {
+    @include max-height(80vh);
+}
 
 .wp-block-gallery {
-    max-height: 60vh;
+    @include gallery-max-height;
     position: relative;
     // left: -17vw;
     // width: 90vw;
@@ -11,6 +15,22 @@
     @include breakpoint(phone) {
         left: 0;
         max-height: unset;
+    }
+
+    li {
+        @include gallery-max-height;
+
+        figure {
+            @include gallery-max-height;
+
+            a {
+                @include gallery-max-height;
+
+                img {
+                    @include gallery-max-height;
+                }
+            }
+        }
     }
 
 

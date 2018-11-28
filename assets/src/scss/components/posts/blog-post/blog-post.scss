@@ -7,12 +7,12 @@ div.blog-article {
     font-size: 33px;
 
     span {
-      box-shadow: 4em 0 0 black, 4em 3px 0px #40465f, -5em 3px 0px #40465f, 0 3px 0px #40465f,
-        1em 7px 10px rgba(0, 0, 0, 0.15),
-        1.5em 14px 7px rgba(0, 0, 0, 0.1),
-        20px 24px 30px rgba(0, 0, 0, 0.1);
-      line-height: 1.5;
-      font-size: 33px !important;
+      // box-shadow: 4em 0 0 black, 4em 3px 0px #40465f, -5em 3px 0px #40465f, 0 3px 0px #40465f,
+      //   1em 7px 10px rgba(0, 0, 0, 0.15),
+      //   1.5em 14px 7px rgba(0, 0, 0, 0.1),
+      //   20px 24px 30px rgba(0, 0, 0, 0.1);
+      // line-height: 1.5;
+      // font-size: 33px !important;
     }
   }
 
@@ -68,8 +68,38 @@ img.pull-portrait {
 
 }
 
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  clear: both;
+}
+
+figure.alignleft {
+  margin-left: 5vw;
+}
+
+img.alignleft {
+  margin-left: 5vw;
+}
+
 img.aligncenter {
   //margin: 0;   you got rid of this because it was wonky on desktop. if it's wonky on mobile just give it a breakpoint.
+}
+
+figure.aligncenter {
+  width: 100% !important;
+  text-align: center;
+  // This is for individual images that are centered.
 }
 
 time.entry-date {
@@ -116,7 +146,6 @@ article {
 
     ol {
       margin: 30px 25vw 0 25vw;
-
       counter-reset: li;
 
       li {
@@ -329,15 +358,15 @@ article.post {
 
 div.entry-content {
   h2 {
-    position: relative;
-    top: -20px;
+    // position: relative;
+    // top: -20px;
 
     span {
-      background-color: black;
-      color: white;
-      padding: 10px;
-      font-size: 45px;
-      box-shadow: 2em 0 0 black, -10px 0 0 black;
+      // background-color: black;
+      // color: white;
+      // padding: 10px;
+      // font-size: 45px;
+      // box-shadow: 2em 0 0 black, -10px 0 0 black;
 
 
     }
@@ -346,13 +375,13 @@ div.entry-content {
 
   h3 {
     span {
-      margin-bottom: 20px;
-      background-color: black;
-      color: white;
-      padding: 10px;
-      font-size: 27px;
-      box-shadow: 2em 0 0 black, -10px 0 0 black;
-      line-height: 1.7;
+      // margin-bottom: 20px;
+      // background-color: black;
+      // color: white;
+      // padding: 10px;
+      // font-size: 27px;
+      // box-shadow: 2em 0 0 black, -10px 0 0 black;
+      // line-height: 1.7;
 
     }
 
@@ -371,175 +400,21 @@ div.entry-content {
   }
 }
 
-/////////////////
-/////// COOL NAV FOR NEXT WP SHIT
-///////////////////
-
-#cooler-nav {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  min-height: 300px;
-
-  @include breakpoint(phone) {
-    min-height: 200px;
-    margin-top: 100px;
-  }
-
-  .nav-box {
-    display: flex;
-    position: absolute;
-    width: 35vw;
-    min-height: 300px;
-    overflow: hidden;
-    padding: 30px 40px;
-
-    @include breakpoint(phone) {
-      width: 50vw;
-      min-height: 200px;
-      padding: 10px;
-    }
-
-
-
-
-
-    a {
-
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      text-decoration: none;
-
-
-
-
-      img {
-        position: absolute;
-        z-index: -1;
-        width: calc(100% + 100px);
-        min-height: calc(100% + 20px);
-        object-fit: cover;
-        transform: translateX(0);
-        transition: all 0.3s $defaultAni;
-
-      }
-
-      p {
-        transform: translateX(0);
-        transition: all 0.3s $defaultAni;
-
-        span {
-          margin: 0 10px;
-          vertical-align: middle;
-          background: black;
-          text-decoration: none;
-        }
-
-      }
-    }
-
-  }
-
-  .previous {
-
-    a {
-      justify-content: flex-start;
-
-      &:hover {
-
-        img {
-          transform: translateX(-50px);
-          transition: all 0.3s $defaultAni;
-
-
-        }
-
-        p {
-          transform: translateX(-50px);
-          transition: all 0.9s $defaultAni;
-
-
-        }
-
-      }
-
-      img {
-        left: 0;
-        top: 0;
-      }
-
-
-      p {
-        span {
-          text-align: left;
-          left: 0;
-        }
-      }
-    }
-
-  }
-
-  .next {
-    right: 0;
-
-    a {
-      justify-content: flex-end;
-
-      &:hover {
-
-        img {
-
-          transform: translateX(50px);
-          transition: all 0.3s $defaultAni;
-
-        }
-
-        p {
-          transform: translateX(50px);
-          transition: all 0.9s $defaultAni;
-
-
-        }
-
-      }
-
-      img {
-        right: 0;
-        top: 0;
-      }
-
-      p {
-        span {
-          text-align: right;
-          right: 0;
-        }
-      }
-    }
-
-  }
-
-}
-
-
-
-
+@import "blog-nav";
 
 .video-wrapper {
-
   position: relative;
-  padding-bottom: 45%;
-  /* 16:9 */
-  padding-top: 25px;
-  height: 0;
   background: black;
+  padding: 1.5vw;
+  height: 70vh;
+  margin: 75px 0;
+
 
   iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     height: 100%;
+    margin: 0;
 
     #document {
 
@@ -586,25 +461,4 @@ article.hentry {
 
 
 
-///////////////////////////////////
-// BLOCK QUOTE
-////////////
-
-.wp-block-quote {
-
-
-  padding: 0 2vw 0 5vw;
-
-  p {
-    border-left: 4px solid #000;
-  }
-}
-
-
-.brkt:before {
-  content: "\005B";
-}
-
-.brkt:after {
-  content: "\005D";
-}
+@import "block-quote";

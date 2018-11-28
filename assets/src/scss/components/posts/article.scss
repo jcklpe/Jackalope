@@ -5,8 +5,51 @@ div.entry-content {
 
   p {
     font-size: 1.5em;
+    color: black;
+    margin: 30px 20vw 0;
+    z-index: 1000;
+    padding: 0 5px;
+    line-height: 1.6;
+  }
+
+  &>h2 {
+
+    font-weight: 500;
+    padding: .2em;
+    padding-right: 2em;
+    padding-left: 3em;
+    margin-bottom: -60px;
+    position: relative;
+    top: -50px;
+    font-size: 2.5em;
+    font-weight: 600;
+    @include block-subheading(3px, 5px, 15px);
+  }
+
+  h3 {
+    display: inline-block;
+    font-weight: 500;
+    padding: .15em;
+    padding-right: 0.5em;
+    padding-left: .9em;
+    position: relative;
+    font-size: 2em;
+    @include block-subheading(2px, 2px, 5px);
+  }
+
+  h4 {
+    font-size: 1.6em;
+    margin: 30px 20vw 0;
+    z-index: 1000;
+    padding: 0 5px;
+    line-height: 1.6;
+    padding-right: 0.4em;
+
+    @include block-subheading(2px, 2px, 5px);
   }
 }
+
+
 
 // div.wrap.wrap-post {
 //   max-width: 1250px !important;

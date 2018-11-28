@@ -1,4 +1,55 @@
 //- Case Study Article
+div.entry-content.case-study-content {
+
+    h2 {
+        top: -100px;
+    }
+
+    ol {
+        margin: 30px 25vw 0 25vw;
+        counter-reset: li;
+
+        li {
+            margin-bottom: 20px;
+            list-style: none;
+
+            span {
+                background: black;
+                color: white;
+                font-size: 1.2em;
+                padding: 0 10px;
+                line-height: 2;
+
+            }
+
+
+            a {
+                vertical-align: text-bottom;
+            }
+
+            &::before {
+                content: counter(li);
+                counter-increment: li;
+                z-index: -1;
+                position: relative;
+                color: #fff;
+                background: black;
+                font-family: $brushFont;
+                font-size: 1.5em;
+                text-align: center;
+                margin-left: -1.3em;
+                left: -25px;
+                line-height: 27px;
+                padding: 0 5px 0 5px;
+                //min-width: 35px;
+                //display: inline-flex;
+                //justify-content: center;
+                //align-items: center;
+
+            }
+        }
+    }
+}
 
 // #page.site {
 //     background: white !important; //HACK: doing this to make sure the post background is white

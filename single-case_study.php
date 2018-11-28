@@ -27,4 +27,6 @@ get_template_part('template-parts/ui/header'); ?>
 
 <?php
 
+ get_template_part( 'template-parts/ui/case-study-links');
+
 get_template_part('template-parts/ui/footer');
