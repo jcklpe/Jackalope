@@ -31,12 +31,12 @@ $sideProjectsBackground = get_field('sideprojects_background'); ?>
 
             <div class="links layer" data-relative-input="true" data-depth="0.40">
 
-                <a class="email" data-relative-input="true" data-depth="0.40" href="mailto:david@jackalope.tech" target="_blank"
+                <a class="email" data-relative-input="true" data-depth="0.40" href="mailto:aslan@jackalope.tech" target="_blank"
                     rel="noopener">
-                    [ ✉- david@jackalope.tech ]
+                    [ ✉- aslan@jackalope.tech ]
                 </a>
 
-                <a class="email-mobile" data-relative-input="true" data-depth="0.40" href="mailto:david@jackalope.tech"
+                <a class="email-mobile" data-relative-input="true" data-depth="0.40" href="mailto:aslan@jackalope.tech"
                     target="_blank" rel="noopener">
                     [ ✉ ]
                 </a>
