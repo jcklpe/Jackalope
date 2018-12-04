@@ -44,8 +44,11 @@ div.entry-content {
     padding: 0 5px;
     line-height: 1.6;
     padding-right: 0.4em;
-
     @include block-subheading(2px, 2px, 5px);
+    display: inline;
+    position: relative;
+    top: 30px;
+
   }
 }
 
