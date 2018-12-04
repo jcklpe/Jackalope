@@ -7,18 +7,19 @@ hamburger.addEventListener("click", function ()
     // Toggle class "is-active"
     hamburger.classList.toggle("is-active");
     // Do something else, like open/close menu
-    console.log("amboogers and wootbeer");
+
 });
 
+// everything that has to be run after domReady
 domReady(function ()
 {
-    // Slab Text stuff
+    //- Slab Text stuff
     jQuery(".slabtarget").slabText({
         // Don't slabtext the headers if the viewport is under 768px
         "viewportBreakpoint": 768
     });
 
-    //// parallax stuff
+    //- Parallax.js
     var sceneElements = document.querySelectorAll('.parallaxin');
 
     // ...then loop over the scene elements and create the Parallax instances
@@ -38,24 +39,14 @@ domReady(function ()
         parallaxScenes.push(new Parallax(sceneElements[i]))
     }
 
-
-
-
-
-
     //This steals iframes
     jQuery('p:has(iframe)').css('padding', '0 !important');
 
+});
 
 
 
-
-
-});/// END OF domREADY
-
-
-
-/// This runs hamburger stuff
+//- Hamburger Bootstrap Collapse code
 (function ()
 {
     var d = document,
@@ -95,7 +86,7 @@ domReady(function ()
     //function
     switchAccordion = function (e)
     {
-        console.log("triggered");
+
         e.preventDefault();
         var thisAnswer = e.target.parentNode.nextElementSibling;
         var thisQuestion = e.target;
@@ -125,28 +116,20 @@ domReady(function ()
         }
         accordionToggles[i].addEventListener('click', switchAccordion, false);
     }
+})();
 
 
-
-
-
-})();/// END OF HAMBURGER STUFF
-
-
-
-
-//This runs lazy loader
+//-Lazy Loader
 jQuery(function ()
 {
-
-
+    //target each gallery to add lazy load functionality
     jQuery('.gallery').each(function ()
     {
         // set the rel for each gallery
         jQuery(this).find(".gallery-icon a").attr('data-fancybox', 'group-' + jQuery(this).attr('id'));
     });
 
-
+    //remove wonky attritubutes added by stuff
     jQuery('img').each(function ()
     {
         jQuery(this).removeAttr('width');
@@ -154,15 +137,11 @@ jQuery(function ()
     }); //this removes attributes from gallery images. #FUBAR
 });
 
-
+// this sets lazy loading settings
 jQuery('.lazy').lazy({
     effect: "fadeIn",
     effectTime: 300,
     threshold: 500,
     enableThrottle: false
 
-});  ///////// END OF LAZY LOADING
-
-jQuery('p a').wrapInner('<div class="brkt"/>');
-
-//stuff
+});

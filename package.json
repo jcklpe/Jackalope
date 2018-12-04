@@ -2,7 +2,7 @@
   "name": "jackalope",
   "version": "1.0.0",
   "description": "wp theme with gulp support",
-  "main": "footer-script-prod.js",
+  "main": "head.js, footer.js",
   "dependencies": {
     "@types/gulp-babel": "^6.1.29",
     "@types/vinyl-buffer": "^1.0.0",
