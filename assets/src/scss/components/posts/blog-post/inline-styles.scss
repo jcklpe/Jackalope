@@ -1,0 +1,33 @@
+//- INLINE STYLES
+p {
+
+    // styling for inline code
+    code {
+        background: $code-background;
+        padding: 0 0.3em;
+        margin: 0 0.2em;
+        color: $code-foreground;
+        font-family: 'Input', 'Courier New', 'Courier', 'monospace';
+    }
+
+    // important messages that should standout
+    &.notice {
+        background: $notice;
+        color: $charcoal;
+        font-size: 1em;
+        margin-top: 100px !important;
+        padding: 25px 100px !important;
+        border-left: solid black 5px;
+    }
+
+    // like an editors note
+    &.note {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: $note;
+        font-style: italic;
+        font-size: 1em;
+        background: $just-off-white;
+        padding: 20px;
+    }
+}

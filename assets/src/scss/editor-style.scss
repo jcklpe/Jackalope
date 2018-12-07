@@ -1,3 +1,16 @@
+@import "base/base";
+@import "components/posts/blog-post/inline-styles";
+
+h2 {
+    background: black !important;
+    color: white !important;
+}
+
+.gallery-item {
+    max-width: 33%;
+    display: inline-flex;
+}
+
 // /*
 // Theme Name: Jackalope
 // Description: Used to style the TinyMCE editor.
@@ -602,13 +615,3 @@
 // .rtl .mejs-offscreen {
 //   right: -10000px;
 // }
-
-h2 {
-    background: black !important;
-    color: white !important;
-}
-
-.gallery-item {
-    max-width: 33%;
-    display: inline-flex;
-}

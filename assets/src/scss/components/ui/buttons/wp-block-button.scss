@@ -1,12 +1,14 @@
+//- this is buttons made by gutenburg. For now, not going to give them a universal style. except for a few tweaks.
 a.wp-block-button__link {
     border-radius: 0px !important;
-    background: $black !important; //determined elsewhere
-    @include block-subheading(2px, 2px, 10px);
+    // background: $black !important; //determined elsewhere
+    // @include block-subheading(2px, 2px, 10px);
+    margin-top: 1.5em;
 
-    &:focus,
-    &:hover {
-        background: rgb(40, 40, 40) !important;
+    // &:focus,
+    // &:hover {
+    //     // background: rgb(40, 40, 40) !important;
 
 
-    }
+    // }
 }
