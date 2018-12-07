@@ -28,6 +28,11 @@ p {
         font-style: italic;
         font-size: 1em;
         background: $just-off-white;
-        padding: 20px;
+        padding: 20px !important;
+
+        em {
+            color: #0162c4;
+
+        }
     }
 }
