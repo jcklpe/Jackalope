@@ -1,3 +1,5 @@
+
+//- style edit link
 span.edit-link {
     position: absolute;
     right: 25px;
@@ -46,4 +48,9 @@ div#page {
     overflow: hidden !important;
     display: flex;
     flex-direction: column;
+}
+
+//HACK: this is some unknown bug with just the loadestone gallery on the case study
+.gridGallery.LodestoneVideoPresentationGallery {
+    min-height: 762px;
 }
