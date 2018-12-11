@@ -1,5 +1,9 @@
 <?php
  /* Template Name: Gallery */
+
+
+
+
 while ( have_posts() ) : the_post();
 $initialCardLoad = 5;
 $loopLazyLoad = 0;
@@ -13,11 +17,14 @@ $defaultCardNumber = get_field( "default_card_number" );
         <?php
             // check if the repeater field has rows of data
             if ( have_rows( 'card' ) ) {
+
                 // loop through the rows of data
                 while ( have_rows( 'card' ) ) :
+
                     the_row();
                     $loopLazyLoad ++; // iterate on loop each time you loop through
                     // display a sub field value inside a card
+
                     //VARIABLES//
                     $rootURL    = get_stylesheet_directory_uri();
                     $subDir     = "/_archive/staticSites/";
@@ -138,16 +145,15 @@ $defaultCardNumber = get_field( "default_card_number" );
             <?php
                             } ?>
 
-        </div>
-        <!-- end of grid item div -->
+        </div> <!-- end of grid item div -->
         <!--end of initial card load of loop-->
         <?php
 
 
                     }
 
-                endwhile;
-                ////end of while statement that loops for as long as rows have data
+                endwhile; ////end of while statement that loops for as long as rows have data
+                ///
             } //end of top level if statement that checks if rows have data
             else {
                 // rows do not have any data so do nothing

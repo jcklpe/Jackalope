@@ -179,35 +179,18 @@ function filter_ptags_on_images($content)
 
 
 
-//-  IM NOT SURE IF I NEED THESE OR NOT
-//-  Implement the Custom Header feature.
+//- IM NOT SURE IF I NEED THESE OR NOT
+// //-Implement the Custom Header feature.
 require get_template_directory() . '/inc/custom-header.php';
 
-//-  Custom template tags for this theme.
+//-Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
 
-//-  Custom functions that act independently of the theme templates.
+//-Custom functions that act independently of the theme templates.
 require get_template_directory() . '/inc/extras.php';
 
-//-  Customizer additions.
+// //-Customizer additions.
 // require get_template_directory() . '/inc/customizer.php';
-
-//-  Register MegaMultiMedia Block with ACF
-
-function jackalope_register_blocks() {
-	if( ! function_exists('acf_register_block') )
-		return;
-	acf_register_block( array(
-		'name'			=> 'mega-multimedia-gallery',
-		'title'			=> __( 'MegaMultiMedia Gallery', 'MegaMultiMediaGallery' ),
-		'render_template'	=> 'template-parts/blocks/mega-multimedia-gallery.php',
-		'category'		=> 'common',
-		'icon'			=> 'tagcloud',
-		'mode'			=> 'edit',
-		'keywords'		=> array( 'gallery', 'media', 'image', 'video', 'link' )
-	));
-}
-add_action('acf/init', 'jackalope_register_blocks' );
 
 
 
