@@ -10,13 +10,13 @@
 $initialCardLoad = 5;
 $loopLazyLoad = 0;
 $defaultCardNumber = get_field( "default_card_number" );
-
+$galleryName = get_field ("gallery_name");
 
 ?>
 
 
 <section class="grid-content">
-	<div class="gridGallery <?php // this will be dealth with later the_title_attribute(); ?>">
+	<div class="gridGallery <?php echo $galleryName?>">
 		<?php
         // check if the repeater field has rows of data
         if ( have_rows( 'card' ) ) {
@@ -41,6 +41,7 @@ $defaultCardNumber = get_field( "default_card_number" );
 					<div class="grid-item">
 						<?php switch (true) {
 
+							//- EMBED
 							case $cardEmbed:?>
 								<a
 								data-fancybox
@@ -53,7 +54,9 @@ $defaultCardNumber = get_field( "default_card_number" );
 								</a>
 							<?php break; ?>
 
-							<?php case $cardLin: ?>
+							<?php
+							//- LINK
+							 case $cardLin: ?>
 								<a
 								href="<?php echo $cardLink ?>"
 								target="_blank">
@@ -63,7 +66,9 @@ $defaultCardNumber = get_field( "default_card_number" );
 								</a>
 							<?php break; ?>
 
-							<?php case $childImage:?>
+							<?php
+							//- IMAGE
+							case $childImage:?>
 								<a
 								href="<?php echo $childImage['sizes']['large'];//big one here ?>"
 								data-caption="<?php echo $title ?>"
@@ -73,7 +78,9 @@ $defaultCardNumber = get_field( "default_card_number" );
             					</a>
 							<?php break; ?>
 
-							<?php case $video: ?>
+							<?php
+							//- VIDEO
+							case $video: ?>
 								<a
 								id="<?php echo $title ?>"
 								href="javascript:;">
@@ -105,6 +112,8 @@ $defaultCardNumber = get_field( "default_card_number" );
 					<div class="grid-item">
 					<?php
 					switch (true) {
+
+						//- EMBED
     					case $cardEmbed:?>
 							<a
 							data-fancybox
@@ -117,7 +126,9 @@ $defaultCardNumber = get_field( "default_card_number" );
 							</a>
 						<?php break; ?>
 
-    					<?php case $cardLin: ?>
+						<?php
+						//- LINK
+						case $cardLin: ?>
 							<a
 								href="<?php echo $cardLink ?>"
 								target="_blank">
@@ -127,7 +138,9 @@ $defaultCardNumber = get_field( "default_card_number" );
 							</a>
 						<?php break; ?>
 
-						<?php case $childImage:?>
+						<?php
+						//- IMAGE
+						case $childImage:?>
 							<a
 								data-fancybox="gallery"
 								data-caption="<?php echo $title ?>"
@@ -138,7 +151,9 @@ $defaultCardNumber = get_field( "default_card_number" );
 							</a>
 						<?php break; ?>
 
-						<?php case $video: ?>
+						<?php
+						//- VIDEO
+						case $video: ?>
 							<a
 								id="<?php echo $title ?>"
 								href="javascript:;">
@@ -163,8 +178,8 @@ $defaultCardNumber = get_field( "default_card_number" );
 						<?php break; ?>
 
 						<?php default:
-							echo "<script>console.log( 'PHP Debug: It dont work bub');</script>";
-					} ?>
+							echo "<script>console.log( 'PHP Debug: It dont work bub');	</script>";
+						} ?>
 					</div>
 
 				<?php } // end of lazy loaded else statement
@@ -183,7 +198,7 @@ $defaultCardNumber = get_field( "default_card_number" );
 <script>
 	domReady(function () {
 		var macy_instance = Macy.init({
-			container: '.<?php the_title_attribute(); ?>',
+			container: '.<?php echo $galleryName ?>',
 			trueOrder: false,
 			waitForImages: true,
 			debug: false,
