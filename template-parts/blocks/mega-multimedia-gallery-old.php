@@ -9,10 +9,7 @@
 **/
 $initialCardLoad = 5;
 $loopLazyLoad = 0;
-$defaultCardNumber = get_field( "default_card_number" );
-
-
-?>
+$defaultCardNumber = get_field( "default_card_number" );?>
 
 
 <section class="grid-content">
@@ -36,110 +33,52 @@ $defaultCardNumber = get_field( "default_card_number" );
                 $cardLink   = $rootURL . $subDir . $cardLin;
 				$cardEmbed  = get_sub_field( 'card_embed' );
 
-				//- Lazy Items
+				//- Initial card load if statement
 				if ( $loopLazyLoad > $initialCardLoad ) {?>
 					<div class="grid-item">
-						<?php switch (true) {
-
-							case $cardEmbed:?>
+						<?php
+						//- EMBED
+							if ( $cardEmbed ) { ?>
 								<a
 								data-fancybox
 								data-type="iframe"
 								data-src="<?php echo $cardEmbed ?>"
 								href="javascript:;">
 									<img
-									class="lazy embedPreviewImg"
+									class="embedPreviewImg lazy"
 									data-src="<?php echo $childImage['sizes']['medium']; ?>">
 								</a>
-							<?php break; ?>
+						<?php } // end of iframe if statement  ?>
 
-							<?php case $cardLin: ?>
+						<?php
+						//- LINK
+							else if ( $cardLin ) { ?>
 								<a
-								href="<?php echo $cardLink ?>"
-								target="_blank">
-									<img
-									class="lazy"
-									src="<?php echo $childImage['sizes']['large']; ?>">
-								</a>
-							<?php break; ?>
-
-							<?php case $childImage:?>
-								<a
-								href="<?php echo $childImage['sizes']['large'];//big one here ?>"
-								data-caption="<?php echo $title ?>"
-								data-fancybox="gallery">
-                					<img class="lazy"
-									data-src="<?php echo $childImage['sizes']['medium']; ?>" />
-            					</a>
-							<?php break; ?>
-
-							<?php case $video: ?>
-								<a
-								id="<?php echo $title ?>"
-								href="javascript:;">
-                					<video
-									class="gallery-video lazy"
-									loop autoplay muted>
-                    					<source
-										src="<?php echo $video; ?>"
-										type="video/mp4">
-                					</video>
-            					</a>
-            					<script>
-                					domReady( function () {
-                                        jQuery("#<?php echo $title?>").on('click', function() {
-                                            jQuery.fancybox.open('<video class="video-fancybox" loop autoplay muted><source src="<?php echo $video; ?>" type="video/mp4"></video>');
-                                            });
-                                    } );
-                                 </script>
-							<?php break; ?>
-
-							<?php default:
-								echo "<script>console.log( 'PHP Debug: It dont work bub');</script>";
-						} ?>
-					</div>
-				<?php } // end of lazy load iter check if statement
-
-				//- Initial item load (non-lazy items)
-				else {?>
-					<div class="grid-item">
-					<?php
-					switch (true) {
-    					case $cardEmbed:?>
-							<a
-							data-fancybox
-							data-type="iframe"
-							data-src="<?php echo $cardEmbed ?>"
-							href="javascript:;">
-								<img
-								class="embedPreviewImg lazy"
-								data-src="<?php echo $childImage['sizes']['medium']; ?>">
-							</a>
-						<?php break; ?>
-
-    					<?php case $cardLin: ?>
-							<a
 								href="<?php echo $cardLink ?>"
 								target="_blank">
 									<img
 									class=""
 									src="<?php echo $childImage['sizes']['large']; ?>">
-							</a>
-						<?php break; ?>
+								</a>
+						<?php } // end of card link if statement ?>
 
-						<?php case $childImage:?>
-							<a
+						<?php
+						//- IMAGE
+							else if ( $childImage ){ ?>
+								<a
 								data-fancybox="gallery"
 								data-caption="<?php echo $title ?>"
 								href="<?php echo $childImage['sizes']['large'];//big one here?>">
 									<img
 									class=""
 									src="<?php echo $childImage['sizes']['medium']; ?>">
-							</a>
-						<?php break; ?>
+								</a>
+						<?php } // end of IMAGE if statement ?>
 
-						<?php case $video: ?>
-							<a
+						<?php
+						//-  VIDEO
+							else if ( $video ){ ?>
+								<a
 								id="<?php echo $title ?>"
 								href="javascript:;">
 									<video
@@ -149,8 +88,8 @@ $defaultCardNumber = get_field( "default_card_number" );
 										src="<?php echo $video; ?>"
 										type="video/mp4">
 									</video>
-							</a>
-							<script>
+								</a>
+								<script>
 									// ADD FANCYBOOX gallery specific identifiers here
 									domReady(function () {
 									jQuery("#<?php echo $title?>").on('click', function () {
@@ -159,22 +98,84 @@ $defaultCardNumber = get_field( "default_card_number" );
 											);
 										});
 									});
-							</script>
-						<?php break; ?>
+								</script>
+						<?php } // end of video statement ?>
 
-						<?php default:
-							echo "<script>console.log( 'PHP Debug: It dont work bub');</script>";
-					} ?>
 					</div>
+				<?php } // end of lazy load iter check if statement
 
+				//- lazy loaded items
+				else {?>
+					<div class="grid-item">
+						<?php
+						//- EMBED
+							if ( $cardEmbed ) { ?>
+								<a
+								data-fancybox
+								data-type="iframe"
+								data-src="<?php echo $cardEmbed ?>"
+								href="javascript:;">
+									<img
+									class="embedPreviewImg lazy"
+									data-src="<?php echo $childImage['sizes']['medium']; ?>">
+								</a>
+						<?php } //end of embed ?>
+
+						<?php
+						//- LINK
+						 	else if ( $cardLin ) { ?>
+								<a
+								href="<?php echo $cardLink ?>"
+								target="_blank">
+									<img
+									class=""
+									src="<?php echo $childImage['sizes']['large']; ?>">
+								</a>
+						<?php } // end of link ?>
+
+						<?php
+						//- IMAGE
+							else if ( $childImage ){ ?>
+								<a
+								data-fancybox="gallery"
+								data-caption="<?php echo $title ?>"
+								href="<?php echo $childImage['sizes']['large'];//big one here?>">
+									<img
+									class=""
+									src="<?php echo $childImage['sizes']['medium']; ?>">
+								</a>
+						<?php } // end of image ?>
+
+						<?php
+						//- VIDEO
+						 	else if ( $video ){ ?>
+								<a
+								id="<?php echo $title ?>"
+								href="javascript:;">
+									<video
+									class="gallery-video"
+									loop autoplay muted>
+										<source
+										src="<?php echo $video; ?>"
+										type="video/mp4">
+									</video>
+								</a>
+								<script>
+									domReady(function () {
+										jQuery("#<?php echo $title?>").on('click', function () {
+
+											jQuery.fancybox.open('<video class= "video-fancybox" loop autoplay muted><source src="<?php echo $video; ?>" type="video/mp4"></video>'
+											);
+										});
+									});
+								</script>
+						<?php } // end of video?>
+
+					</div>
 				<?php } // end of lazy loaded else statement
 
     		endwhile;//end of while statement that loops for as long as rows have data
-		} //end of top level if statement that checks if rows have data
-
-		else {
-		//nothing here
-		}?>
+        } //end of top level if statement that checks if rows have data?>
 	</div>
 	<!--//-end of grid gallery -->
 </section>
