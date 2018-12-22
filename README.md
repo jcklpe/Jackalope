@@ -1,6 +1,8 @@
-Jackalope: LEGACY
+Jackalope: 
 
-This is the first WP theme I ever developed. It's a mess. Going to be updating and retooling it. Getting it on github to make retooling and deploying it easier.
+This is the first WordPress theme I've ever made. I am occasionally adding extra stuff to it occasionally, fixing bugs or adding immediately necessary functionality, but my major priority is to finish learning ReactJS so that I can just rebuild this sucker as a single page app that hooks into WordPress' Rest API. 
+
+
 
 To Do:
 
@@ -17,7 +19,7 @@ Deferred to next project:
 
 - [ ] Or rebuild theme as React frontend and hook into Ghost CMS with REST API
 
-- [ ] rebuild custom galleries as custom Gutenberg block
+- [x] rebuild custom galleries as custom Gutenberg block
 
 - [ ] Separate out professional work from personal blog/projects for  a more focused presentation.
 
