@@ -209,6 +209,78 @@ function jackalope_register_blocks() {
 }
 add_action('acf/init', 'jackalope_register_blocks' );
 
+////////////////////////////////
+//- ADMIN CUSTOMIZATIONS
+
+//- add filter by post
+
+function kc_add_taxonomy_filters() {
+global $typenow;
+
+// an array of all the taxonomies you want to display. Use the taxonomy name or slug
+$my_taxonomies = array( 'post_tag' );
+switch($typenow){
+
+	case 'post':
+
+		foreach ($my_taxonomies as $tax_slug) {
+
+
+			$tax_obj = get_taxonomy($tax_slug);
+			$tax_name = $tax_obj->labels->name;
+			$terms = get_terms($tax_slug);
+			if(count($terms) > 0) {
+				echo "<select name='tag' id='$tax_slug' class='postform alignleft actions'>";
+							echo "<option value=''>Show All $tax_name</option>";
+							foreach ($terms as $term) {
+							echo '<option value="', $term->slug,'"
+							 ',selected( @$_GET[$tax_slug] == $term->slug , $current = true, $echo = false ) , '>' , $term->name ,' ' ,
+								$term->count ,')</option>';
+							}
+							echo "</select>";
+			}
+		}
+	break;
+	}
+}
+
+add_action( 'restrict_manage_posts', 'kc_add_taxonomy_filters' );
+
+//- remove categories filter
+add_action( 'load-edit.php', 'no_category_dropdown' );
+
+function no_category_dropdown() {
+	add_filter( 'wp_dropdown_cats', '__return_false' );
+}
+
+//- remove readability and seo scores filters
+add_action( 'admin_init', 'bb_remove_yoast_seo_admin_filters', 20 );
+function bb_remove_yoast_seo_admin_filters() {
+	global $wpseo_meta_columns ;
+	if ( $wpseo_meta_columns ) {
+		remove_action( 'restrict_manage_posts', array( $wpseo_meta_columns , 'posts_filter_dropdown' ) );
+						remove_action( 'restrict_manage_posts', array( $wpseo_meta_columns , 'posts_filter_dropdown_readability' ) );
+		}
+	}
+
+
+//- Add random default images to posts
+
+// This didn't work. It would require me to change every single version
+
+// $defaultImg = Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+// // yes I know this method is crazy. bite me!
+
+// if ( has_post_thumbnail() ) {
+// 	the_post_thumbnail();
+// 	}
+
+// else { ?>
+
+<!--<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/post-defaults/space2.jpg" />
+
+// }
+
 
 
 
