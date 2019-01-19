@@ -264,22 +264,7 @@ function bb_remove_yoast_seo_admin_filters() {
 	}
 
 
-//- Add random default images to posts
 
-// This didn't work. It would require me to change every single version
-
-// $defaultImg = Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
-// // yes I know this method is crazy. bite me!
-
-// if ( has_post_thumbnail() ) {
-// 	the_post_thumbnail();
-// 	}
-
-// else { ?>
-
-<!--<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/post-defaults/space2.jpg" />
-
-// }
 
 
 
