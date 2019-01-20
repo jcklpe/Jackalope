@@ -4,9 +4,10 @@
   "description": "wp theme with gulp support",
   "main": "head.js, footer.js",
   "dependencies": {
-    "node-sass": "^4.11.0"
+    
   },
   "devDependencies": {
+    "node-sass": "^4.11.0",
     "@types/gulp-babel": "^6.1.29",
     "@types/vinyl-buffer": "^1.0.0",
     "@types/vinyl-source-stream": "0.0.30",
