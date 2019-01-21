@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "wp theme with gulp support",
   "main": "head.js, footer.js",
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "devDependencies": {
     "node-sass": "^4.11.0",
     "@types/gulp-babel": "^6.1.29",
