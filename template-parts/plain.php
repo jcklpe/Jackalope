@@ -3,43 +3,26 @@
 Template Name: Plain
 */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> <header class="entry-header">
-    <?php
-    if (is_single()) :
-    //			the_title( '<h1 class="entry-title">', '</h1>' );
-    else :
-        the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-    endif;
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-    if ('post' === get_post_type()) : ?>
-        <div class="entry-meta">
-            <?php jackalope_posted_on(); ?>
-        </div>
-        <!-- .entry-meta -->
-    <?php
-    endif; ?>
-    </header>
-    <!-- .entry-header -->
+        <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
 
-    <div class="entry-content  blog-article">
-        <?php
-        the_content(sprintf(
-            /* translators: %s: Name of current post. */
-            wp_kses(__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'jackalope'), array('span' => array('class' => array()))),
-            the_title('<span class="screen-reader-text">"', '"</span>', false)
-        ));
+            <header class="article-header">
+                <h1 class="page-title"><?php the_title(); ?></h1>
+            </header> <!-- end article header -->
 
-        wp_link_pages(array(
-            'before' => '<div class="page-links">' . esc_html__('Pages:', 'jackalope'),
-            'after'  => '</div>',
-        ));
-        ?>
-    </div>
-    <!-- .entry-content -->
+            <section class="entry-content" itemprop="articleBody">
+                <?php the_content(); ?>
+                <?php wp_link_pages(); ?>
+            </section> <!-- end article section -->
 
-    <footer class="entry-footer">
-        <?php jackalope_entry_footer(); ?>
-    </footer>
-    <!-- .entry-footer -->
-</article>
-<!-- #post-## -->
+            <footer class="article-footer">
+
+            </footer> <!-- end article footer -->
+
+            <?php comments_template(); ?>
+
+        </article> <!-- end article -->
+
+<?php endwhile;
+endif; ?>
