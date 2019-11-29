@@ -71,15 +71,8 @@ assets/bower_components/*
 library/vendors/composer
 assets/img/.DS_Store
 
-<<<<<<< HEAD
-# ftp client files
-_gsdata_/*
-_gsdata_
-_gsdata_/
-=======
 
 #ignore good sync stuff
 _gsdata_
 _gsdata_/
 _gsdata_/*
->>>>>>> 560ccc3894a5c79e2b51cb703b0b5e2d1d68a315
