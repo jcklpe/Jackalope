@@ -4,41 +4,52 @@
  * Jackalope functions and definitions
  * @package Jackalope
  */
+// supposed to fix issues with generating frontity website stuff
+add_filter('rest_pre_serve_request', function ($value) {
+
+	header('Access-Control-Allow-Origin: *');
+
+	header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
+
+	header('Access-Control-Allow-Credentials: true');
+
+	return $value;
+});
 
 if (!function_exists('jackalope_setup')) :
-function jackalope_setup()
-{
+	function jackalope_setup()
+	{
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support('automatic-feed-links');
-	add_theme_support('title-tag');
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support('automatic-feed-links');
+		add_theme_support('title-tag');
 
-	// Enable support for Post Thumbnails on posts and pages.
-	add_theme_support('post-thumbnails');
+		// Enable support for Post Thumbnails on posts and pages.
+		add_theme_support('post-thumbnails');
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus(array(
-		'menu-1' => esc_html__('Primary', 'jackalope'),
-	));
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus(array(
+			'menu-1' => esc_html__('Primary', 'jackalope'),
+		));
 
-	// Switch default core markup for search form, comment form, and comments to output valid HTML5.
-	add_theme_support('html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	));
+		// Switch default core markup for search form, comment form, and comments to output valid HTML5.
+		add_theme_support('html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		));
 
-	// // Set up the WordPress core custom background feature.
-	// add_theme_support('custom-background', apply_filters('jackalope_custom_background_args', array(
-	// 	'default-color' => 'ffffff',
-	// 	'default-image' => '',
-	// )));
+		// // Set up the WordPress core custom background feature.
+		// add_theme_support('custom-background', apply_filters('jackalope_custom_background_args', array(
+		// 	'default-color' => 'ffffff',
+		// 	'default-image' => '',
+		// )));
 
-	// // Add theme support for selective refresh for widgets.
-	// add_theme_support('customize-selective-refresh-widgets');
-}
+		// // Add theme support for selective refresh for widgets.
+		// add_theme_support('customize-selective-refresh-widgets');
+	}
 endif;
 add_action('after_setup_theme', 'jackalope_setup');
 
@@ -92,28 +103,31 @@ function jackalope_footer()
 add_action('wp_enqueue_scripts', 'jackalope_footer');
 
 //- THEME STYLES
-function enqueue_theme_css() {
-    wp_enqueue_style( 'default', get_template_directory_uri() . '/assets/build/style.css' );
+function enqueue_theme_css()
+{
+	wp_enqueue_style('default', get_template_directory_uri() . '/assets/build/style.css');
 }
-add_action( 'wp_enqueue_scripts', 'enqueue_theme_css' );
+add_action('wp_enqueue_scripts', 'enqueue_theme_css');
 
 
 //- Login Style
-function my_login_style() {
-    wp_enqueue_style( 'login_style', get_template_directory_uri() . '/assets/build/login-style.css' );
-    // wp_enqueue_script( 'login_style', get_template_directory_uri() . './assets/build/login-style.js' );
+function my_login_style()
+{
+	wp_enqueue_style('login_style', get_template_directory_uri() . '/assets/build/login-style.css');
+	// wp_enqueue_script( 'login_style', get_template_directory_uri() . './assets/build/login-style.js' );
 }
-add_action( 'login_enqueue_scripts', 'my_login_style' );
+add_action('login_enqueue_scripts', 'my_login_style');
 
 //- Editor Style
-add_editor_style( './assets/build/editor-style.css' );
+add_editor_style('./assets/build/editor-style.css');
 
 //- Admin Panel Style
-function my_admin_style() {
-	wp_register_style( 'admin_style', get_template_directory_uri() . '/assets/build/admin-style.css', false, '1.0.0' );
-	wp_enqueue_style( 'admin_style' );
+function my_admin_style()
+{
+	wp_register_style('admin_style', get_template_directory_uri() . '/assets/build/admin-style.css', false, '1.0.0');
+	wp_enqueue_style('admin_style');
 }
-add_action( 'admin_enqueue_scripts', 'my_admin_style' );
+add_action('admin_enqueue_scripts', 'my_admin_style');
 
 //- change admin favicon
 function add_favicon()
@@ -171,11 +185,11 @@ function tag_stripped_field($field)
 }
 
 function filter_ptags_on_images($content)
-	{
-		$content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-		return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
-	}
-	add_filter('the_content', 'filter_ptags_on_images');
+{
+	$content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+	return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
+}
+add_filter('the_content', 'filter_ptags_on_images');
 
 
 
@@ -194,74 +208,79 @@ require get_template_directory() . '/inc/extras.php';
 
 //-  Register MegaMultiMedia Block with ACF
 
-function jackalope_register_blocks() {
-	if( ! function_exists('acf_register_block') )
+function jackalope_register_blocks()
+{
+	if (!function_exists('acf_register_block'))
 		return;
-	acf_register_block( array(
+	acf_register_block(array(
 		'name'			=> 'mega-multimedia-gallery',
-		'title'			=> __( 'MegaMultiMedia Gallery', 'MegaMultiMediaGallery' ),
+		'title'			=> __('MegaMultiMedia Gallery', 'MegaMultiMediaGallery'),
 		'render_template'	=> 'template-parts/blocks/mega-multimedia-gallery.php',
 		'category'		=> 'common',
 		'icon'			=> 'tagcloud',
 		'mode'			=> 'edit',
-		'keywords'		=> array( 'gallery', 'media', 'image', 'video', 'link' )
+		'keywords'		=> array('gallery', 'media', 'image', 'video', 'link')
 	));
 }
-add_action('acf/init', 'jackalope_register_blocks' );
+add_action('acf/init', 'jackalope_register_blocks');
 
 ////////////////////////////////
 //- ADMIN CUSTOMIZATIONS
 
 //- add filter by post
 
-function kc_add_taxonomy_filters() {
-global $typenow;
+function kc_add_taxonomy_filters()
+{
+	global $typenow;
 
-// an array of all the taxonomies you want to display. Use the taxonomy name or slug
-$my_taxonomies = array( 'post_tag' );
-switch($typenow){
+	// an array of all the taxonomies you want to display. Use the taxonomy name or slug
+	$my_taxonomies = array('post_tag');
+	switch ($typenow) {
 
-	case 'post':
+		case 'post':
 
-		foreach ($my_taxonomies as $tax_slug) {
+			foreach ($my_taxonomies as $tax_slug) {
 
 
-			$tax_obj = get_taxonomy($tax_slug);
-			$tax_name = $tax_obj->labels->name;
-			$terms = get_terms($tax_slug);
-			if(count($terms) > 0) {
-				echo "<select name='tag' id='$tax_slug' class='postform alignleft actions'>";
-							echo "<option value=''>Show All $tax_name</option>";
-							foreach ($terms as $term) {
-							echo '<option value="', $term->slug,'"
-							 ',selected( @$_GET[$tax_slug] == $term->slug , $current = true, $echo = false ) , '>' , $term->name ,' ' ,
-								$term->count ,')</option>';
-							}
-							echo "</select>";
+				$tax_obj = get_taxonomy($tax_slug);
+				$tax_name = $tax_obj->labels->name;
+				$terms = get_terms($tax_slug);
+				if (count($terms) > 0) {
+					echo "<select name='tag' id='$tax_slug' class='postform alignleft actions'>";
+					echo "<option value=''>Show All $tax_name</option>";
+					foreach ($terms as $term) {
+						echo '<option value="', $term->slug, '"
+							 ', selected(@$_GET[$tax_slug] == $term->slug, $current = true, $echo = false), '>', $term->name, ' ',
+							$term->count,
+							')</option>';
+					}
+					echo "</select>";
+				}
 			}
-		}
-	break;
+			break;
 	}
 }
 
-add_action( 'restrict_manage_posts', 'kc_add_taxonomy_filters' );
+add_action('restrict_manage_posts', 'kc_add_taxonomy_filters');
 
 //- remove categories filter
-add_action( 'load-edit.php', 'no_category_dropdown' );
+add_action('load-edit.php', 'no_category_dropdown');
 
-function no_category_dropdown() {
-	add_filter( 'wp_dropdown_cats', '__return_false' );
+function no_category_dropdown()
+{
+	add_filter('wp_dropdown_cats', '__return_false');
 }
 
 //- remove readability and seo scores filters
-add_action( 'admin_init', 'bb_remove_yoast_seo_admin_filters', 20 );
-function bb_remove_yoast_seo_admin_filters() {
-	global $wpseo_meta_columns ;
-	if ( $wpseo_meta_columns ) {
-		remove_action( 'restrict_manage_posts', array( $wpseo_meta_columns , 'posts_filter_dropdown' ) );
-						remove_action( 'restrict_manage_posts', array( $wpseo_meta_columns , 'posts_filter_dropdown_readability' ) );
-		}
+add_action('admin_init', 'bb_remove_yoast_seo_admin_filters', 20);
+function bb_remove_yoast_seo_admin_filters()
+{
+	global $wpseo_meta_columns;
+	if ($wpseo_meta_columns) {
+		remove_action('restrict_manage_posts', array($wpseo_meta_columns, 'posts_filter_dropdown'));
+		remove_action('restrict_manage_posts', array($wpseo_meta_columns, 'posts_filter_dropdown_readability'));
 	}
+}
 
 
 
