@@ -20,7 +20,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 
             </footer> <!-- end article footer -->
 
-            <?php comments_template(); ?>
+
 
         </article> <!-- end article -->
 
