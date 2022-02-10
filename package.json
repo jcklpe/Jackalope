@@ -5,7 +5,7 @@
   "main": "head.js, footer.js",
   "dependencies": {},
   "devDependencies": {
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "@types/gulp-babel": "^6.1.29",
     "@types/vinyl-buffer": "^1.0.0",
     "@types/vinyl-source-stream": "0.0.30",
